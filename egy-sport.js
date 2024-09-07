@@ -13,7 +13,9 @@ jQuery(document).ready(function ($) {
         switch (!0) {
             case 30 < m:
                 var i = moment.utc(a).subtract(2, "hours").toDate();
-                t.parent().find(".fc_time").addClass("fc_time_show").text(moment(i).format("LT").replace("PM", "PM").replace("AM", "AM")), i = moment(i).format("YYYY/MM/DD h:mm A"), t.parent().parent().parent().parent().find(".hoverG div").html("لم تبدأ المباراة بعد"), t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html(" لم تبدأ "),                     t.parent().parent().parent().parent().addClass("notstarted"), t.countdowntimer({
+                t.parent().find(".fc_time").addClass("fc_time_show").text(moment(i).format("LT").replace("PM", "PM").replace("AM", "AM")), i = moment(i).format("YYYY/MM/DD h:mm A"), t.parent().parent().parent().parent().find(".hoverG div").html("لم تبدأ المباراة بعد"), t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html(" لم تبدأ "), 
+                    t.parent().parent().parent().parent().attr("href", "javascript:void(0)").attr("target", ""),
+                    t.parent().parent().parent().parent().addClass("notstarted"), t.countdowntimer({
                     dateAndTime: i
                 });
                 break;
@@ -25,14 +27,15 @@ jQuery(document).ready(function ($) {
                 });
                 break;
             case 0 < o: 
-                i = moment.utc(a).subtract(2, "hours").toDate(), t.parent().find(".result_match").addClass("result_show"),
-                i = moment(i).format("YYYY/MM/DD h:mm A"), t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html("جارية الان"), t.parent().parent().parent().parent().addClass("runing"), 
+                i = moment.utc(a).subtract(2, "hours").toDate(), t.parent().find(".fc_time").addClass("fc_time_show").text(moment(i).format("LT").replace("PM", "PM").replace("AM", "AM")), i = moment(i).format("YYYY/MM/DD h:mm A"), t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html("جارية الان"), t.parent().parent().parent().parent().addClass("runing"), 
                     t.parents(".egy_sports_item").addClass("live"),
                     t.parent().parent().parent().parent().find(".hoverG div").html("شاهد المبارة الان");
                 break;
             default:
                 t.parent().find(".result_match").addClass("result_show");
-                t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html("انتهت"), t.parent().parent().parent().parent().find(".hoverG div").html("انتهت المباراة"), t.parents(".egy_sports_item").addClass("finshed"),t.parent().parent().parent().parent().addClass("endded");
+                t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html("انتهت"), t.parent().parent().parent().parent().find(".hoverG div").html("انتهت المباراة"), t.parents(".egy_sports_item").addClass("finshed"),
+                    t.parent().parent().parent().parent().attr("href", "javascript:void(0)").attr("target", ""),
+                    t.parent().parent().parent().parent().addClass("endded");
         }
     });
 });
@@ -40,10 +43,10 @@ jQuery(document).ready(function ($) {
 ////////////////////////////////////////
 
 jQuery(function($) {
-    moment.tz.setDefault("Asia/Riyadh"), $("select#change_timezone").change(function() {
+    moment.tz.setDefault("Africa/Cairo"), $("select#change_timezone").change(function() {
         current_time_zone = $(this).val(), $.each($(".egy_sports_item"), function() {
             var a = $(this).attr("rel");
             $(this).find(".fc_time").text(moment(a, "YYYY/MM/DD h:mm A").tz(current_time_zone).format("h:mm A"));
-        }); 
+        });
     });
 });
