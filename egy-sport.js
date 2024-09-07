@@ -8,11 +8,11 @@ jQuery(document).ready(function ($) {
             r = moment(a, "YYYY/MM/DD h:mm A"),
             n = moment(e, "YYYY/MM/DD h:mm A"),
             s = moment.utc().format("YYYY/MM/DD h:mm A"),
-            m = r.subtract(1, "hours").diff(s, "minutes"),
-            o = n.subtract(1, "hours").diff(s, "minutes");
+            m = r.subtract(2, "hours").diff(s, "minutes"),
+            o = n.subtract(2, "hours").diff(s, "minutes");
         switch (!0) {
             case 30 < m:
-                var i = moment.utc(a).subtract(1, "hours").toDate();
+                var i = moment.utc(a).subtract(2, "hours").toDate();
                 t.parent().find(".fc_time").addClass("fc_time_show").text(moment(i).format("LT").replace("PM", "PM").replace("AM", "AM")), i = moment(i).format("YYYY/MM/DD h:mm A"), t.parent().parent().parent().parent().find(".hoverG div").html("لم تبدأ المباراة بعد"), t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html(" لم تبدأ "), 
                     t.parent().parent().parent().parent().attr("href", "javascript:void(0)").attr("target", ""),
                     t.parent().parent().parent().parent().addClass("notstarted"), t.countdowntimer({
@@ -20,14 +20,14 @@ jQuery(document).ready(function ($) {
                 });
                 break;
             case 0 < m:
-                i = moment.utc(a).subtract(1, "hours").toDate(), t.parent().find(".fc_time").addClass("fc_time_show").text(moment(i).format("LT").replace("PM", "PM").replace("AM", "AM")), i = moment(i).format("YYYY/MM/DD h:mm A"), t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html(" تبدأ قريبا "), t.parent().parent().parent().parent().addClass("started"), 
+                i = moment.utc(a).subtract(2, "hours").toDate(), t.parent().find(".fc_time").addClass("fc_time_show").text(moment(i).format("LT").replace("PM", "PM").replace("AM", "AM")), i = moment(i).format("YYYY/MM/DD h:mm A"), t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html(" تبدأ قريبا "), t.parent().parent().parent().parent().addClass("started"), 
                     t.parents(".egy_sports_item").addClass("soon"),
-                    t.parent().parent().parent().parent().find(".hoverG div").html("تبدأ المباراة قريبا"), i = moment.utc(a).subtract(1, "hours").toDate(), i = moment(i).format("YYYY/MM/DD h:mm A"), t.countdowntimer({
+                    t.parent().parent().parent().parent().find(".hoverG div").html("تبدأ المباراة قريبا"), i = moment.utc(a).subtract(2, "hours").toDate(), i = moment(i).format("YYYY/MM/DD h:mm A"), t.countdowntimer({
                     dateAndTime: i
                 });
                 break;
             case 0 < o: 
-                i = moment.utc(a).subtract(1, "hours").toDate(), t.parent().find(".fc_time").addClass("fc_time_show").text(moment(i).format("LT").replace("PM", "PM").replace("AM", "AM")), i = moment(i).format("YYYY/MM/DD h:mm A"), t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html("جارية الان"), t.parent().parent().parent().parent().addClass("runing"), 
+                i = moment.utc(a).subtract(2, "hours").toDate(), t.parent().find(".fc_time").addClass("fc_time_show").text(moment(i).format("LT").replace("PM", "PM").replace("AM", "AM")), i = moment(i).format("YYYY/MM/DD h:mm A"), t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html("جارية الان"), t.parent().parent().parent().parent().addClass("runing"), 
                     t.parents(".egy_sports_item").addClass("live"),
                     t.parent().parent().parent().parent().find(".hoverG div").html("شاهد المبارة الان");
                 break;
