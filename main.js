@@ -42,10 +42,6 @@ jQuery(document).ready(function ($) {
         document.getElementById('iframe').src = url;
     }
 
-    $('.menu_icon_cont').click(function () {
-        $('.kora-top-nav').slideToggle();
-    });
-
 
 
   
