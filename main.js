@@ -2,15 +2,6 @@ jQuery(document).ready(function ($) {
 
     "use strict";
  
-
-    
-    /*------------------
-		Navigation
-	--------------------*/
-
-
-  
-
     function openTabs(evt, tabsyName) {
         var i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tabcontent");
@@ -24,11 +15,6 @@ jQuery(document).ready(function ($) {
         document.getElementById(tabsyName).style.display = "block";
         evt.currentTarget.className += " active";
     }
-
-
-
-
-   
     
     function dodajAktywne(elem) {
         var a = document.getElementsByTagName('button');
@@ -41,9 +27,6 @@ jQuery(document).ready(function ($) {
     function setURL(url) {
         document.getElementById('iframe').src = url;
     }
-
-
-
   
     //////////////////////////////////////
     //////////////////////////////////////
