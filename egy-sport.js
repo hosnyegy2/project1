@@ -9,7 +9,7 @@ jQuery(document).ready(function ($) {
             n = moment(e, "YYYY/MM/DD h:mm A"),
             s = moment.utc().format("YYYY/MM/DD h:mm A"),
             m = r.subtract(0, "hours").diff(s, "minutes"),
-            o = n.subtract(2, "hours").diff(s, "minutes");
+            o = n.subtract(0, "hours").diff(s, "minutes");
         switch (!0) {
             case 30 < m:
                 var i = moment.utc(a).subtract(0, "hours").toDate();
