@@ -8,24 +8,24 @@ jQuery(document).ready(function ($) {
             r = moment(a, "YYYY/MM/DD h:mm A"),
             n = moment(e, "YYYY/MM/DD h:mm A"),
             s = moment.utc().format("YYYY/MM/DD h:mm A"),
-            m = r.subtract(2, "hours").diff(s, "minutes"),
-            o = n.subtract(2, "hours").diff(s, "minutes");
+            m = r.subtract(3, "hours").diff(s, "minutes"),
+            o = n.subtract(3, "hours").diff(s, "minutes");
         switch (!0) {
             case 30 < m:
-                var i = moment.utc(a);
+                var i = moment.utc(a).subtract(3, "hours").toDate();
                 t.parent().find(".fc_time").addClass("fc_time_show").text(moment(i).format("LT").replace("PM", "PM").replace("AM", "AM")), i = moment(i).format("YYYY/MM/DD h:mm A"), t.parent().parent().parent().parent().find(".hoverG div").html("لم تبدأ المباراة بعد"), t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html(" لم تبدأ "),                     t.parent().parent().parent().parent().addClass("notstarted"), t.countdowntimer({
                     dateAndTime: i
                 });
                 break;
             case 0 < m:
-                i = moment.utc(a), t.parent().find(".fc_time").addClass("fc_time_show").text(moment(i).format("LT").replace("PM", "PM").replace("AM", "AM")), i = moment(i).format("YYYY/MM/DD h:mm A"), t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html(" تبدأ قريبا "), t.parent().parent().parent().parent().addClass("started"), 
+                i = moment.utc(a).subtract(3, "hours").toDate(), t.parent().find(".fc_time").addClass("fc_time_show").text(moment(i).format("LT").replace("PM", "PM").replace("AM", "AM")), i = moment(i).format("YYYY/MM/DD h:mm A"), t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html(" تبدأ قريبا "), t.parent().parent().parent().parent().addClass("started"), 
                     t.parents(".egy_sports_item").addClass("soon"),
-                    t.parent().parent().parent().parent().find(".hoverG div").html("تبدأ المباراة قريبا"), i = moment.utc(a), i = moment(i).format("YYYY/MM/DD h:mm A"), t.countdowntimer({
+                    t.parent().parent().parent().parent().find(".hoverG div").html("تبدأ المباراة قريبا"), i = moment.utc(a).subtract(3, "hours").toDate(), i = moment(i).format("YYYY/MM/DD h:mm A"), t.countdowntimer({
                     dateAndTime: i
                 });
                 break;
             case 0 < o: 
-                i = moment.utc(a), t.parent().find(".result_match").addClass("result_show"),
+                i = moment.utc(a).subtract(3, "hours").toDate(), t.parent().find(".result_match").addClass("result_show"),
                 i = moment(i).format("YYYY/MM/DD h:mm A"), t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html("جارية الان"), t.parent().parent().parent().parent().addClass("runing"), 
                     t.parents(".egy_sports_item").addClass("live"),
                     t.parent().parent().parent().parent().find(".hoverG div").html("شاهد المبارة الان");
