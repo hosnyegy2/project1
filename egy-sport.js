@@ -36,14 +36,3 @@ jQuery(document).ready(function ($) {
         }
     });
 });
-///////////////////////////////////////////
-////////////////////////////////////////
-
-jQuery(function($) {
-    moment.tz.setDefault("Asia/Riyadh"), $("select#change_timezone").change(function() {
-        current_time_zone = $(this).val(), $.each($(".egy_sports_item"), function() {
-            var a = $(this).attr("rel");
-            $(this).find(".fc_time").text(moment(a, "YYYY/MM/DD h:mm A").tz(current_time_zone).format("h:mm A"));
-        }); 
-    });
-});
