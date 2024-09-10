@@ -58,10 +58,11 @@ jQuery(document).ready(function ($) {
                 t.parents(".egy_sports_item").addClass("live"),
                 t.parent().parent().parent().parent().find(".hoverG div").html("شاهد المبارة الان");
 
-                // عند بداية المباراة، نبدأ عد تنازلي لوقت المباراة
-                var gameDuration = n.diff(r, 'seconds'); // حساب مدة المباراة بالثواني
-                t.countdowntimer({
-                    duration: gameDuration, // عد التنازلي للمدة المتبقية
+                // بدء عداد جديد لمدة المباراة بعد انتهائها
+                var gameDuration = n.diff(r, "minutes"); // احسب مدة المباراة بالدقائق
+                t.parent().append('<div class="game-duration-timer"></div>'); // إضافة عنصر جديد لعرض العد التنازلي
+                $('.game-duration-timer').countdowntimer({
+                    minutes: gameDuration, // ابدأ العد لمدة المباراة
                     onComplete: function () {
                         t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html("انتهت"),
                         t.parent().parent().parent().parent().find(".hoverG div").html("انتهت المباراة"),
