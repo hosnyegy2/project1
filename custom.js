@@ -36,7 +36,7 @@ jQuery(document).ready(function ($) {
         }
 
         // إضافة شريط التقدم (progress bar) في بداية المباراة
-        t.parent().append('<div class="progress-bar-container"><div class="progress-bar"></div></div>');
+        t.parent().append('<div class="progress-bar-container" style="display: none;"><div class="progress-bar"></div></div>');
 
         function updateProgressBar(remainingMinutes, gameDuration) {
             var progressInterval = setInterval(function () {
@@ -49,6 +49,7 @@ jQuery(document).ready(function ($) {
 
                 if (percentage >= 100) {
                     clearInterval(progressInterval);
+                    $('.progress-bar-container').fadeOut(); // إخفاء شريط التقدم بعد انتهاء العد
                 }
             }, 60000);
         }
@@ -56,6 +57,9 @@ jQuery(document).ready(function ($) {
         function initializeProgressBar() {
             var percentage = progressPercentage ? progressPercentage : 0;
             $('.progress-bar').css('width', percentage + '%');
+            if (percentage > 0) {
+                $('.progress-bar-container').show(); // عرض شريط التقدم إذا كان هناك نسبة مئوية مخزنة
+            }
         }
 
         switch (true) {
@@ -96,9 +100,9 @@ jQuery(document).ready(function ($) {
                 localStorage.setItem("startTime_" + gameId, moment.utc().toString());
                 localStorage.setItem("remainingTime_" + gameId, gameDuration);
 
-                t.parent().append('<div class="game-duration-timer"></div>'); 
+                $('.progress-bar-container').show(); // عرض شريط التقدم عند بدء المباراة
                 $('.game-duration-timer').countdowntimer({
-                    minutes: gameDuration, 
+                    minutes: gameDuration,
                     onComplete: function () {
                         t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html("انتهت"),
                         t.parent().parent().parent().parent().find(".hoverG div").html("انتهت المباراة"),
@@ -108,6 +112,7 @@ jQuery(document).ready(function ($) {
                         localStorage.removeItem("remainingTime_" + gameId);
                         localStorage.removeItem("startTime_" + gameId);
                         localStorage.removeItem("progressPercentage_" + gameId);
+                        $('.progress-bar-container').fadeOut(); // إخفاء شريط التقدم بعد انتهاء العد
                     }
                 });
 
@@ -122,6 +127,7 @@ jQuery(document).ready(function ($) {
                 t.parent().parent().parent().parent().find(".hoverG div").html("انتهت المباراة"),
                 t.parents(".egy_sports_item").addClass("finshed"),
                 t.parent().parent().parent().parent().addClass("endded");
+                $('.progress-bar-container').fadeOut(); // إخفاء شريط التقدم إذا كانت المباراة قد انتهت
         }
 
         // تحديث الوقت المتبقي يدويًا بعد التعديل من لوحة التحكم
@@ -148,6 +154,7 @@ jQuery(document).ready(function ($) {
                     localStorage.removeItem("remainingTime_" + gameId);
                     localStorage.removeItem("startTime_" + gameId);
                     localStorage.removeItem("progressPercentage_" + gameId);
+                    $('.progress-bar-container').fadeOut(); // إخفاء شريط التقدم بعد انتهاء العد
                 }
             });
 
