@@ -57,6 +57,18 @@ jQuery(document).ready(function ($) {
                 t.parent().parent().parent().parent().addClass("runing"),
                 t.parents(".egy_sports_item").addClass("live"),
                 t.parent().parent().parent().parent().find(".hoverG div").html("شاهد المبارة الان");
+
+                // عند بداية المباراة، نبدأ عد تنازلي لوقت المباراة
+                var gameDuration = n.diff(r, 'seconds'); // حساب مدة المباراة بالثواني
+                t.countdowntimer({
+                    duration: gameDuration, // عد التنازلي للمدة المتبقية
+                    onComplete: function () {
+                        t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html("انتهت"),
+                        t.parent().parent().parent().parent().find(".hoverG div").html("انتهت المباراة"),
+                        t.parents(".egy_sports_item").addClass("finshed"),
+                        t.parent().parent().parent().parent().addClass("endded");
+                    }
+                });
                 break;
 
             default:
