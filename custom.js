@@ -57,6 +57,39 @@ jQuery(document).ready(function ($) {
                 t.parent().parent().parent().parent().addClass("runing"),
                 t.parents(".egy_sports_item").addClass("live"),
                 t.parent().parent().parent().parent().find(".hoverG div").html("شاهد المبارة الان");
+                
+                // Add timer functionality
+                var timerElement = t.parent().parent().parent().parent().find(".timer");
+                var statusElement = t.parent().parent().parent().parent().find(".status"); // Add a new element to display the status
+                var startTime = moment.utc(a).subtract(hoursToSubtract, "hours").toDate();
+                var firstHalfEndTime = moment(startTime).add(45, "minutes").toDate();
+                var halfTimeEndTime = moment(firstHalfEndTime).add(15, "minutes").toDate();
+                var secondHalfEndTime = moment(halfTimeEndTime).add(45, "minutes").toDate();
+
+                var timerInterval = setInterval(function () {
+                    var currentTime = moment.utc().toDate();
+                    if (currentTime < firstHalfEndTime) {
+                        var timeRemaining = moment(firstHalfEndTime).diff(currentTime);
+                        var minutes = Math.floor(timeRemaining / 60000);
+                        var seconds = Math.floor((timeRemaining % 60000) / 1000);
+                        timerElement.text(minutes + ":" + seconds.toString().padStart(2, "0"));
+                        statusElement.text("الشوط الاول"); // Display "First Half" during the first 45 minutes
+                    } else if (currentTime < halfTimeEndTime) {
+                        timerElement.text("45:00"); // Display "45:00" during the half-time break
+                        statusElement.text("استراحة"); // Display "Break" during the half-time break
+                    } else if (currentTime < secondHalfEndTime) {
+                        var timeRemaining = moment(secondHalfEndTime).diff(currentTime);
+                        var minutes = Math.floor(timeRemaining / 60000);
+                        var seconds = Math.floor((timeRemaining % 60000) / 1000);
+                        timerElement.text(minutes + ":" + seconds.toString().padStart(2, "0"));
+                        statusElement.text("الشوط الثانى"); // Display "Second Half" during the second 45 minutes
+                    } else {
+                        clearInterval(timerInterval);
+                        timerElement.text("90:00"); // Display "90:00" at the end of the match
+                        statusElement.text("Full Time"); // Display "Full Time" at the end of the match
+                    }
+                }, 1000);
+      
                 break;
 
             default:
