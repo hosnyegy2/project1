@@ -15,6 +15,7 @@ jQuery(document).ready(function ($) {
         var t = $(this),
             a = t.data("start"),
             e = t.data("gameends"),
+            gameId = t.data("gameid"), // معرف فريد للمباراة
             r = moment(a, "YYYY/MM/DD h:mm A"),
             n = moment(e, "YYYY/MM/DD h:mm A"),
             s = moment.utc().format("YYYY/MM/DD h:mm A");
@@ -24,6 +25,17 @@ jQuery(document).ready(function ($) {
 
         var m = r.subtract(hoursToSubtract, "hours").diff(s, "minutes"),
             o = n.subtract(hoursToSubtract, "hours").diff(s, "minutes");
+
+        // جلب الوقت المتبقي المخزن في LocalStorage
+        var remainingTime = localStorage.getItem("remainingTime_" + gameId);
+        var startTime = localStorage.getItem("startTime_" + gameId);
+
+        if (remainingTime && startTime) {
+            var elapsedTime = (moment.utc().diff(moment(startTime), 'minutes'));
+            remainingTime -= elapsedTime;
+        } else {
+            remainingTime = o; // إذا لم يكن هناك وقت مخزن، نبدأ بالوقت الطبيعي
+        }
 
         switch (true) {
             case m > 30:
@@ -58,18 +70,29 @@ jQuery(document).ready(function ($) {
                 t.parents(".egy_sports_item").addClass("live"),
                 t.parent().parent().parent().parent().find(".hoverG div").html("شاهد المبارة الان");
 
-                // بدء عداد جديد لمدة المباراة بعد انتهائها
-                var gameDuration = n.diff(r, "minutes"); // احسب مدة المباراة بالدقائق
-                t.parent().append('<div class="game-duration-timer"></div>'); // إضافة عنصر جديد لعرض العد التنازلي
+                // إذا كانت هناك مدة متبقية مخزنة نستخدمها
+                var gameDuration = remainingTime > 0 ? remainingTime : n.diff(r, "minutes");
+
+                // تخزين وقت البدء والوقت المتبقي
+                localStorage.setItem("startTime_" + gameId, moment.utc().toString());
+                localStorage.setItem("remainingTime_" + gameId, gameDuration);
+
+                // بدء العد التنازلي الجديد
+                t.parent().append('<div class="game-duration-timer"></div>'); 
                 $('.game-duration-timer').countdowntimer({
-                    minutes: gameDuration, // ابدأ العد لمدة المباراة
+                    minutes: gameDuration, 
                     onComplete: function () {
                         t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html("انتهت"),
                         t.parent().parent().parent().parent().find(".hoverG div").html("انتهت المباراة"),
                         t.parents(".egy_sports_item").addClass("finshed"),
                         t.parent().parent().parent().parent().addClass("endded");
+
+                        // إزالة الوقت المخزن عند انتهاء المباراة
+                        localStorage.removeItem("remainingTime_" + gameId);
+                        localStorage.removeItem("startTime_" + gameId);
                     }
                 });
+
                 break;
 
             default:
@@ -81,3 +104,4 @@ jQuery(document).ready(function ($) {
         }
     });
 });
+
