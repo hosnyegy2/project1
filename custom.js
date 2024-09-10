@@ -35,7 +35,6 @@ jQuery(document).ready(function ($) {
             remainingTime = o; // إذا لم يكن هناك وقت مخزن، نبدأ بالوقت الطبيعي
         }
 
-        // إضافة عناصر العداد وشريط التقدم إذا لم تكن موجودة
         if ($('.game-duration-timer').length === 0) {
             t.parent().append('<div class="game-duration-timer"></div>');
         }
@@ -44,7 +43,8 @@ jQuery(document).ready(function ($) {
             t.parent().append('<div class="progress-bar-container" style="display: none;"><div class="progress-bar"></div></div>');
         }
 
-        function updateProgressBar(remainingMinutes, gameDuration) {
+        function updateProgressBar() {
+            var gameDuration = o > 0 ? o : remainingTime;
             var progressInterval = setInterval(function () {
                 var elapsedTime = moment.utc().diff(moment(startTime), 'minutes');
                 var percentage = (elapsedTime / gameDuration) * 100;
@@ -124,7 +124,7 @@ jQuery(document).ready(function ($) {
 
                 $('.progress-bar-container').show(); // عرض شريط التقدم عند بدء المباراة
                 initializeCountdownTimer(gameDuration);
-                updateProgressBar(remainingTime, gameDuration);
+                updateProgressBar();
                 initializeProgressBar();
                 break;
 
@@ -149,7 +149,7 @@ jQuery(document).ready(function ($) {
             localStorage.setItem("remainingTime_" + gameId, remainingTime);
 
             $('.progress-bar-container').show(); // عرض شريط التقدم عند تعديل الوقت يدويًا
-            updateProgressBar(remainingTime, gameDuration);
+            updateProgressBar();
             initializeProgressBar();
         });
     });
