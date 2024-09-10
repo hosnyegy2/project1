@@ -87,6 +87,8 @@ jQuery(document).ready(function ($) {
                         clearInterval(timerInterval);
                         timerElement.text("90:00"); // Display "90:00" at the end of the match
                         statusElement.text("Full Time"); // Display "Full Time" at the end of the match
+                        timerElement.remove(); // Remove the timer element
+                        statusElement.remove(); // Remove the status element
                     }
                 }, 1000);
       
