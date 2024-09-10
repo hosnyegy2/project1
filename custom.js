@@ -2,11 +2,13 @@
 
 
 jQuery(document).ready(function ($) {
+    // دالة للتحقق مما إذا كان التوقيت الصيفي مفعلًا
     function isDaylightSavingTime() {
         const now = new Date();
-        const january = new Date(now.getFullYear(), 0, 1); // يناير (التوقيت الشتوي)
-        const july = new Date(now.getFullYear(), 6, 1); // يوليو (التوقيت الصيفي)
+        const january = new Date(now.getFullYear(), 0, 1); // شهر يناير (التوقيت الشتوي)
+        const july = new Date(now.getFullYear(), 6, 1); // شهر يوليو (التوقيت الصيفي)
 
+        // مقارنة فرق التوقيت بين الشتاء والصيف
         return Math.max(january.getTimezoneOffset(), july.getTimezoneOffset()) !== now.getTimezoneOffset();
     }
 
@@ -14,74 +16,26 @@ jQuery(document).ready(function ($) {
         var t = $(this),
             a = t.data("start"),
             e = t.data("gameends"),
-            gameId = t.data("gameid"),
+            gameId = t.data("gameid"), // معرف فريد للمباراة
             r = moment(a, "YYYY/MM/DD h:mm A"),
             n = moment(e, "YYYY/MM/DD h:mm A"),
             s = moment.utc().format("YYYY/MM/DD h:mm A");
 
-        var hoursToSubtract = isDaylightSavingTime() ? 3 : 2;
+        // التحقق مما إذا كان التوقيت الصيفي مفعلًا
+        var hoursToSubtract = isDaylightSavingTime() ? 3 : 2; // 3 ساعات للتوقيت الصيفي و 2 للشتوي
 
         var m = r.subtract(hoursToSubtract, "hours").diff(s, "minutes"),
             o = n.subtract(hoursToSubtract, "hours").diff(s, "minutes");
 
+        // جلب الوقت المتبقي المخزن في LocalStorage
         var remainingTime = localStorage.getItem("remainingTime_" + gameId);
         var startTime = localStorage.getItem("startTime_" + gameId);
-        var progressPercentage = localStorage.getItem("progressPercentage_" + gameId);
 
         if (remainingTime && startTime) {
             var elapsedTime = (moment.utc().diff(moment(startTime), 'minutes'));
             remainingTime -= elapsedTime;
         } else {
             remainingTime = o; // إذا لم يكن هناك وقت مخزن، نبدأ بالوقت الطبيعي
-        }
-
-        if ($('.game-duration-timer').length === 0) {
-            t.parent().append('<div class="game-duration-timer"></div>');
-        }
-        
-        if ($('.progress-bar-container').length === 0) {
-            t.parent().append('<div class="progress-bar-container" style="display: none;"><div class="progress-bar"></div></div>');
-        }
-
-        function updateProgressBar() {
-            var gameDuration = o > 0 ? o : remainingTime;
-            var progressInterval = setInterval(function () {
-                var elapsedTime = moment.utc().diff(moment(startTime), 'minutes');
-                var percentage = (elapsedTime / gameDuration) * 100;
-                $('.progress-bar').css('width', percentage + '%');
-
-                localStorage.setItem("progressPercentage_" + gameId, percentage);
-
-                if (percentage >= 100) {
-                    clearInterval(progressInterval);
-                    $('.progress-bar-container').fadeOut(); // إخفاء شريط التقدم بعد انتهاء العد
-                }
-            }, 60000); // تحديث كل دقيقة
-        }
-
-        function initializeProgressBar() {
-            var percentage = progressPercentage ? progressPercentage : 0;
-            $('.progress-bar').css('width', percentage + '%');
-            if (percentage > 0) {
-                $('.progress-bar-container').show(); // عرض شريط التقدم إذا كان هناك نسبة مئوية مخزنة
-            }
-        }
-
-        function initializeCountdownTimer(gameDuration) {
-            $('.game-duration-timer').countdowntimer({
-                minutes: gameDuration,
-                onComplete: function () {
-                    t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html("انتهت"),
-                    t.parent().parent().parent().parent().find(".hoverG div").html("انتهت المباراة"),
-                    t.parents(".egy_sports_item").addClass("finshed"),
-                    t.parent().parent().parent().parent().addClass("endded");
-
-                    localStorage.removeItem("remainingTime_" + gameId);
-                    localStorage.removeItem("startTime_" + gameId);
-                    localStorage.removeItem("progressPercentage_" + gameId);
-                    $('.progress-bar-container').fadeOut(); // إخفاء شريط التقدم بعد انتهاء العد
-                }
-            });
         }
 
         switch (true) {
@@ -117,15 +71,29 @@ jQuery(document).ready(function ($) {
                 t.parents(".egy_sports_item").addClass("live"),
                 t.parent().parent().parent().parent().find(".hoverG div").html("شاهد المبارة الان");
 
+                // إذا كانت هناك مدة متبقية مخزنة نستخدمها
                 var gameDuration = remainingTime > 0 ? remainingTime : n.diff(r, "minutes");
 
+                // تخزين وقت البدء والوقت المتبقي
                 localStorage.setItem("startTime_" + gameId, moment.utc().toString());
                 localStorage.setItem("remainingTime_" + gameId, gameDuration);
 
-                $('.progress-bar-container').show(); // عرض شريط التقدم عند بدء المباراة
-                initializeCountdownTimer(gameDuration);
-                updateProgressBar();
-                initializeProgressBar();
+                // بدء العد التنازلي الجديد
+                t.parent().append('<div class="game-duration-timer"></div>'); 
+                $('.game-duration-timer').countdowntimer({
+                    minutes: gameDuration, 
+                    onComplete: function () {
+                        t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html("انتهت"),
+                        t.parent().parent().parent().parent().find(".hoverG div").html("انتهت المباراة"),
+                        t.parents(".egy_sports_item").addClass("finshed"),
+                        t.parent().parent().parent().parent().addClass("endded");
+
+                        // إزالة الوقت المخزن عند انتهاء المباراة
+                        localStorage.removeItem("remainingTime_" + gameId);
+                        localStorage.removeItem("startTime_" + gameId);
+                    }
+                });
+
                 break;
 
             default:
@@ -134,23 +102,6 @@ jQuery(document).ready(function ($) {
                 t.parent().parent().parent().parent().find(".hoverG div").html("انتهت المباراة"),
                 t.parents(".egy_sports_item").addClass("finshed"),
                 t.parent().parent().parent().parent().addClass("endded");
-                $('.progress-bar-container').fadeOut(); // إخفاء شريط التقدم إذا كانت المباراة قد انتهت
         }
-
-        $(document).on('timeUpdated', function (e, newStartTime, newEndTime) {
-            r = moment(newStartTime, "YYYY/MM/DD h:mm A");
-            n = moment(newEndTime, "YYYY/MM/DD h:mm A");
-            remainingTime = n.diff(moment.utc(), 'minutes');
-            
-            $('.game-duration-timer').countdowntimer('destroy');
-            $('.progress-bar').css('width', '0%');
-
-            localStorage.setItem("startTime_" + gameId, moment.utc().toString());
-            localStorage.setItem("remainingTime_" + gameId, remainingTime);
-
-            $('.progress-bar-container').show(); // عرض شريط التقدم عند تعديل الوقت يدويًا
-            updateProgressBar();
-            initializeProgressBar();
-        });
     });
 });
