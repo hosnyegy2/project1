@@ -94,8 +94,8 @@ jQuery(document).ready(function ($) {
                     } else {
                         clearInterval(timerInterval);
                         timerElement.text("90:00"); // Display "90:00" at the end of the match
-                        statusElement.text("Full Time"); // Display "Full Time" at the end of the match
-                        t.parent().parent().parent().parent().find(".timer-status").remove(); // Hide the entire timer-status div
+                        statusElement.html("<span class='full-time'>Full Time</span>"); // Display "Full Time" at the end of the match
+                        //t.parent().parent().parent().parent().find(".timer-status").remove(); // Hide the entire timer-status div
                     }
                 }, 1000);
 
@@ -150,12 +150,12 @@ jQuery(document).ready(function ($) {
                         }
                     } else {
                         clearInterval(timerInterval);
-                        timerElement.text("90:00"); // Display "90:00" at the end of the match
-                        statusElement.text("Full Time"); // Display "Full Time" at the end of the match
+                        //timerElement.text("90:00"); // Display "90:00" at the end of the match
+                        //statusElement.text("Full Time"); // Display "Full Time" at the end of the match
                         isMatchLive = false;
                         progressBarElement.css("width", "100%"); // Set progress bar to 100% at the end of the match
                         progressBarElement.parent().removeClass("match-live");
-                        t.parent().parent().parent().parent().find(".timer-status").remove(); // Hide the entire timer-status div
+                        //t.parent().parent().parent().parent().find(".timer-status").remove(); // Hide the entire timer-status div
                     }
                 }, 1000);
 
