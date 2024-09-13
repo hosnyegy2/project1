@@ -111,7 +111,7 @@ jQuery(document).ready(function ($) {
 
                     if (currentTime < delayEndTime) {
                         // Display message during the 5-minute delay
-                        timerElement.html("<span style='font-size: 8px;color: #f00;border-bottom: 1px dotted;'>بانتظار ضربة البداية</span>");
+                        timerElement.html("<span class='waiting-kick-off'>بانتظار ضربة البداية</span>");
                         statusElement.text(""); // Clear the status element
                         progressBarElement.css("width", "0%"); // Reset progress bar width
                         isMatchLive = false;
