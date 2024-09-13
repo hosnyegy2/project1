@@ -60,18 +60,22 @@ jQuery(document).ready(function ($) {
                 t.parents(".egy_sports_item").addClass("live"),
                 t.parent().parent().parent().parent().find(".timer-status").show(),
                 t.parent().parent().parent().parent().find(".hoverG div").html("شاهد المبارة الان");
-                
+
                 // Add timer functionality
                 var timerElement = t.parent().parent().parent().parent().find(".timer");
                 var statusElement = t.parent().parent().parent().parent().find(".status"); // Add a new element to display the status
                 var startTime = moment.utc(a).subtract(hoursToSubtract, "hours").toDate();
-                var firstHalfEndTime = moment(startTime).add(45, "minutes").toDate();
+                var delayEndTime = moment(startTime).add(5, "minutes").toDate(); // Add a 5-minute delay
+                var firstHalfEndTime = moment(delayEndTime).add(45, "minutes").toDate();
                 var halfTimeEndTime = moment(firstHalfEndTime).add(15, "minutes").toDate();
                 var secondHalfEndTime = moment(halfTimeEndTime).add(45, "minutes").toDate();
 
                 var timerInterval = setInterval(function () {
                     var currentTime = moment.utc().toDate();
-                    if (currentTime < firstHalfEndTime) {
+                    if (currentTime < delayEndTime) {
+                        timerElement.html("<span style='font-size: 8px;color: #f00;border-bottom: 1px dotted;'>بانتظار ضربة البداية</span>"); // Display message during the 5-minute delay
+                        statusElement.text(""); // Clear the status element
+                    } else if (currentTime < firstHalfEndTime) {
                         var timeRemaining = moment(firstHalfEndTime).diff(currentTime);
                         var minutes = Math.floor(timeRemaining / 60000);
                         var seconds = Math.floor((timeRemaining % 60000) / 1000);
