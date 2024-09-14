@@ -74,7 +74,7 @@ jQuery(document).ready(function ($) {
                 var timerInterval = setInterval(function () {
                     var currentTime = moment.utc().toDate();
                     if (currentTime < delayEndTime) {
-                        timerElement.html("<span style='font-size: 8px;color: #f00;border-bottom: 1px dotted;'>بانتظار ضربة البداية</span>"); // Display message during the 5-minute delay
+                        timerElement.html("<span class='waiting-kick-off'>بانتظار ضربة البداية</span>"); // Display message during the 5-minute delay
                         statusElement.text(""); // Clear the status element
                     } else if (currentTime < firstHalfEndTime) {
                         var timeElapsed = moment(currentTime).diff(delayEndTime);
