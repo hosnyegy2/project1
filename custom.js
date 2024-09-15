@@ -66,7 +66,7 @@ jQuery(document).ready(function ($) {
                 var timerElement = t.parent().parent().parent().parent().find(".timer");
                 var statusElement = t.parent().parent().parent().parent().find(".status"); // Add a new element to display the status
                 var startTime = moment.utc(a).subtract(hoursToSubtract, "hours").toDate();
-                var delayEndTime = moment(startTime).add(5, "minutes").toDate(); // Add a 5-minute delay
+                var delayEndTime = moment(startTime).add(3, "minutes").toDate(); // Add a 5-minute delay
                 var firstHalfEndTime = moment(delayEndTime).add(45, "minutes").toDate();
                 var halfTimeEndTime = moment(firstHalfEndTime).add(15, "minutes").toDate();
                 var secondHalfEndTime = moment(halfTimeEndTime).add(45, "minutes").toDate();
