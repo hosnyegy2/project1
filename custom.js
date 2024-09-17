@@ -80,84 +80,86 @@ jQuery(document).ready(function ($) {
                         var timeElapsed = moment(currentTime).diff(delayEndTime);
                         var minutes = Math.floor(timeElapsed / 60000);
                         var seconds = Math.floor((timeElapsed % 60000) / 1000);
-                        timerElement.text(minutes + ":" + seconds.toString().padStart(2, "0"));
+                        timerElement.html("`" + minutes + ":" + seconds.toString().padStart(2, "0")); // Add dot above the timer
                         statusElement.text("الشوط الاول"); // Display "First Half" during the first 45 minutes
                     } else if (currentTime < halfTimeEndTime) {
-                        timerElement.text("45:00"); // Display "45:00" during the half-time break
+                        timerElement.html("45:00"); // Display "45:00" during the half-time break with apostrophe
                         statusElement.text("استراحة"); // Display "Break" during the half-time break
                     } else if (currentTime < secondHalfEndTime) {
                         var timeElapsed = moment(currentTime).diff(halfTimeEndTime);
                         var minutes = Math.floor(timeElapsed / 60000) + 45; // Add 45 to continue from the second half
                         var seconds = Math.floor((timeElapsed % 60000) / 1000);
-                        timerElement.text(minutes + ":" + seconds.toString().padStart(2, "0"));
+                        timerElement.html("`" + minutes + ":" + seconds.toString().padStart(2, "0")); // Add dot above the timer
                         statusElement.text("الشوط الثانى"); // Display "Second Half" during the second 45 minutes
                     } else {
                         clearInterval(timerInterval);
-                        timerElement.text("90:00"); // Display "90:00" at the end of the match
+                        timerElement.html("90:00"); // Display "90:00" at the end of the match with apostrophe
                         statusElement.html("<span class='full-time'>Full Time</span>"); // Display "Full Time" at the end of the match
                         //t.parent().parent().parent().parent().find(".timer-status").remove(); // Hide the entire timer-status div
                     }
                 }, 1000);
 
+
                 
                 
-               // Add a new element to display the progress bar
-                var progressBarElement = t.parent().parent().parent().parent().find(".progress-bar-container");
-                var progressBarElement = t.parent().parent().parent().parent().find(".progress-bar");
+              // Add a new element to display the progress bar
+            var progressBarElement = t.parent().parent().parent().parent().find(".progress-bar-container");
+            var progressBarElement = t.parent().parent().parent().parent().find(".progress-bar");
 
-                var timerInterval = setInterval(function () {
-                    var currentTime = moment.utc().toDate();
-                    var isMatchLive = false;
+            var timerInterval = setInterval(function () {
+                var currentTime = moment.utc().toDate();
+                var isMatchLive = false;
 
-                    if (currentTime < delayEndTime) {
-                        // Display message during the 5-minute delay
-                        timerElement.html("<span class='waiting-kick-off'>بانتظار ضربة البداية</span>");
-                        statusElement.text(""); // Clear the status element
-                        progressBarElement.css("width", "0%"); // Reset progress bar width
-                        isMatchLive = false;
-                        progressBarElement.parent().removeClass("match-live");
-                    } else if (currentTime < firstHalfEndTime) {
-                        // Calculate the elapsed time during the first half
-                        var timeElapsed = moment(currentTime).diff(delayEndTime);
-                        var minutes = Math.floor(timeElapsed / 60000);
-                        var seconds = Math.floor((timeElapsed % 60000) / 1000);
-                        timerElement.text(minutes + ":" + seconds.toString().padStart(2, "0"));
-                        statusElement.text("الشوط الاول"); // Display "First Half" during the first 45 minutes
-                        var progress = (currentTime - delayEndTime) / (firstHalfEndTime - delayEndTime) * 100; // Calculate progress for the first half
-                        isMatchLive = true;
-                        if (isMatchLive) {
-                            progressBarElement.css("width", progress + "%"); // Update progress bar width
-                            progressBarElement.parent().addClass("match-live");
-                        }
-                    } else if (currentTime < halfTimeEndTime) {
-                        timerElement.text("45:00"); // Display "45:00" during the half-time break
-                        statusElement.text("استراحة"); // Display "Break" during the half-time break
-                        isMatchLive = false;
-                        progressBarElement.css("width", "50%"); // Set progress bar to 50% during half-time
-                        progressBarElement.parent().removeClass("match-live");
-                    } else if (currentTime < secondHalfEndTime) {
-                        // Calculate the elapsed time during the second half
-                        var timeElapsed = moment(currentTime).diff(halfTimeEndTime);
-                        var minutes = Math.floor(timeElapsed / 60000) + 45; // Add 45 to account for the second half
-                        var seconds = Math.floor((timeElapsed % 60000) / 1000);
-                        timerElement.text(minutes + ":" + seconds.toString().padStart(2, "0"));
-                        statusElement.text("الشوط الثانى"); // Display "Second Half" during the second 45 minutes
-                        var progress = (currentTime - halfTimeEndTime) / (secondHalfEndTime - halfTimeEndTime) * 100; // Calculate progress for the second half
-                        isMatchLive = true;
-                        if (isMatchLive) {
-                            progressBarElement.css("width", progress + "%"); // Update progress bar width
-                            progressBarElement.parent().addClass("match-live");
-                        }
-                    } else {
-                        clearInterval(timerInterval);
-                        //timerElement.text("90:00"); // Display "90:00" at the end of the match
-                        //statusElement.text("Full Time"); // Display "Full Time" at the end of the match
-                        isMatchLive = false;
-                        progressBarElement.css("width", "100%"); // Set progress bar to 100% at the end of the match
-                        progressBarElement.parent().removeClass("match-live");
-                        //t.parent().parent().parent().parent().find(".timer-status").remove(); // Hide the entire timer-status div
+                if (currentTime < delayEndTime) {
+                    // Display message during the 5-minute delay
+                    timerElement.html("<span class='waiting-kick-off'>بانتظار ضربة البداية</span>");
+                    statusElement.text(""); // Clear the status element
+                    progressBarElement.css("width", "0%"); // Reset progress bar width
+                    isMatchLive = false;
+                    progressBarElement.parent().removeClass("match-live");
+                } else if (currentTime < firstHalfEndTime) {
+                    // Calculate the elapsed time during the first half
+                    var timeElapsed = moment(currentTime).diff(delayEndTime);
+                    var minutes = Math.floor(timeElapsed / 60000);
+                    var seconds = Math.floor((timeElapsed % 60000) / 1000);
+                    timerElement.html("`" + minutes + ":" + seconds.toString().padStart(2, "0")); // Add dot above the timer
+                    statusElement.text("الشوط الاول"); // Display "First Half" during the first 45 minutes
+                    var progress = (currentTime - delayEndTime) / (firstHalfEndTime - delayEndTime) * 100; // Calculate progress for the first half
+                    isMatchLive = true;
+                    if (isMatchLive) {
+                        progressBarElement.css("width", progress + "%"); // Update progress bar width
+                        progressBarElement.parent().addClass("match-live");
                     }
-                }, 1000);
+                } else if (currentTime < halfTimeEndTime) {
+                    timerElement.html("45:00"); // Display "45:00" during the half-time break with apostrophe
+                    statusElement.text("استراحة"); // Display "Break" during the half-time break
+                    isMatchLive = false;
+                    progressBarElement.css("width", "50%"); // Set progress bar to 50% during half-time
+                    progressBarElement.parent().removeClass("match-live");
+                } else if (currentTime < secondHalfEndTime) {
+                    // Calculate the elapsed time during the second half
+                    var timeElapsed = moment(currentTime).diff(halfTimeEndTime);
+                    var minutes = Math.floor(timeElapsed / 60000) + 45; // Add 45 to account for the second half
+                    var seconds = Math.floor((timeElapsed % 60000) / 1000);
+                    timerElement.html("`" + minutes + ":" + seconds.toString().padStart(2, "0")); // Add dot above the timer
+                    statusElement.text("الشوط الثانى"); // Display "Second Half" during the second 45 minutes
+                    var progress = (currentTime - halfTimeEndTime) / (secondHalfEndTime - halfTimeEndTime) * 100; // Calculate progress for the second half
+                    isMatchLive = true;
+                    if (isMatchLive) {
+                        progressBarElement.css("width", progress + "%"); // Update progress bar width
+                        progressBarElement.parent().addClass("match-live");
+                    }
+                } else {
+                    clearInterval(timerInterval);
+                    //timerElement.html("<span class='timer-apostrophe'>'</span>90:00"); // Display "90:00" at the end of the match with apostrophe
+                    //statusElement.text("Full Time"); // Display "Full Time" at the end of the match
+                    isMatchLive = false;
+                    progressBarElement.css("width", "100%"); // Set progress bar to 100% at the end of the match
+                    progressBarElement.parent().removeClass("match-live");
+                    //t.parent().parent().parent().parent().find(".timer-status").remove(); // Hide the entire timer-status div
+                }
+            }, 1000);
+
 
       
                 break;
