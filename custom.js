@@ -83,7 +83,7 @@ jQuery(document).ready(function ($) {
                         timerElement.html("`" + minutes + ":" + seconds.toString().padStart(2, "0")); // Add dot above the timer
                         statusElement.text("الشوط الاول"); // Display "First Half" during the first 45 minutes
                     } else if (currentTime < halfTimeEndTime) {
-                        timerElement.html("45:00"); // Display "45:00" during the half-time break with apostrophe
+                        timerElement.html("`45:00"); // Display "45:00" during the half-time break with apostrophe
                         statusElement.text("استراحة"); // Display "Break" during the half-time break
                     } else if (currentTime < secondHalfEndTime) {
                         var timeElapsed = moment(currentTime).diff(halfTimeEndTime);
@@ -93,7 +93,7 @@ jQuery(document).ready(function ($) {
                         statusElement.text("الشوط الثانى"); // Display "Second Half" during the second 45 minutes
                     } else {
                         clearInterval(timerInterval);
-                        timerElement.html("90:00"); // Display "90:00" at the end of the match with apostrophe
+                        timerElement.html("`90:00"); // Display "90:00" at the end of the match with apostrophe
                         statusElement.html("<span class='full-time'>Full Time</span>"); // Display "Full Time" at the end of the match
                         //t.parent().parent().parent().parent().find(".timer-status").remove(); // Hide the entire timer-status div
                     }
@@ -131,7 +131,7 @@ jQuery(document).ready(function ($) {
                         progressBarElement.parent().addClass("match-live");
                     }
                 } else if (currentTime < halfTimeEndTime) {
-                    timerElement.html("45:00"); // Display "45:00" during the half-time break with apostrophe
+                    timerElement.html("`45:00"); // Display "45:00" during the half-time break with apostrophe
                     statusElement.text("استراحة"); // Display "Break" during the half-time break
                     isMatchLive = false;
                     progressBarElement.css("width", "50%"); // Set progress bar to 50% during half-time
