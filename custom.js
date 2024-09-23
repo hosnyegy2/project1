@@ -173,42 +173,4 @@ jQuery(document).ready(function ($) {
                 t.parent().parent().parent().parent().addClass("endded");
         }
     });
-    
-    $(".hosny2 .date-time-match").each(function() {
-        var a = $(this), 
-        b = a.data("start"), 
-        c = a.data("gameends"), 
-        d = moment(b, "YYYY/MM/DD h:mm A"), 
-        e = moment(c, "YYYY/MM/DD h:mm A"), 
-        f = moment.utc().format("YYYY/MM/DD h:mm A"), 
-        // التحقق مما إذا كان التوقيت الصيفي مفعلًا
-        var hoursToSubtract = isDaylightSavingTime() ? 3 : 2; // 3 ساعات للتوقيت الصيفي و 2 للشتوي
-
-        var m = r.subtract(hoursToSubtract, "hours").diff(s, "minutes"),
-            o = n.subtract(hoursToSubtract, "hours").diff(s, "minutes");
-             
-        switch (!0) {
-          case 30 < g:
-            i = moment.utc(b).subtract(hoursToSubtract, "hours").toDate();
-                $(".hosny2").find(".showVideo").addClass("disShow");
-                $(".hosny2").find("iframe#iframe").attr('src', '');
-            break;
-
-          case 0 < g:
-            i = moment.utc(b).subtract(hoursToSubtract, "hours").toDate();
-                $(".hosny2").find(".showVideo").addClass("activeShow");
-            break;
-
-          case 0 < h:
-            i = moment.utc(b).subtract(hoursToSubtract, "hours").toDate(); 
-                $(".hosny2").find(".showVideo").addClass("activeShow");                
-            break;
-
-          default: 
-            i = moment.utc(b).subtract(hoursToSubtract, "hours").toDate();
-                $(".hosny2").find(".showVideo").addClass("disShow");
-                $(".hosny2").find("iframe#iframe").attr('src', '');
-        }
-    });
-    
 });
