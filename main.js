@@ -129,3 +129,54 @@ function openTabs(evt, tabsyName) {
             moveContent();
         }
     }, 60000); // 
+
+
+// دالة لإظهار أيقونة التحميل ثم إخفائها بعد تحميل المحتوى
+function showLoading(tabId, loadingId, contentClass) {
+    var loadingElement = document.getElementById(loadingId);
+    var contentElements = document.querySelectorAll(tabId + ' ' + contentClass);
+
+    // إظهار أيقونة التحميل
+    loadingElement.style.display = 'flex';
+
+    // محاكاة تأخير في تحميل المحتوى لمدة 3 ثواني (يمكن استبدال هذه الفقرة بشيفرة جلب المحتوى من API أو غيره)
+    setTimeout(function () {
+        // إخفاء أيقونة التحميل
+        loadingElement.style.display = 'none';
+
+        // إظهار المحتوى
+        contentElements.forEach(function (element) {
+            element.style.display = 'block';
+        });
+    }, 3000); // تغيير 3000 إلى الوقت المناسب (بالمللي ثانية)
+}
+
+// استدعاء الدالة لكل تاب عند التبديل بين التابات
+function loadContentForTab(tabName) {
+    if (tabName === 'yesterday') {
+        showLoading('#yesterday', 'loading-yesterday', '.m_block');
+    } else if (tabName === 'Today') {
+        showLoading('#Today', 'loading-today', '.m_block');
+    } else if (tabName === 'Tomorrow') {
+        showLoading('#Tomorrow', 'loading-tomorrow', '.m_block');
+    }
+}
+
+// استدعاء الدالة لتبويب اليوم عند تحميل الصفحة
+window.onload = function () {
+    loadContentForTab('Today');
+};
+
+// عند التبديل بين التابات
+document.getElementById('yas').addEventListener('click', function () {
+    loadContentForTab('yesterday');
+});
+
+document.getElementById('tod').addEventListener('click', function () {
+    loadContentForTab('Today');
+});
+
+document.getElementById('tom').addEventListener('click', function () {
+    loadContentForTab('Tomorrow');
+});
+
