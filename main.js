@@ -27,20 +27,6 @@ jQuery(document).ready(function ($) {
     function setURL(url) {
         document.getElementById('iframe').src = url;
     }
-  
-    //////////////////////////////////////
-    //////////////////////////////////////
-    jQuery(document).ready(function ($) {
-        $("a#tom").click(function () {
-            $(".titleG").html("اهم مباريات الغد");
-        });
-        $("a#tod").click(function () {
-            $(".titleG").html("اهم مباريات اليوم");
-        });
-        $("a#yas").click(function () {
-            $(".titleG").html("نتائج مباريات الامس")
-        });
-    });
 
 });
 //////////////////////////////////////
