@@ -137,7 +137,7 @@ function showLoading(tabId, loadingId, contentClass) {
     var contentElements = document.querySelectorAll(tabId + ' ' + contentClass);
 
     // إظهار أيقونة التحميل
-    loadingElement.style.display = 'flex';
+    loadingElement.style.display = 'block';
 
     // محاكاة تأخير في تحميل المحتوى لمدة 3 ثواني (يمكن استبدال هذه الفقرة بشيفرة جلب المحتوى من API أو غيره)
     setTimeout(function () {
@@ -175,6 +175,11 @@ document.getElementById('yas').addEventListener('click', function () {
 document.getElementById('tod').addEventListener('click', function () {
     loadContentForTab('Today');
 });
+
+document.getElementById('tom').addEventListener('click', function () {
+    loadContentForTab('Tomorrow');
+});
+
 
 document.getElementById('tom').addEventListener('click', function () {
     loadContentForTab('Tomorrow');
