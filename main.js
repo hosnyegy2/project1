@@ -158,4 +158,25 @@ function startTimer(showTime, hideTime, iframeSrc) {
   checkTime(showTime, hideTime, iframeSrc);
 }
 
+function checkTime() {
+        const currentTime = new Date();
+        const currentHour = currentTime.getHours();
+        const currentMinute = currentTime.getMinutes();
+
+        // تحقق مما إذا كانت الساعة 12:00 صباحًا
+        if (currentHour === 0 && currentMinute === 0) {
+            // إخفاء المحتوى القديم
+            document.querySelector('.old-content').style.display = 'none';
+
+            // إظهار المحتوى الجديد
+            document.querySelector('.new-content').style.display = 'block';
+        }
+    }
+
+    // استدعاء الدالة مباشرة عند تحميل الصفحة للتحقق
+    checkTime();
+
+    // تعيين مؤقت يتحقق من الوقت كل دقيقة
+    setInterval(checkTime, 60000); // 60000 مللي ثانية = 1 دقيقة
+
 
