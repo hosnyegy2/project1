@@ -59,76 +59,9 @@ function openTabs(evt, tabsyName) {
     }
     document.getElementById(tabsyName).style.display = "block";
     evt.currentTarget.className += " active";
-}
-
-// دالة لعرض التاريخ في التابات Today, Yesterday, Tomorrow
-    function displayDateInTabs() {
-        var today = new Date();
-
-        // الحصول على اليوم، الشهر، والسنة
-        var day = today.getDate();
-        var month = today.getMonth() + 1; // الأشهر تبدأ من 0 في الجافاسكريبت
-        var year = today.getFullYear();
-
-        // تنسيق التاريخ بالشكل المطلوب (DD/MM/YYYY)
-        var formattedDate = day + '/' + month + '/' + year;
-
-        // إضافة التاريخ إلى تبويب مباريات اليوم
-        var todayElement = document.querySelector('#Today .titleG');
-        if (todayElement) {
-            todayElement.innerHTML += ' - ' + formattedDate;
-        }
-
-        // إضافة التاريخ إلى تبويب مباريات الأمس (نقص يوم واحد)
-        var yesterday = new Date();
-        yesterday.setDate(today.getDate() - 1);
-        var formattedYesterday = yesterday.getDate() + '/' + (yesterday.getMonth() + 1) + '/' + yesterday.getFullYear();
-
-        var yesterdayElement = document.querySelector('#yesterday .titleG');
-        if (yesterdayElement) {
-            yesterdayElement.innerHTML += ' - ' + formattedYesterday;
-        }
-
-        // إضافة التاريخ إلى تبويب مباريات الغد (زيادة يوم واحد)
-        var tomorrow = new Date();
-        tomorrow.setDate(today.getDate() + 1);
-        var formattedTomorrow = tomorrow.getDate() + '/' + (tomorrow.getMonth() + 1) + '/' + tomorrow.getFullYear();
-
-        var tomorrowElement = document.querySelector('#Tomorrow .titleG');
-        if (tomorrowElement) {
-            tomorrowElement.innerHTML += ' - ' + formattedTomorrow;
-        }
-    }
-
-    // استدعاء الدالة لعرض التاريخ
-    displayDateInTabs();
+};
 
 
-    // وظيفة لنقل المحتويات
-    function moveContent() {
-        var yesterdayContent = document.getElementById('yesterday').innerHTML;
-        var todayContent = document.getElementById('Today').innerHTML;
-        var tomorrowContent = document.getElementById('Tomorrow').innerHTML;
-
-        // نقل مباريات اليوم إلى مباريات الأمس
-        document.getElementById('yesterday').innerHTML = todayContent;
-
-        // نقل مباريات الغد إلى مباريات اليوم
-        document.getElementById('Today').innerHTML = tomorrowContent;
-
-        // إفراغ محتوى مباريات الغد
-        document.getElementById('Tomorrow').innerHTML = '';
-    }
-
-    // فحص الساعة كل دقيقة
-    setInterval(function() {
-        var currentTime = new Date();
-
-        // إذا كانت الساعة 12:00 صباحًا
-        if (currentTime.getHours() === 0 && currentTime.getMinutes() === 0) {
-            moveContent();
-        }
-    }, 60000); // 
 
 function checkTime(showTime, hideTime, iframeSrc) {
   const now = new Date();
@@ -157,7 +90,7 @@ function startTimer(showTime, hideTime, iframeSrc) {
 
   // التحقق الفوري عند تحميل الصفحة
   checkTime(showTime, hideTime, iframeSrc);
-}
+};
 
 function checkTimeAndContent() {
         const oldContent = document.getElementById('old-content');
