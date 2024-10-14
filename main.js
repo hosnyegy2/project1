@@ -44,38 +44,3 @@ function startTimer(showTime, hideTime, iframeSrc) {
   // التحقق الفوري عند تحميل الصفحة
   checkTime(showTime, hideTime, iframeSrc);
 }
-/////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////
-function checkTimeAndContent() {
-        const oldContent = document.getElementById('old-content');
-        const newContent = document.getElementById('new-content');
-        const noMatchesMessage = document.getElementById('no-matches');
-        
-        // التحقق مما إذا كان المحتوى فارغًا
-        if (!oldContent.innerHTML.trim() && !newContent.innerHTML.trim()) {
-            // إذا كان كلاهما فارغين، إظهار رسالة "لا يوجد مباريات اليوم"
-            noMatchesMessage.style.display = 'block';
-        } else {
-            noMatchesMessage.style.display = 'none';
-            
-            const currentTime = new Date();
-            const currentHour = currentTime.getHours();
-            const currentMinute = currentTime.getMinutes();
-            
-            // تحقق مما إذا كانت الساعة 12:00 صباحًا
-            if (currentHour === 0 && currentMinute === 0) {
-                // إخفاء المحتوى القديم
-                oldContent.style.display = 'none';
-                
-                // إظهار المحتوى الجديد
-                newContent.style.display = 'block';
-            }
-        }
-    }
-
-    // استدعاء الدالة مباشرة عند تحميل الصفحة للتحقق
-    checkTimeAndContent();
-
-    // تعيين مؤقت يتحقق من الوقت كل دقيقة
-    setInterval(checkTimeAndContent, 60000); // 60000 مللي ثانية = 1 دقيقة
-
