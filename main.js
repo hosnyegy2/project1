@@ -59,8 +59,7 @@ function openTabs(evt, tabsyName) {
     }
     document.getElementById(tabsyName).style.display = "block";
     evt.currentTarget.className += " active";
-};
-
+}
 
 
 function checkTime(showTime, hideTime, iframeSrc) {
@@ -90,7 +89,7 @@ function startTimer(showTime, hideTime, iframeSrc) {
 
   // التحقق الفوري عند تحميل الصفحة
   checkTime(showTime, hideTime, iframeSrc);
-};
+}
 
 function checkTimeAndContent() {
         const oldContent = document.getElementById('old-content');
