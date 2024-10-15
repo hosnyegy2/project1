@@ -77,7 +77,7 @@ const matchData = {
             }
             }
         ],
-    "2024/10/17": [{
+    "2024/10/16": [{
         "id": 244,
         "gameUrl": "https://sport.coldady.com/2024/10/2024-2025_15.html",
         "fareq1": {
