@@ -1,4 +1,3 @@
-// دالة لتحميل المباريات لليوم
 function loadMatchesForToday() {
     const today = new Date().toISOString().split('T')[0].replace(/-/g, '/'); // الحصول على تاريخ اليوم بصيغة YYYY/MM/DD
     const matches = matchData[today];
@@ -38,8 +37,8 @@ function loadMatchesForToday() {
                                 </div>
                             </div>
                             <div class="Fareeq-l">
-                                <img alt="${match.fareq2.name}" src="${match.fareq2.logo}" />
-                                <span>${match.fareq2.name}</span>
+                                <img alt="${match.fareeq2.name}" src="${match.fareq2.logo}" />
+                                <span>${match.fareeq2.name}</span>
                             </div>
                         </div>
                     </a>
@@ -54,17 +53,15 @@ function loadMatchesForToday() {
     }
 }
 
-// دالة لتحديث المباريات عند منتصف الليل
-function updateMatchesAtMidnight() {
-    const now = new Date();
-    const localHour = now.getUTCHours() + (now.getTimezoneOffset() / 60); // الحصول على الساعة المحلية
-    if (localHour === 0) { // إذا كانت الساعة 12:00 صباحًا
-        loadMatchesForToday(); // تحديث المباريات
-    }
-}
-
 // استدعاء الدالة عند تحميل الصفحة
 loadMatchesForToday();
 
 // تعيين مؤقت لتحديث البيانات عند الساعة 12:00 صباحاً
-setInterval(updateMatchesAtMidnight, 60000); // تحديث كل دقيقة
+setInterval(function () {
+    const now = new Date();
+    // تعديل الشرط ليتوافق مع التوقيت المحلي
+    const localHour = now.getUTCHours() + (now.getTimezoneOffset() / 60);
+    if (localHour === 0 && now.getMinutes() === 0) {
+        loadMatchesForToday();
+    }
+}, 60000); // تحديث كل دقيقة
