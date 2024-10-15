@@ -1,7 +1,6 @@
 function loadMatchesForToday() {
-    // تحديد التوقيت المحلي لمصر تلقائيًا مع دعم التوقيت الصيفي والشتوي
     const today = new Date(); 
-    const egyptTime = new Date(Intl.DateTimeFormat('en-US', { timeZone: 'Africa/Cairo' }).format(today)); // ضبط الوقت حسب التوقيت المحلي لمصر
+    const egyptTime = new Date(today.getTime() + (3 * 60 * 60 * 1000)); // إضافة 3 ساعات لتوقيت مصر
     const formattedDate = egyptTime.toISOString().split('T')[0].replace(/-/g, '/'); // الحصول على تاريخ اليوم بصيغة YYYY/MM/DD
     const matches = matchData[formattedDate];
     const matchesContainer = document.getElementById('matches-container');
@@ -15,7 +14,7 @@ function loadMatchesForToday() {
         matches.forEach(match => {
             // تحويل توقيت المباراة ليكون مناسبًا لتوقيت مصر
             const matchTime = new Date(match.timeStart);
-            const egyptMatchTime = new Date(Intl.DateTimeFormat('en-US', { timeZone: 'Africa/Cairo' }).format(matchTime)); // ضبط الوقت حسب التوقيت المحلي لمصر
+            const egyptMatchTime = new Date(matchTime.getTime() + (3 * 60 * 60 * 1000)); // إضافة 3 ساعات لتوقيت مصر
 
             const matchElement = `
                 <div class="m_block egy_sports_item">
