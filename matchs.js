@@ -12,8 +12,8 @@ const matchData = {
                 "logo": "https://img.btolat.com/teamslogo/7959.png?v=402"
             },
             "btola": " تصفيات أمريكا الجنوبية لكأس العالم ",
-            "timeStart": "2024/10/15 11:30 PM",
-            "timeEnd": "2024/10/16 1:30 AM",
+            "timeStart": "2024/10/15 9:30 PM",
+            "timeEnd": "2024/10/15 11:30 PM",
             "score": {
                 "team1": 0,
                 "team2": 0
