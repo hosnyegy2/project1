@@ -77,24 +77,44 @@ const matchData = {
             }
             }
         ],
-    "2024/10/17": [{
-        "id": 244,
-        "gameUrl": "https://sport.coldady.com/2024/10/2024-2025_15.html",
-        "fareq1": {
-            "name": "كوريا الجنوبية",
-            "logo": "https://img.btolat.com/teamslogo/12303.png?v=149"
+    "2024/10/17": [
+        {
+            "id": 256,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "غلطة سراي",
+                "logo": "https://www.futbox.com/img/v1/f9b/97d/47e/b50/322c60f1951a7209b50f.png"
+            },
+            "fareq2": {
+                "name": "روما",
+                "logo": "https://logowik.com/content/uploads/images/as-roma5337.jpg"
+            },
+            "btola": "دوري أبطال أوروبا للسيدات",
+            "timeStart": "2024/10/17 7:45 PM",
+            "timeEnd": "2024/10/17 9:45 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
         },
-        "fareq2": {
-            "name": "العراق",
-            "logo": "https://img.btolat.com/teamslogo/11499.png?v=748"
-        },
-        "btola": "تصفيات آسيا لكأس العالم",
-        "timeStart": "2024/10/15 2:00 PM",
-        "timeEnd": "2024/10/15 4:00 PM",
-        "score": {
-            "team1": 0,
-            "team2": 0
+        {
+            "id": 257,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "ريال مدريد",
+                "logo": "https://logowik.com/content/uploads/images/545_realmadridfc.jpg"
+            },
+            "fareq2": {
+                "name": "سيلتك",
+                "logo": "https://logowik.com/content/uploads/images/celtic-fc3967.jpg"
+            },
+            "btola": "دوري أبطال أوروبا للسيدات",
+            "timeStart": "2024/10/17 7:45 PM",
+            "timeEnd": "2024/10/17 9:45 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
         }
-        }]
+    ]
 };
-
