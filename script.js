@@ -1,16 +1,17 @@
-  function loadMatchesForToday() {
-      const today = new Date().toISOString().split('T')[0].replace(/-/g, '/'); // الحصول على تاريخ اليوم بصيغة YYYY/MM/DD
-      const matches = matchData[today];
-      const matchesContainer = document.getElementById('matches-container');
-      const noMatchesMessage = document.getElementById('no-matches');
+// دالة لتحميل المباريات لليوم
+function loadMatchesForToday() {
+    const today = new Date().toISOString().split('T')[0].replace(/-/g, '/'); // الحصول على تاريخ اليوم بصيغة YYYY/MM/DD
+    const matches = matchData[today];
+    const matchesContainer = document.getElementById('matches-container');
+    const noMatchesMessage = document.getElementById('no-matches');
 
-      matchesContainer.innerHTML = ''; // تفريغ المحتوى القديم
+    matchesContainer.innerHTML = ''; // تفريغ المحتوى القديم
 
-      if (matches && matches.length > 0) {
-          noMatchesMessage.style.display = 'none'; // إخفاء رسالة لا يوجد مباريات
+    if (matches && matches.length > 0) {
+        noMatchesMessage.style.display = 'none'; // إخفاء رسالة لا يوجد مباريات
 
-          matches.forEach(match => {
-              const matchElement = `
+        matches.forEach(match => {
+            const matchElement = `
                 <div class="m_block egy_sports_item">
                     <a href="${match.gameUrl}" class="ElGadwl" title="${match.fareq1.name} ضد ${match.fareq2.name}">
                         <div class="Gadwl-Top">
@@ -37,31 +38,33 @@
                                 </div>
                             </div>
                             <div class="Fareeq-l">
-                                <img alt="${match.fareeq2.name}" src="${match.fareq2.logo}" />
-                                <span>${match.fareeq2.name}</span>
+                                <img alt="${match.fareq2.name}" src="${match.fareq2.logo}" />
+                                <span>${match.fareq2.name}</span>
                             </div>
                         </div>
                     </a>
                 </div>
             `;
-              matchesContainer.innerHTML += matchElement;
-          });
+            matchesContainer.innerHTML += matchElement;
+        });
 
-      } else {
-          // إظهار رسالة "لا يوجد مباريات اليوم" إذا لم يكن هناك مباريات في تاريخ اليوم
-          noMatchesMessage.style.display = 'block';
-      }
-  }
+    } else {
+        // إظهار رسالة "لا يوجد مباريات اليوم" إذا لم يكن هناك مباريات في تاريخ اليوم
+        noMatchesMessage.style.display = 'block';
+    }
+}
 
-  // استدعاء الدالة عند تحميل الصفحة
-  loadMatchesForToday();
+// دالة لتحديث المباريات عند منتصف الليل
+function updateMatchesAtMidnight() {
+    const now = new Date();
+    const localHour = now.getUTCHours() + (now.getTimezoneOffset() / 60); // الحصول على الساعة المحلية
+    if (localHour === 0) { // إذا كانت الساعة 12:00 صباحًا
+        loadMatchesForToday(); // تحديث المباريات
+    }
+}
 
-  // تعيين مؤقت لتحديث البيانات عند الساعة 12:00 صباحاً
-  setInterval(function () {
-      const now = new Date();
-      // تعديل الشرط ليتوافق مع التوقيت المحلي
-      const localHour = now.getUTCHours() + (now.getTimezoneOffset() / 60);
-      if (localHour === 0 && now.getMinutes() === 0) {
-          loadMatchesForToday();
-      }
-  }, 60000); // تحديث كل دقيقة
+// استدعاء الدالة عند تحميل الصفحة
+loadMatchesForToday();
+
+// تعيين مؤقت لتحديث البيانات عند الساعة 12:00 صباحاً
+setInterval(updateMatchesAtMidnight, 60000); // تحديث كل دقيقة
