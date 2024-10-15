@@ -181,11 +181,11 @@ const matchData = {
             "gameUrl": "",
             "fareq1": {
                 "name": "غلطة سراي",
-                "logo": "https://www.futbox.com/img/v1/f9b/97d/47e/b50/322c60f1951a7209b50f.png"
+                "logo": "https://img.btolat.com/teamslogo/17029.png?v=354"
             },
             "fareq2": {
                 "name": "روما",
-                "logo": "https://logowik.com/content/uploads/images/as-roma5337.jpg"
+                "logo": "https://img.btolat.com/teamslogo/11998.png?v=815"
             },
             "btola": "دوري أبطال أوروبا للسيدات",
             "timeStart": "2024/10/17 7:45 PM",
@@ -200,11 +200,11 @@ const matchData = {
             "gameUrl": "",
             "fareq1": {
                 "name": "ريال مدريد",
-                "logo": "https://logowik.com/content/uploads/images/545_realmadridfc.jpg"
+                "logo": "https://img.btolat.com/teamslogo/16110.png?v=376"
             },
             "fareq2": {
                 "name": "سيلتك",
-                "logo": "https://logowik.com/content/uploads/images/celtic-fc3967.jpg"
+                "logo": "https://upload.wikimedia.org/wikipedia/ar/thumb/3/35/Celtic_FC.svg/180px-Celtic_FC.svg.png"
             },
             "btola": "دوري أبطال أوروبا للسيدات",
             "timeStart": "2024/10/17 7:45 PM",
