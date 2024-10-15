@@ -2,7 +2,7 @@
 const matchData = {
     "2024/10/16": [{
             "id": 246,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/2024-2025_6.html",
             "fareq1": {
                 "name": "باراجواي",
                 "logo": "https://img.btolat.com/teamslogo/13867.png?v=404"
@@ -21,7 +21,7 @@ const matchData = {
             },
         {
             "id": 247,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/2024-2025_19.html",
             "fareq1": {
                 "name": "أوروجواي",
                 "logo": "https://img.btolat.com/teamslogo/17412.png?v=74"
@@ -40,7 +40,7 @@ const matchData = {
             },
         {
             "id": 248,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/2024-2025_98.html",
             "fareq1": {
                 "name": "الأرجنتين",
                 "logo": "https://img.btolat.com/teamslogo/5886.png?v=13"
@@ -59,7 +59,7 @@ const matchData = {
             },
         {
             "id": 249,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/2024-2025_73.html",
             "fareq1": {
                 "name": "البرازيل",
                 "logo": "https://img.btolat.com/teamslogo/7084.png?v=176"
