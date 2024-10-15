@@ -103,11 +103,11 @@ const matchData = {
             "gameUrl": "",
             "fareq1": {
                 "name": "يوفنتوس",
-                "logo": "https://logowik.com/content/uploads/images/juventus-fc-2017-icon8536.logowik.com.webp"
+                "logo": "https://img.btolat.com/teamslogo/11922.png?v=381"
             },
             "fareq2": {
                 "name": "بايرن ميونخ",
-                "logo": "https://logowik.com/content/uploads/images/bayern-munchen-emblem7197.logowik.com.webp"
+                "logo": "https://img.btolat.com/teamslogo/10285.png?v=46"
             },
             "btola": "دوري أبطال أوروبا للسيدات",
             "timeStart": "2024/10/16 7:45 PM",
@@ -126,7 +126,7 @@ const matchData = {
             },
             "fareq2": {
                 "name": "مانشستر سيتي",
-                "logo": "https://logowik.com/content/uploads/images/901_manchestercityfc.jpg"
+                "logo": "https://img.btolat.com/teamslogo/9259.png?v=545"
             },
             "btola": "دوري أبطال أوروبا للسيدات",
             "timeStart": "2024/10/16 7:45 PM",
@@ -141,7 +141,7 @@ const matchData = {
             "gameUrl": "",
             "fareq1": {
                 "name": "آرسنال",
-                "logo": "https://logowik.com/content/uploads/images/t_721_arsenalfc.jpg"
+                "logo": "https://img.btolat.com/teamslogo/9002.png?v=593"
             },
             "fareq2": {
                 "name": "فاليرينغا",
@@ -160,7 +160,7 @@ const matchData = {
             "gameUrl": "",
             "fareq1": {
                 "name": "برشلونة",
-                "logo": "https://www.futbox.com/img/v1/849/014/a7b/4ab/4db7eaac8fd2c3e159cc.png"
+                "logo": "https://img.btolat.com/teamslogo/15702.png?v=616"
             },
             "fareq2": {
                 "name": "هاماربي",
