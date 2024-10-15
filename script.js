@@ -1,5 +1,6 @@
 function loadMatchesForToday() {
     const today = new Date().toISOString().split('T')[0].replace(/-/g, '/'); // الحصول على تاريخ اليوم بصيغة YYYY/MM/DD
+    console.log("Today's date:", today); // طباعة التاريخ للتحقق
     const matches = matchData[today];
     const matchesContainer = document.getElementById('matches-container');
     const noMatchesMessage = document.getElementById('no-matches');
