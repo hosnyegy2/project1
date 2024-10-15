@@ -1,7 +1,26 @@
 // البيانات الديناميكية لكل يوم
 const matchData = {
-    
     "2024/10/15": [{
+            "id": 244,
+            "gameUrl": "https://sport.coldady.com/2024/10/2024-2025_79.html",
+            "fareq1": {
+                "name": "كولومبيا",
+                "logo": "https://img.btolat.com/teamslogo/8117.png?v=867"
+            },
+            "fareq2": {
+                "name": "تشيلي",
+                "logo": "https://img.btolat.com/teamslogo/7959.png?v=402"
+            },
+            "btola": " تصفيات أمريكا الجنوبية لكأس العالم ",
+            "timeStart": "2024/10/15 11:30 PM",
+            "timeEnd": "2024/10/16 1:30 AM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+        },
+    ],
+    "2024/10/16": [{
             "id": 245,
             "gameUrl": "https://sport.coldady.com/2024/10/2024-2025_79.html",
             "fareq1": {
