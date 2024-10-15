@@ -1,6 +1,6 @@
 function loadMatchesForToday() {
     const today = new Date(); 
-    const egyptTime = new Date(today.getTime() + (2 * 60 * 60 * 1000)); // إضافة ساعتين لتوقيت مصر
+    const egyptTime = new Date(today.getTime() + (3 * 60 * 60 * 1000)); // إضافة 3 ساعات لتوقيت مصر
     const formattedDate = egyptTime.toISOString().split('T')[0].replace(/-/g, '/'); // الحصول على تاريخ اليوم بصيغة YYYY/MM/DD
     const matches = matchData[formattedDate];
     const matchesContainer = document.getElementById('matches-container');
@@ -14,7 +14,7 @@ function loadMatchesForToday() {
         matches.forEach(match => {
             // تحويل توقيت المباراة ليكون مناسبًا لتوقيت مصر
             const matchTime = new Date(match.timeStart);
-            const egyptMatchTime = new Date(matchTime.getTime() + (2 * 60 * 60 * 1000)); // إضافة ساعتين لتوقيت مصر
+            const egyptMatchTime = new Date(matchTime.getTime() + (3 * 60 * 60 * 1000)); // إضافة 3 ساعات لتوقيت مصر
 
             const matchElement = `
                 <div class="m_block egy_sports_item">
