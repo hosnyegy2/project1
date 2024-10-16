@@ -178,7 +178,7 @@ const matchData = {
     "2024/10/17": [
         {
             "id": 256,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/galatasaray-vs-roma.html",
             "fareq1": {
                 "name": "غلطة سراي",
                 "logo": "https://img.btolat.com/teamslogo/17029.png?v=354"
@@ -197,7 +197,7 @@ const matchData = {
         },
         {
             "id": 257,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/real-madrid-vs-celtic-match.html",
             "fareq1": {
                 "name": "ريال مدريد",
                 "logo": "https://img.btolat.com/teamslogo/16110.png?v=376"
