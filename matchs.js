@@ -100,7 +100,7 @@ const matchData = {
         },
         {
             "id": 258,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/2024-2025_16.html",
             "fareq1": {
                 "name": "يوفنتوس",
                 "logo": "https://img.btolat.com/teamslogo/11922.png?v=381"
@@ -119,7 +119,7 @@ const matchData = {
         },
         {
             "id": 259,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/2024-2025_56.html",
             "fareq1": {
                 "name": "بولتن",
                 "logo": "https://logowik.com/content/uploads/images/t_club-union-deportiva-norte-de-dean-funes-cordoba6095.logowik.com.webp"
@@ -138,7 +138,7 @@ const matchData = {
         },
         {
             "id": 260,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/2024-2025_33.html",
             "fareq1": {
                 "name": "آرسنال",
                 "logo": "https://img.btolat.com/teamslogo/9002.png?v=593"
@@ -157,7 +157,7 @@ const matchData = {
         },
         {
             "id": 261,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/2024-2025_30.html",
             "fareq1": {
                 "name": "برشلونة",
                 "logo": "https://img.btolat.com/teamslogo/15702.png?v=616"
