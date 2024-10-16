@@ -1,8 +1,20 @@
 function loadMatchesForToday() {
-    // الحصول على الوقت الحالي ثم إضافة 3 ساعات فقط لعرض الجدول
     const today = new Date();
-    const egyptTime = new Date(today.getTime() + (3 * 60 * 60 * 1000)); // إضافة 3 ساعات لتوقيت عرض الجدول
-    const formattedDate = today.toISOString().split('T')[0].replace(/-/g, '/'); // الحصول على تاريخ اليوم الفعلي بدون تعديل
+
+    // دالة للتحقق مما إذا كان التوقيت الصيفي مفعلًا
+    function isDaylightSavingTime() {
+        const now = new Date();
+        const january = new Date(now.getFullYear(), 0, 1); // يناير (الشتاء)
+        const july = new Date(now.getFullYear(), 6, 1); // يوليو (الصيف)
+        
+        return Math.max(january.getTimezoneOffset(), july.getTimezoneOffset()) !== now.getTimezoneOffset();
+    }
+
+    // حساب فرق التوقيت بناءً على الصيف أو الشتاء لوقت عرض الجدول فقط
+    const hoursToAdd = isDaylightSavingTime() ? 3 : 2; // 3 ساعات للصيف و 2 للشتاء
+    const egyptTime = new Date(today.getTime() + (hoursToAdd * 60 * 60 * 1000)); // تعديل وقت عرض الجدول فقط
+
+    const formattedDate = egyptTime.toISOString().split('T')[0].replace(/-/g, '/'); // الحصول على تاريخ اليوم بصيغة YYYY/MM/DD
     const matches = matchData[formattedDate];
     const matchesContainer = document.getElementById('matches-container');
     const noMatchesMessage = document.getElementById('no-matches');
@@ -13,7 +25,9 @@ function loadMatchesForToday() {
         noMatchesMessage.style.display = 'none'; // إخفاء رسالة لا يوجد مباريات
 
         matches.forEach(match => {
-            // عرض التوقيت الفعلي للمباراة بدون تعديل فارق التوقيت
+            // هنا نترك توقيت المباراة كما هو دون تعديل
+            const matchTime = new Date(match.timeStart);
+
             const matchElement = `
                 <div class="m_block egy_sports_item">
                     <!-- مباراة ${match.fareq1.name} ضد ${match.fareq2.name} فى ${match.btola} -->
