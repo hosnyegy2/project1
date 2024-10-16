@@ -1,7 +1,8 @@
 function loadMatchesForToday() {
-    const today = new Date(); 
-    const egyptTime = new Date(today.getTime() + (3 * 60 * 60 * 1000)); // إضافة 3 ساعات لتوقيت مصر
-    const formattedDate = egyptTime.toISOString().split('T')[0].replace(/-/g, '/'); // الحصول على تاريخ اليوم بصيغة YYYY/MM/DD
+    // الحصول على الوقت الحالي ثم إضافة 3 ساعات فقط لعرض الجدول
+    const today = new Date();
+    const egyptTime = new Date(today.getTime() + (3 * 60 * 60 * 1000)); // إضافة 3 ساعات لتوقيت عرض الجدول
+    const formattedDate = today.toISOString().split('T')[0].replace(/-/g, '/'); // الحصول على تاريخ اليوم الفعلي بدون تعديل
     const matches = matchData[formattedDate];
     const matchesContainer = document.getElementById('matches-container');
     const noMatchesMessage = document.getElementById('no-matches');
@@ -12,10 +13,7 @@ function loadMatchesForToday() {
         noMatchesMessage.style.display = 'none'; // إخفاء رسالة لا يوجد مباريات
 
         matches.forEach(match => {
-            // تحويل توقيت المباراة ليكون مناسبًا لتوقيت مصر
-            const matchTime = new Date(match.timeStart);
-            const egyptMatchTime = new Date(matchTime.getTime() + (3 * 60 * 60 * 1000)); // إضافة 3 ساعات لتوقيت مصر
-
+            // عرض التوقيت الفعلي للمباراة بدون تعديل فارق التوقيت
             const matchElement = `
                 <div class="m_block egy_sports_item">
                     <!-- مباراة ${match.fareq1.name} ضد ${match.fareq2.name} فى ${match.btola} -->
@@ -33,7 +31,7 @@ function loadMatchesForToday() {
                                     <div class="fc_time">
                                         <span id="hdaf1">${match.score.team1}</span> - <span id="hdaf2">${match.score.team2}</span>
                                     </div>
-                                    <div class="date stay" data-start="${egyptMatchTime.toISOString()}" data-gameends="${match.timeEnd}" id="${match.id}"></div>
+                                    <div class="date stay" data-start="${match.timeStart}" data-gameends="${match.timeEnd}" id="${match.id}"></div>
                                     <div class="timer-status">
                                         <span class="timer"></span>
                                         <span class="status"></span>
