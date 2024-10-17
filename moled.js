@@ -216,7 +216,7 @@ const matchData = {
         },
         {
             "id": 262,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/17.html",
             "fareq1": {
                 "name": "العقبة",
                 "logo": "https://www.jfa.jo/images/team1/60662de4e7046.png"
@@ -235,7 +235,7 @@ const matchData = {
         },
         {
             "id": 263,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/17_17.html",
             "fareq1": {
                 "name": "شباب الأردن",
                 "logo": "https://www.jfa.jo/images/team1/60662dd08caf1.png"
