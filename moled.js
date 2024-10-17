@@ -18,8 +18,8 @@ const matchData = {
             "timeStart": "2024/10/17 7:45 PM",
             "timeEnd": "2024/10/17 9:45 PM",
             "score": {
-                "team1": 0,
-                "team2": 2
+                "team1": 1,
+                "team2": 6
             }
         },
         {
@@ -37,7 +37,7 @@ const matchData = {
             "timeStart": "2024/10/17 7:45 PM",
             "timeEnd": "2024/10/17 9:45 PM",
             "score": {
-                "team1": 1,
+                "team1": 4,
                 "team2": 0
             }
         },
@@ -57,7 +57,7 @@ const matchData = {
             "timeEnd": "2024/10/17 9:45 PM",
             "score": {
                 "team1": 1,
-                "team2": 0
+                "team2": 3
             }
         },
         {
@@ -76,7 +76,7 @@ const matchData = {
             "timeEnd": "2024/10/17 9:45 PM",
             "score": {
                 "team1": 0,
-                "team2": 0
+                "team2": 2
             }
         }
     ],
