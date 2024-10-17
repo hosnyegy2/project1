@@ -19,7 +19,7 @@ const matchData = {
             "timeEnd": "2024/10/17 9:45 PM",
             "score": {
                 "team1": 0,
-                "team2": 0
+                "team2": 2
             }
         },
         {
@@ -37,7 +37,7 @@ const matchData = {
             "timeStart": "2024/10/17 7:45 PM",
             "timeEnd": "2024/10/17 9:45 PM",
             "score": {
-                "team1": 0,
+                "team1": 1,
                 "team2": 0
             }
         },
@@ -56,7 +56,7 @@ const matchData = {
             "timeStart": "2024/10/17 7:45 PM",
             "timeEnd": "2024/10/17 9:45 PM",
             "score": {
-                "team1": 0,
+                "team1": 1,
                 "team2": 0
             }
         },
@@ -80,7 +80,180 @@ const matchData = {
             }
         }
     ],
-    "2024/10/18": [],
+    "2024/10/18": [
+        {
+            "id": 264,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "الخور",
+                "logo": "https://img.btolat.com/teamslogo/14500.png?v=692"
+            },
+            "fareq2": {
+                "name": "الريان",
+                "logo": "https://img.btolat.com/teamslogo/14502.png?v=750"
+            },
+            "btola": "الدوري القطري",
+            "timeStart": "2024/10/18 5:30 PM",
+            "timeEnd": "2024/10/18 7:30 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 265,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "الخليج",
+                "logo": "https://img.btolat.com/teamslogo/15006.png?v=809"
+            },
+            "fareq2": {
+                "name": "الأهلي السعودي",
+                "logo": "https://img.btolat.com/teamslogo/14990.png?v=643"
+            },
+            "btola": "الدوري السعودي",
+            "timeStart": "2024/10/18 5:45 PM",
+            "timeEnd": "2024/10/18 7:45 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 266,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "الهلال السعودي",
+                "logo": "https://img.btolat.com/teamslogo/15001.png?v=23"
+            },
+            "fareq2": {
+                "name": "الفيحاء",
+                "logo": "https://img.btolat.com/teamslogo/14998.png?v=170"
+            },
+            "btola": "الدوري السعودي",
+            "timeStart": "2024/10/18 6:00 PM",
+            "timeEnd": "2024/10/18 8:00 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 267,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "السد",
+                "logo": "https://img.btolat.com/teamslogo/14503.png?v=105"
+            },
+            "fareq2": {
+                "name": "الشحانية",
+                "logo": "https://img.btolat.com/teamslogo/14509.png?v=56"
+            },
+            "btola": "الدوري القطري",
+            "timeStart": "2024/10/18 7:30 PM",
+            "timeEnd": "2024/10/18 9:30 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 270,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "الغرافة",
+                "logo": "https://img.btolat.com/teamslogo/14497.png?v=925"
+            },
+            "fareq2": {
+                "name": "أم صلال",
+                "logo": "https://img.btolat.com/teamslogo/14513.png?v=0"
+            },
+            "btola": "الدوري القطري",
+            "timeStart": "2024/10/18 7:30 PM",
+            "timeEnd": "2024/10/18 9:30 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 271,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "نهضة الزمامرة",
+                "logo": "https://img.btolat.com/teamslogo/29802.png?v=925"
+            },
+            "fareq2": {
+                "name": "الرجاء البيضاوي",
+                "logo": "https://img.btolat.com/teamslogo/13126.png?v=490"
+            },
+            "btola": "الدوري المغربي",
+            "timeStart": "2024/10/18 8:00 PM",
+            "timeEnd": "2024/10/18 10:00 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 268,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "الشباب السعودي",
+                "logo": "https://img.btolat.com/teamslogo/15017.png?v=438"
+            },
+            "fareq2": {
+                "name": "النصر السعودي",
+                "logo": "https://img.btolat.com/teamslogo/15010.png?v=992"
+            },
+            "btola": "الدوري السعودي",
+            "timeStart": "2024/10/18 9:00 PM",
+            "timeEnd": "2024/10/18 11:00 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 269,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "بوروسيا دورتموند",
+                "logo": "https://img.btolat.com/teamslogo/10303.png?v=260"
+            },
+            "fareq2": {
+                "name": "سانت باولي",
+                "logo": "https://img.btolat.com/teamslogo/10603.png?v=240"
+            },
+            "btola": "الدوري الالماني",
+            "timeStart": "2024/10/18 9:30 PM",
+            "timeEnd": "2024/10/18 11:30 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+
+        {
+            "id": 272,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "الشباب الرياضي السالمي",
+                "logo": "https://img.btolat.com/teamslogo/29803.png?v=237"
+            },
+            "fareq2": {
+                "name": "الرجاء البيضاوي",
+                "logo": "https://img.btolat.com/teamslogo/13126.png?v=490"
+            },
+            "btola": "الدوري المغربي",
+            "timeStart": "2024/10/18 10:00 PM",
+            "timeEnd": "2024/10/19 12:00 AM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+}
+    ],
     "2024/10/19": [],
     "2024/10/20": [],
     "2024/10/21": [],
@@ -94,5 +267,5 @@ const matchData = {
     "2024/10/29": [],
     "2024/10/30": [],
     "2024/10/31": []
-    
+
 };
