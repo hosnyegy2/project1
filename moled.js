@@ -83,7 +83,7 @@ const matchData = {
     "2024/10/18": [
         {
             "id": 264,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/2024-2025_18.html",
             "fareq1": {
                 "name": "الخور",
                 "logo": "https://img.btolat.com/teamslogo/14500.png?v=692"
@@ -102,7 +102,7 @@ const matchData = {
 },
         {
             "id": 265,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/20241018.html",
             "fareq1": {
                 "name": "الخليج",
                 "logo": "https://img.btolat.com/teamslogo/15006.png?v=809"
@@ -121,7 +121,7 @@ const matchData = {
 },
         {
             "id": 266,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/20241018_18.html",
             "fareq1": {
                 "name": "الهلال السعودي",
                 "logo": "https://img.btolat.com/teamslogo/15001.png?v=23"
@@ -140,7 +140,7 @@ const matchData = {
 },
         {
             "id": 267,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/20241018_16.html",
             "fareq1": {
                 "name": "السد",
                 "logo": "https://img.btolat.com/teamslogo/14503.png?v=105"
@@ -159,7 +159,7 @@ const matchData = {
 },
         {
             "id": 270,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/20241018_23.html",
             "fareq1": {
                 "name": "الغرافة",
                 "logo": "https://img.btolat.com/teamslogo/14497.png?v=925"
@@ -178,7 +178,7 @@ const matchData = {
 },
         {
             "id": 271,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/20241018_11.html",
             "fareq1": {
                 "name": "نهضة الزمامرة",
                 "logo": "https://img.btolat.com/teamslogo/29802.png?v=925"
@@ -197,7 +197,7 @@ const matchData = {
 },
         {
             "id": 268,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/20241018_9.html",
             "fareq1": {
                 "name": "الشباب السعودي",
                 "logo": "https://img.btolat.com/teamslogo/15017.png?v=438"
@@ -216,7 +216,7 @@ const matchData = {
 },
         {
             "id": 269,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/20241018_69.html",
             "fareq1": {
                 "name": "بوروسيا دورتموند",
                 "logo": "https://img.btolat.com/teamslogo/10303.png?v=260"
@@ -236,7 +236,7 @@ const matchData = {
 
         {
             "id": 272,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/20241018_36.html",
             "fareq1": {
                 "name": "الشباب الرياضي السالمي",
                 "logo": "https://img.btolat.com/teamslogo/29803.png?v=237"
