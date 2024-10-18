@@ -184,8 +184,8 @@ const matchData = {
                 "logo": "https://img.btolat.com/teamslogo/29802.png?v=925"
             },
             "fareq2": {
-                "name": "الرجاء البيضاوي",
-                "logo": "https://img.btolat.com/teamslogo/13126.png?v=490"
+                "name": "نهضة بركان",
+                "logo": "https://img.btolat.com/teamslogo/13127.png?v=137"
             },
             "btola": "الدوري المغربي",
             "timeStart": "2024/10/18 8:00 PM",
