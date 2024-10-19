@@ -297,6 +297,7 @@ table .name svg {
         width: auto;
         text-align: center;
         padding-right: 0;
+        font-weight: 500;
     }
 
     .standings_jdwel thead th {
