@@ -43,25 +43,7 @@ const matchData = {
                 "team2": 1
             }
 },
-        {
-            "id": 275,
-            "gameUrl": "https://sport.coldady.com/2024/10/bayer-leverkusen-vs-eintracht-frankfurt-match.html",
-            "fareq1": {
-                "name": "الترجي الجرجيسي",
-                "logo": "https://img.btolat.com/teamslogo/16960.png?v=692"
-            },
-            "fareq2": {
-                "name": "الترجي التونسي",
-                "logo": "https://img.btolat.com/teamslogo/16933.png?v=814"
-            },
-            "btola": "الدوري التونسي",
-            "timeStart": "2024/10/19 5:00 PM",
-            "timeEnd": "2024/10/19 7:00 PM",
-            "score": {
-                "team1": 0,
-                "team2": 0
-            }
-},
+       
         {
             "id": 276,
             "gameUrl": "https://sport.coldady.com/2024/10/blog-post_45.html",
