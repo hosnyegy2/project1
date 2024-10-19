@@ -285,14 +285,14 @@ table .name svg {
         font-size: 1rem !important
     }
 
+}
+
+@media screen and (max-width:768px) {
     .standings_jdwel tbody td.team {
         width: auto;
         text-align: center;
         padding-right: 0;
     }
-}
-
-@media screen and (max-width:600px) {
     .standings_jdwel .d-md-none {
         display: block
     }
