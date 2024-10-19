@@ -285,12 +285,10 @@ table .name svg {
         font-size: 1rem !important
     }
 
-    .d-md-none {
-        display: none !important
-    }
-
-    .d-md-block {
-        display: block !important
+    .standings_jdwel tbody td.team {
+        width: auto;
+        text-align: center;
+        padding-right: 0;
     }
 }
 
