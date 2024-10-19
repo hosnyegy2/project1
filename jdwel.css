@@ -299,6 +299,10 @@ table .name svg {
         padding-right: 0;
     }
 
+    .standings_jdwel thead th {
+        font-size: 12px;
+    }
+
     .standings_jdwel .d-md-none {
         display: block
     }
