@@ -54,6 +54,7 @@
 .scorers_jdwel .row:nth-of-type(2n+1) {
     background: rgb(246, 247, 250)
 }
+
 .standings_jdwel tbody td {
     padding: 6px;
     text-align: center;
@@ -62,15 +63,18 @@
     box-shadow: 1px -1px 0 rgb(230, 231, 241);
     vertical-align: middle;
 }
+
 .is-dark .standings_jdwel tbody td {
     box-shadow: 1px -1px 0 rgb(55 56 60);
 }
+
 .is-dark .tablepress tbody tr,
 .is-dark .default_jdwel tbody tr,
 .is-dark .scorers_jdwel .row {
     background: rgb(43 44 51);
     border: solid 1px rgb(54 55 60);
 }
+
 .is-dark .tablepress tbody tr:nth-of-type(2n+1),
 .is-dark .default_jdwel tbody tr:nth-of-type(2n+1),
 .is-dark .scorers_jdwel .row:nth-of-type(2n+1) {
@@ -79,6 +83,7 @@
     font-weight: bold;
     color: #fff;
 }
+
 .tablepress th:first-child,
 .default_jdwel th:first-child {
     border-radius: 0 10px 0 0
@@ -293,6 +298,7 @@ table .name svg {
         text-align: center;
         padding-right: 0;
     }
+
     .standings_jdwel .d-md-none {
         display: block
     }
@@ -313,9 +319,6 @@ table .name svg {
         font-size: 10px;
         line-height: 14.5px
     }
-}
-
-@media screen and (max-width:480px) {
 
     .standings_jdwel thead th {
         padding: 8px 4px
@@ -324,5 +327,4 @@ table .name svg {
     .standings_jdwel .match-left {
         display: none
     }
-
 }
