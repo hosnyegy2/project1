@@ -50,7 +50,6 @@
 .scorers_jdwel .row {
     background: rgb(255, 255, 255);
     border: solid 1px rgb(230, 231, 241);
-    height: 55px
 }
 
 .tablepress tbody tr:nth-of-type(2n+1),
@@ -74,7 +73,6 @@
 .is-dark .scorers_jdwel .row {
     background: rgb(43 44 51);
     border: solid 1px rgb(54 55 60);
-    height: 55px;
 }
 .is-dark .tablepress tbody tr:nth-of-type(2n+1),
 .is-dark .default_jdwel tbody tr:nth-of-type(2n+1),
