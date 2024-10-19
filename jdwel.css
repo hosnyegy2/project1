@@ -64,7 +64,13 @@
 .scorers_jdwel .row:nth-of-type(2n+1) {
     background: rgb(246, 247, 250)
 }
-
+.is-dark .tablepress tbody tr:nth-of-type(2n+1),
+.is-dark .default_jdwel tbody tr:nth-of-type(2n+1),
+.is-dark .scorers_jdwel .row:nth-of-type(2n+1) {
+    background-color: #191919;
+    border-bottom: 1px solid #0f0f0f;
+    font-weight: bold;
+}
 .tablepress th:first-child,
 .default_jdwel th:first-child {
     border-radius: 0 10px 0 0
