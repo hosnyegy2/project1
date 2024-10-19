@@ -58,6 +58,17 @@
 .scorers_jdwel .row:nth-of-type(2n+1) {
     background: rgb(246, 247, 250)
 }
+.standings_jdwel tbody td {
+    padding: 6px;
+    text-align: center;
+    font-size: 12px;
+    background: 0;
+    box-shadow: 1px -1px 0 rgb(230, 231, 241);
+    vertical-align: middle;
+}
+.is-dark .standings_jdwel tbody td {
+    box-shadow: 1px -1px 0 rgb(55 56 60);
+}
 .is-dark .tablepress tbody tr,
 .is-dark .default_jdwel tbody tr,
 .is-dark .scorers_jdwel .row {
@@ -163,16 +174,6 @@ table .name svg {
 
 .standings_jdwel tbody td.rank {
     width: 30px
-}
-
-.standings_jdwel tbody td.team_logo {
-    border: 0;
-    position: absolute;
-    right: 31px;
-    box-shadow: inherit !important;
-    padding-right: 0 !important;
-    width: auto !important;
-    text-align: center !important
 }
 
 .standings_jdwel tbody td.team {
