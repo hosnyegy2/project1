@@ -303,7 +303,7 @@ table .name svg {
         font-size: 12px;
     }
 
-    .standings_jdwel th.goal-plus-minus {
+    th.goal-plus-minus, td.goal-plus-minus {
         display: none;
     }
 
