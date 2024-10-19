@@ -1,13 +1,8 @@
 .standings_jdwel {
-    border-collapse: collapse;
-    border-spacing: 0;
     width: 100%;
     min-width: 600px;
     margin: 0;
     text-align: center;
-    font-size: 12px;
-    border: 0 solid rgb(255, 255, 255);
-    color: rgb(65, 65, 65);
     border-radius: 2px;
     overflow: hidden;
     position: relative
@@ -146,21 +141,6 @@ table .name svg {
     padding-bottom: 10px
 }
 
-.standings_jdwel {
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    min-width: 600px;
-    margin: 0;
-    text-align: center;
-    font-size: 12px;
-    border: 0 solid rgb(255, 255, 255);
-    color: rgb(65, 65, 65);
-    border-radius: 2px;
-    overflow: hidden;
-    position: relative
-}
-
 /*-----------------------*/
 
 
@@ -180,20 +160,6 @@ table .name svg {
 
 .standings_jdwel thead th:only-child {
     border-radius: 10px 10px 0 0
-}
-
-.standings_jdwel tbody tr:hover {
-    background-color: whitesmoke !important
-}
-
-.standings_jdwel tbody td {
-    padding: 6px;
-    text-align: center;
-    font-family: 'Cairo', tahoma;
-    font-size: 12px;
-    background: 0;
-    box-shadow: 1px -1px 0 rgb(230, 231, 241);
-    vertical-align: middle
 }
 
 .standings_jdwel tbody td.rank {
