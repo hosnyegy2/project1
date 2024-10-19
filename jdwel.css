@@ -236,45 +236,6 @@ table .name svg {
     padding-right: 35px
 }
 
-.standings_jdwel tbody tr:first-child {
-    color: RGB(44, 118, 53);
-    background-color: rgb(228, 252, 213);
-    border: RGB(214, 233, 196) solid 1px
-}
-
-.standings_jdwel tbody tr:nth-of-type(2) {
-    color: RGB(44, 118, 53);
-    background-color: rgb(235, 252, 224);
-    border: RGB(214, 233, 196) solid 1px
-}
-
-.standings_jdwel tbody tr:nth-of-type(3) {
-    color: RGB(44, 118, 53);
-    background-color: rgb(242, 255, 234);
-    border: RGB(214, 233, 196) solid 1px
-}
-
-.standings_jdwel tbody tr:nth-of-type(4) {
-    background-color: rgba(255, 255, 221, 0.77)
-}
-
-.standings_jdwel tbody tr:nth-of-type(5) {
-    background-color: rgba(255, 255, 242, 0.8)
-}
-
-.standings_jdwel tbody tr:nth-of-type(18) {
-    background-color: RGB(255, 238, 238)
-}
-
-.standings_jdwel tbody tr:nth-of-type(19) {
-    background-color: rgb(255, 225, 225)
-}
-
-.standings_jdwel tbody tr:last-child {
-    background-color: rgb(254, 208, 208);
-    color: rgb(169, 68, 66) !important
-}
-
 .standings_jdwel .d-md-none {
     display: none
 }
