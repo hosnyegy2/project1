@@ -301,6 +301,7 @@ table .name svg {
 
     .standings_jdwel thead th {
         font-size: 12px;
+        padding: 8px 4px
     }
 
     th.goal-plus-minus, td.goal-plus-minus {
@@ -326,10 +327,6 @@ table .name svg {
     .jdwel_frame.scorers_jdwel .row {
         font-size: 10px;
         line-height: 14.5px
-    }
-
-    .standings_jdwel thead th {
-        padding: 8px 4px
     }
 
     .standings_jdwel .match-left {
