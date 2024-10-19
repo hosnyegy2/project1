@@ -163,28 +163,12 @@ table .name svg {
 
 /*-----------------------*/
 
-.standings_jdwel thead tr {
-    background: rgb(255, 255, 255);
-    border-bottom: 2px solid rgb(230, 231, 241)
-}
-
-.standings_jdwel tbody tr {
-    background: rgb(255, 255, 255);
-    position: relative;
-    height: 35px
-}
-
-.standings_jdwel tbody tr:nth-of-type(2n+1) {
-    background: rgb(246, 247, 250)
-}
 
 .standings_jdwel thead th {
     padding: 10px;
     text-align: center;
-    color: rgb(102, 102, 102);
     font-size: 12px;
     border-bottom: none;
-    font-family: 'Cairo'
 }
 
 .standings_jdwel thead th:first-child {
