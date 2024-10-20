@@ -94,8 +94,8 @@ const matchData = {
                 "logo": "https://img.btolat.com/teamslogo/9092.png?v=38"
             },
             "btola": "الدوري الإنجليزي",
-            "timeStart": "2024/10/20 6:30 PM",
-            "timeEnd": "2024/10/20 8:30 PM",
+            "timeStart": "2024/10/20 6:35 PM",
+            "timeEnd": "2024/10/20 8:35 PM",
             "score": {
                 "team1": 2,
                 "team2": 1
