@@ -85,7 +85,7 @@ const matchData = {
 },
         {
             "id": 299,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/valencia-vs-las-palmas.html",
             "fareq1": {
                 "name": "فالنسيا",
                 "logo": "https://img.btolat.com/teamslogo/16261.png?v=12"
