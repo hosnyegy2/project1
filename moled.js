@@ -28,7 +28,7 @@ const matchData = {
 },
         {
             "id": 296,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/blog-post_21.html",
             "fareq1": {
                 "name": "السد",
                 "logo": "https://img.btolat.com/teamslogo/14503.png?v=105"
@@ -47,7 +47,7 @@ const matchData = {
 },
         {
             "id": 297,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/blog-post_77.html",
             "fareq1": {
                 "name": "العين",
                 "logo": "https://img.btolat.com/teamslogo/17231.png?v=104"
@@ -66,7 +66,7 @@ const matchData = {
 },
         {
             "id": 298,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/blog-post_52.html",
             "fareq1": {
                 "name": "الريان",
                 "logo": "https://img.btolat.com/teamslogo/14502.png?v=750"
