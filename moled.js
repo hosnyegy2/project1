@@ -158,7 +158,7 @@ const matchData = {
             "timeEnd": "2024/10/23 12:00 AM",
             "score": {
                 "team1": 0,
-                "team2": 0
+                "team2": 1
             }
 },
         {
@@ -176,7 +176,7 @@ const matchData = {
             "timeStart": "2024/10/22 10:00 PM",
             "timeEnd": "2024/10/23 12:00 AM",
             "score": {
-                "team1": 0,
+                "team1": 1,
                 "team2": 1
             }
 },
@@ -214,7 +214,7 @@ const matchData = {
             "timeStart": "2024/10/22 10:00 PM",
             "timeEnd": "2024/10/23 12:00 AM",
             "score": {
-                "team1": 0,
+                "team1": 5,
                 "team2": 2
             }
 }
