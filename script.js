@@ -151,35 +151,20 @@ function createTabs() {
     });
 }
 
-
 // دالة لتحميل المباريات لتاريخ محدد
 function loadMatchesForDate(date) {
-    const today = new Date();
-
-    // دالة للتحقق مما إذا كان التوقيت الصيفي مفعلًا
-    function isDaylightSavingTime() {
-        const now = new Date();
-        const january = new Date(now.getFullYear(), 0, 1);
-        const july = new Date(now.getFullYear(), 6, 1);
-        return Math.max(january.getTimezoneOffset(), july.getTimezoneOffset()) !== now.getTimezoneOffset();
-    }
-
-    const hoursToAdd = isDaylightSavingTime() ? 3 : 2;
-    const egyptTime = new Date(today.getTime() + (hoursToAdd * 60 * 60 * 1000));
-    const formattedDate = egyptTime.toISOString().split('T')[0].replace(/-/g, '/');
-
-    const matches = matchData[formattedDate];
+    const matches = matchData[date]; // يجب أن يحتوي هذا المتغير على بيانات المباريات
     const matchesContainer = document.getElementById('matches-container');
     const noMatchesMessage = document.getElementById('no-matches');
 
-    matchesContainer.innerHTML = '';
+    matchesContainer.innerHTML = ''; // تفريغ المحتوى القديم
 
     if (matches && matches.length > 0) {
-        noMatchesMessage.style.display = 'none';
+        noMatchesMessage.style.display = 'none'; // إخفاء رسالة لا يوجد مباريات
 
         matches.forEach(match => {
             const matchElement = `
-                <div class="m_block egy_sports_item">
+                <div class="m_block egy_sports_item ">
                     <a href="${match.gameUrl}" class="ElGadwl" title="${match.fareq1.name} ضد ${match.fareq2.name}">
                         <div class="Gadwl-Top">
                             <div class="Fareeq-r">
@@ -206,7 +191,7 @@ function loadMatchesForDate(date) {
                             </div>
                             <div class="Fareeq-l">
                                 <img alt="${match.fareq2.name}" src="${match.fareq2.logo}" />
-                                <span>${match.fareeq2.name}</span>
+                                <span>${match.fareq2.name}</span>
                             </div>
                         </div>
                     </a>
@@ -214,7 +199,6 @@ function loadMatchesForDate(date) {
             `;
             matchesContainer.innerHTML += matchElement;
         });
-
         // استدعاء الكود من الرابط الخارجي
         $.getScript("https://raw.githack.com/hosnyegy2/project1/main/custom.js")
             .done(function (script, textStatus) {
@@ -225,6 +209,7 @@ function loadMatchesForDate(date) {
             });
 
     } else {
+        // إظهار رسالة "لا يوجد مباريات" إذا لم يكن هناك مباريات في تاريخ اليوم
         noMatchesMessage.style.display = 'block';
     }
 }
@@ -236,17 +221,6 @@ createTabs();
 setInterval(function () {
     const now = new Date();
     if (now.getHours() === 0 && now.getMinutes() === 0) {
-        // تحديث المحتوى للمباريات لليوم الجديد
-        const tomorrow = new Date();
-        tomorrow.setDate(now.getDate() + 1);
-        const formattedDate = tomorrow.toISOString().split('T')[0].replace(/-/g, '/');
-        loadMatchesForDate(formattedDate);
-
-        // تعيين التاب النشط لليوم الجديد
-        const newActiveTab = document.querySelector(`.tab-button:nth-child(3)`); // هذا إذا كان التاب الثالث يمثل اليوم الحالي
-        if (newActiveTab) {
-            setActiveTab(newActiveTab);
-            setDayAndDateInTitle(formattedDate); // تحديث العنوان
-        }
+        loadMatchesForDate(new Date().toISOString().split('T')[0].replace(/-/g, '/'));
     }
 }, 60000); // تحديث كل دقيقة
