@@ -153,22 +153,21 @@ function createTabs() {
 
 // دالة لتحميل المباريات لتاريخ محدد
 function loadMatchesForDate(date) {
-    const today = new Date();
-
-    // دالة للتحقق مما إذا كان التوقيت الصيفي مفعلًا
-    function isDaylightSavingTime() {
+     function isDaylightSavingTime() {
         const now = new Date();
         const january = new Date(now.getFullYear(), 0, 1); // يناير (الشتاء)
         const july = new Date(now.getFullYear(), 6, 1); // يوليو (الصيف)
-
         return Math.max(january.getTimezoneOffset(), july.getTimezoneOffset()) !== now.getTimezoneOffset();
     }
 
-    // حساب فرق التوقيت بناءً على الصيف أو الشتاء لوقت عرض الجدول فقط
+    // هنا نقوم بتعديل توقيت عرض الجدول بناءً على التوقيت الصيفي أو الشتوي
+    const today = new Date();
     const hoursToAdd = isDaylightSavingTime() ? 3 : 2; // 3 ساعات للصيف و 2 للشتاء
-    const egyptTime = new Date(today.getTime() + (hoursToAdd * 60 * 60 * 1000)); // تعديل وقت عرض الجدول فقط
+    const adjustedDate = new Date(today.getTime() + hoursToAdd * 60 * 60 * 1000);
 
-    const formattedDate = egyptTime.toISOString().split('T')[0].replace(/-/g, '/'); // الحصول على تاريخ اليوم بصيغة YYYY/MM/DD
+    // تنسيق التاريخ كما هو مطلوب
+    const formattedDate = adjustedDate.toISOString().split('T')[0].replace(/-/g, '/');
+    
     const matches = matchData[formattedDate];
     const matchesContainer = document.getElementById('matches-container');
     const noMatchesMessage = document.getElementById('no-matches');
