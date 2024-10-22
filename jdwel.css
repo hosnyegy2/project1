@@ -277,46 +277,63 @@ table .name svg {
     border-bottom: 0;
 }
 
-div#tabs-container {
-    width: 100%;
-    background: #f00;
-    text-align: center;
-    padding: 10px;
+/* تنسيقات التابات */
+.tabs-container {
     display: flex;
-    box-sizing: border-box;
-    margin: 0;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
 }
 
-div#tabs-container button {
-    color: #fff;
-    background: #000;
-    padding: 10px;
-    border-left: 1px solid;
+.tab-button {
+    flex: 1 1 auto;
+    margin: 1px;
+    /* padding: 10px; */
+    border: 2px solid #007bff;
+    border-radius: 5px;
     text-align: center;
-    width: 100%;
-    margin: 4px 2px;
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     cursor: pointer;
+    background-color: white;
+    color: #007bff;
+    font-size: 13px;
+    line-height: 1.9;
 }
 
-div#tabs-container button.active {
-    background: #333;
+.tab-button:hover {
+    background-color: #007bff;
+    color: white;
 }
 
-@media only screen and (max-width: 960px) {
-    div#tabs-container {
+.tab-button.active {
+    background-color: #007bff;
+    color: white;
+}
+
+/* تخصيص لسطح المكتب */
+@media (min-width: 992px) {
+    .tabs-container {
+        display: flex;
+        justify-content: space-around;
+        /* توزيع المساحة بالتساوي */
+    }
+}
+
+/* تخصيص لشاشات الهواتف */
+@media (max-width: 991px) {
+    .tabs-container {
+        justify-content: center;
+        flex-wrap: nowrap;
+        /* جعل التابات بجانب بعضها البعض */
         overflow-x: auto;
-        margin: 0 auto;
+        /* إضافة شريط تمرير أفقي إذا لزم الأمر */
     }
 
-    div#tabs-container button {
-        display: grid;
-        grid-template-columns: 110px auto;
-        grid-gap: 10px;
-        margin: 0;
+    .tab-button {
+        flex: 1 1 auto;
+        /* جعل التاب يأخذ المساحة المتاحة */
+        white-space: nowrap;
+        font-size: 10px;
+        /* منع التفاف النص داخل التاب */
     }
 }
 
@@ -342,7 +359,8 @@ div#tabs-container button.active {
         padding: 8px 4px
     }
 
-    th.goal-plus-minus, td.goal-plus-minus {
+    th.goal-plus-minus,
+    td.goal-plus-minus {
         display: none;
     }
 
