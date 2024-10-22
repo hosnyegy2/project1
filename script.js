@@ -1,36 +1,80 @@
-function loadMatchesForToday() {
-    const today = new Date();
-
-    // دالة للتحقق مما إذا كان التوقيت الصيفي مفعلًا
-    function isDaylightSavingTime() {
-        const now = new Date();
-        const january = new Date(now.getFullYear(), 0, 1); // يناير (الشتاء)
-        const july = new Date(now.getFullYear(), 6, 1); // يوليو (الصيف)
-        
-        return Math.max(january.getTimezoneOffset(), july.getTimezoneOffset()) !== now.getTimezoneOffset();
+function setActiveTab(activeTab) {
+        const allTabs = document.querySelectorAll('.tab-button');
+        allTabs.forEach(tab => tab.classList.remove('active'));
+        activeTab.classList.add('active');
     }
 
-    // حساب فرق التوقيت بناءً على الصيف أو الشتاء لوقت عرض الجدول فقط
-    const hoursToAdd = isDaylightSavingTime() ? 3 : 2; // 3 ساعات للصيف و 2 للشتاء
-    const egyptTime = new Date(today.getTime() + (hoursToAdd * 60 * 60 * 1000)); // تعديل وقت عرض الجدول فقط
+    // دالة لإنشاء التواريخ في التابات
+    // دالة لتحويل رقم اليوم إلى اسم اليوم
+    function getDayName(dateString) {
+        const days = ["الأحد", "الإثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"];
+        const date = new Date(dateString);
+        return days[date.getDay()];
+    }
 
-    const formattedDate = egyptTime.toISOString().split('T')[0].replace(/-/g, '/'); // الحصول على تاريخ اليوم بصيغة YYYY/MM/DD
-    const matches = matchData[formattedDate];
-    const matchesContainer = document.getElementById('matches-container');
-    const noMatchesMessage = document.getElementById('no-matches');
+    // دالة لإنشاء التواريخ في التابات
+    function createTabs() {
+        const tabsContainer = document.getElementById('tabs-container');
+        tabsContainer.innerHTML = '';
 
-    matchesContainer.innerHTML = ''; // تفريغ المحتوى القديم
+        // الحصول على التاريخ الحالي
+        const today = new Date();
 
-    if (matches && matches.length > 0) {
-        noMatchesMessage.style.display = 'none'; // إخفاء رسالة لا يوجد مباريات
+        // إنشاء مصفوفة للتواريخ المطلوبة (يومان قبل، يومان بعد)
+        const dates = [];
+        for (let i = -2; i <= 2; i++) {
+            const date = new Date(today);
+            date.setDate(today.getDate() + i); // تعديل التاريخ حسب قيمة i (يومين قبل ويومين بعد)
+            const formattedDate = date.toISOString().split('T')[0].replace(/-/g, '/'); // تنسيق التاريخ
+            dates.push(formattedDate); // إضافة التاريخ إلى المصفوفة
+        }
 
-        matches.forEach(match => {
-            // هنا نترك توقيت المباراة كما هو دون تعديل
-            const matchTime = new Date(match.timeStart);
+        // إنشاء التابات بناءً على التواريخ المحسوبة
+        dates.forEach((date, index) => {
+            const tab = document.createElement('button');
+            tab.classList.add('tab-button');
+            tab.innerHTML = `
+            <div>${getDayName(date)}</div>
+            <div>${date}</div>
+        `;
+            tab.style.display = 'flex';
+            tab.style.flexDirection = 'column'; // لجعل اسم اليوم فوق التاريخ
+            tab.style.alignItems = 'center'; // محاذاة محتويات التاب في المنتصف
 
-            const matchElement = `
-                <div class="m_block egy_sports_item">
-                    <!-- مباراة ${match.fareq1.name} ضد ${match.fareq2.name} فى ${match.btola} -->
+            tab.onclick = function() {
+                loadMatchesForDate(date);
+                setActiveTab(tab); // تعيين التاب النشط
+            };
+
+            tabsContainer.appendChild(tab);
+
+            // تعيين التاب الذي يتوافق مع تاريخ اليوم كنشط عند التحميل
+            if (index === 2) { // اليوم الحالي هو التاب الثالث
+                tab.classList.add('active');
+                loadMatchesForDate(date); // تحميل مباريات اليوم
+            }
+        });
+    }
+
+    // دالة لتحميل المباريات لتاريخ محدد
+    function loadMatchesForDate(date) {
+        const matches = matchData[date];
+        const matchesContainer = document.getElementById('matches-container');
+        const noMatchesMessage = document.getElementById('no-matches');
+
+        matchesContainer.innerHTML = ''; // تفريغ المحتوى القديم
+
+        // عرض تاريخ اليوم
+        /*const dateHeader = document.createElement('h3');
+        dateHeader.innerText = `تاريخ: ${date}`;
+        matchesContainer.appendChild(dateHeader);*/
+
+        if (matches && matches.length > 0) {
+            noMatchesMessage.style.display = 'none'; // إخفاء رسالة لا يوجد مباريات
+
+            matches.forEach(match => {
+                const matchElement = `
+                <div class="m_block egy_sports_item ">
                     <a href="${match.gameUrl}" class="ElGadwl" title="${match.fareq1.name} ضد ${match.fareq2.name}">
                         <div class="Gadwl-Top">
                             <div class="Fareeq-r">
@@ -63,22 +107,30 @@ function loadMatchesForToday() {
                     </a>
                 </div>
             `;
-            matchesContainer.innerHTML += matchElement;
-        });
+                matchesContainer.innerHTML += matchElement;
+            });
+            // استدعاء الكود من الرابط الخارجي
+            $.getScript("https://raw.githack.com/hosnyegy2/project1/main/custom.js")
+                .done(function(script, textStatus) {
+                    console.log("Script loaded successfully: " + textStatus);
+                })
+                .fail(function(jqxhr, settings, exception) {
+                    console.error("Error loading script: " + exception);
+                });
 
-    } else {
-        // إظهار رسالة "لا يوجد مباريات اليوم" إذا لم يكن هناك مباريات في تاريخ اليوم
-        noMatchesMessage.style.display = 'block';
+        } else {
+            // إظهار رسالة "لا يوجد مباريات" إذا لم يكن هناك مباريات في تاريخ اليوم
+            noMatchesMessage.style.display = 'block';
+        }
     }
-}
 
-// استدعاء الدالة عند تحميل الصفحة
-loadMatchesForToday();
+    // استدعاء الدالة عند تحميل الصفحة
+    createTabs();
 
-// تعيين مؤقت لتحديث البيانات عند الساعة 12:00 صباحاً
-setInterval(function () {
-    const now = new Date();
-    if (now.getHours() === 0 && now.getMinutes() === 0) {
-        loadMatchesForToday();
-    }
-}, 60000); // تحديث كل دقيقة
+    // تعيين مؤقت لتحديث البيانات عند الساعة 12:00 صباحاً
+    setInterval(function() {
+        const now = new Date();
+        if (now.getHours() === 0 && now.getMinutes() === 0) {
+            loadMatchesForDate(new Date().toISOString().split('T')[0].replace(/-/g, '/'));
+        }
+    }, 60000); // تحديث كل دقيقة
