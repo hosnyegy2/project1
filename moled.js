@@ -222,7 +222,7 @@ const matchData = {
     "2024/10/23": [
         {
             "id": 307,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/blog-post_0.html",
             "fareq1": {
                 "name": "الرياضي المكناسي",
                 "logo": "https://img.btolat.com/teamslogo/13102.png?v=971"
@@ -241,7 +241,7 @@ const matchData = {
 },
         {
             "id": 308,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/atletico-madrid-vs-lille-french.html",
             "fareq1": {
                 "name": "أتلتيكو مدريد",
                 "logo": "https://img.btolat.com/teamslogo/15692.png?v=534"
@@ -260,7 +260,7 @@ const matchData = {
 },
         {
             "id": 309,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/barcelona-vs-bayern-munich.html",
             "fareq1": {
                 "name": "برشلونة",
                 "logo": "https://img.btolat.com/teamslogo/15702.png?v=616"
@@ -279,7 +279,7 @@ const matchData = {
 },
         {
             "id": 310,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/man-city-vs-sparta-prague.html",
             "fareq1": {
                 "name": "مانشستر سيتي",
                 "logo": "https://img.btolat.com/teamslogo/9259.png?v=545"
@@ -298,7 +298,7 @@ const matchData = {
 },
         {
             "id": 311,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/leipzig-vs-liverpool.html",
             "fareq1": {
                 "name": "لايبزيج",
                 "logo": "https://img.btolat.com/teamslogo/10552.png?v=654"
@@ -317,7 +317,7 @@ const matchData = {
 },
         {
             "id": 312,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/young-boys-vs-inter-milan.html",
             "fareq1": {
                 "name": "يونج بويز",
                 "logo": "https://img.btolat.com/teamslogo/16793.png?v=338"
