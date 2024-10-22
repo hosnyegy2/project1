@@ -288,7 +288,6 @@ table .name svg {
 .tab-button {
     flex: 1 1 auto;
     margin: 1px;
-    /* padding: 10px; */
     border: 2px solid #007bff;
     border-radius: 5px;
     text-align: center;
@@ -296,9 +295,13 @@ table .name svg {
     background-color: white;
     color: #007bff;
     font-size: 13px;
-    line-height: 1.9;
+    line-height: 1.7;
 }
-
+.is-dark .tab-button {
+    border: 2px solid #4d5258;
+    background-color: #3b3b3b;
+    color: #cccdcf;
+}
 .tab-button:hover {
     background-color: #007bff;
     color: white;
