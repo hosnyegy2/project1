@@ -644,7 +644,198 @@ const matchData = {
             }
 }
     ],
-    "2024/10/26": [],
+    "2024/10/26": [
+        {
+            "id": 329,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "بلد الوليد",
+                "logo": "https://img.btolat.com/teamslogo/16123.png?v=334"
+            },
+            "fareq2": {
+                "name": "فياريال",
+                "logo": "https://img.btolat.com/teamslogo/16270.png?v=30"
+            },
+            "btola": "الدوري الاسباني",
+            "timeStart": "2024/10/26 3:00 PM",
+            "timeEnd": "2024/10/26 5:00 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 330,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "نابولي",
+                "logo": "https://img.btolat.com/teamslogo/11947.png?v=385"
+            },
+            "fareq2": {
+                "name": "ليتشي",
+                "logo": "https://img.btolat.com/teamslogo/11926.png?v=633"
+            },
+            "btola": "الدوري الايطالي",
+            "timeStart": "2024/10/26 4:00 PM",
+            "timeEnd": "2024/10/26 6:00 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 331,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "أوجسبورج",
+                "logo": "https://img.btolat.com/teamslogo/10269.png?v=916"
+            },
+            "fareq2": {
+                "name": "بوروسيا دورتموند",
+                "logo": "https://img.btolat.com/teamslogo/10303.png?v=260"
+            },
+            "btola": "الدوري الايطالي",
+            "timeStart": "2024/10/26 4:30 PM",
+            "timeEnd": "2024/10/26 6:30 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 332,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "مانشستر سيتي",
+                "logo": "https://img.btolat.com/teamslogo/9259.png?v=545"
+            },
+            "fareq2": {
+                "name": "ساوثهامبتون",
+                "logo": "https://img.btolat.com/teamslogo/9363.png?v=712"
+            },
+            "btola": "الدوري الإنجليزي",
+            "timeStart": "2024/10/26 5:00 PM",
+            "timeEnd": "2024/10/26 7:00 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 333,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "أم صلال",
+                "logo": "https://img.btolat.com/teamslogo/14513.png?v=0"
+            },
+            "fareq2": {
+                "name": "الخور",
+                "logo": "https://img.btolat.com/teamslogo/14500.png?v=692"
+            },
+            "btola": "الدوري القطري",
+            "timeStart": "2024/10/26 5:30 PM",
+            "timeEnd": "2024/10/26 7:30 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 334,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "بولونيا",
+                "logo": "https://img.btolat.com/teamslogo/11822.png?v=699"
+            },
+            "fareq2": {
+                "name": "ميلان",
+                "logo": "https://img.btolat.com/teamslogo/11938.png?v=918"
+            },
+            "btola": "الدوري الايطالي",
+            "timeStart": "2024/10/26 7:00 PM",
+            "timeEnd": "2024/10/26 9:00 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 335,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "الريان",
+                "logo": "https://img.btolat.com/teamslogo/14502.png?v=750"
+            },
+            "fareq2": {
+                "name": "الأهلي القطري",
+                "logo": "https://img.btolat.com/teamslogo/14495.png?v=459"
+            },
+            "btola": "الدوري القطري",
+            "timeStart": "2024/10/26 7:30 PM",
+            "timeEnd": "2024/10/26 9:30 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 336,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "الهلال السعودي",
+                "logo": "https://img.btolat.com/teamslogo/15001.png?v=23"
+            },
+            "fareq2": {
+                "name": "التعاون",
+                "logo": "https://img.btolat.com/teamslogo/15019.png?v=718"
+            },
+            "btola": "الدوري السعودي",
+            "timeStart": "2024/10/26 9:00 PM",
+            "timeEnd": "2024/10/26 11:00 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 337,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "الوداد البيضاوي",
+                "logo": "https://img.btolat.com/teamslogo/13137.png?v=519"
+            },
+            "fareq2": {
+                "name": "نهضة بركان",
+                "logo": "https://img.btolat.com/teamslogo/13127.png?v=137"
+            },
+            "btola": "الدوري المغربي",
+            "timeStart": "2024/10/26 10:00 PM",
+            "timeEnd": "2024/10/27 12:00 AM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 338,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "ريال مدريد",
+                "logo": "https://img.btolat.com/teamslogo/16110.png?v=376"
+            },
+            "fareq2": {
+                "name": "برشلونة",
+                "logo": "https://img.btolat.com/teamslogo/15702.png?v=616"
+            },
+            "btola": "الدوري الاسباني",
+            "timeStart": "2024/10/26 10:00 PM",
+            "timeEnd": "2024/10/27 12:00 AM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+}
+    ],
     "2024/10/27": [],
     "2024/10/28": [],
     "2024/10/29": [],
