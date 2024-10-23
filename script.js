@@ -102,7 +102,7 @@ function getDayName(dateString) {
 function setDayAndDateInTitle(dateString) {
     const titleElement = document.querySelector('.titleG');
     const dayName = getDayName(dateString); // الحصول على اسم اليوم
-    titleElement.innerText = `مباريات ${dayName} - ${dateString}`; // تغيير النص داخل عنصر titleG
+    titleElement.innerText = `مباريات يوم ${dayName}`; // تغيير النص داخل عنصر titleG
 }
 
 // دالة لإنشاء التواريخ في التابات
