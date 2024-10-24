@@ -465,8 +465,8 @@ const matchData = {
             "timeStart": "2024/10/24 9:10 PM",
             "timeEnd": "2024/10/24 11:10 PM",
             "score": {
-                "team1": '0 (7) ركلات ترجيحية (6)',
-                "team2": 0
+                "team1": '0 (7)',
+                "team2": '(6) 0'
             }
 },
         {
