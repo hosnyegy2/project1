@@ -101,7 +101,7 @@ function isDaylightSavingTime() {
 
 // دالة لتعديل التوقيت بناءً على الصيف أو الشتاء
 function adjustTimeForEgypt(date) {
-    const hoursToAdd = isDaylightSavingTime() ? 2 : 1; // 2 ساعات للصيف و 1 للشتاء
+    const hoursToAdd = isDaylightSavingTime() ? 3 : 2; // 2 ساعات للصيف و 1 للشتاء
     return new Date(date.getTime() + (hoursToAdd * 60 * 60 * 1000)); // تعديل الوقت حسب فرق التوقيت
 }
 
