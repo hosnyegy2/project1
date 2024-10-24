@@ -63,41 +63,56 @@ jQuery(document).ready(function ($) {
                 
                 
                 // Add timer functionality
-                var timerElement = t.parent().parent().parent().parent().find(".timer");
-                var statusElement = t.parent().parent().parent().parent().find(".status"); // Add a new element to display the status
-                var startTime = moment.utc(a).subtract(hoursToSubtract, "hours").toDate();
-                var delayEndTime = moment(startTime).add(3, "minutes").toDate(); // Add a 5-minute delay
-                var firstHalfEndTime = moment(delayEndTime).add(45, "minutes").toDate();
-                var halfTimeEndTime = moment(firstHalfEndTime).add(15, "minutes").toDate();
-                var secondHalfEndTime = moment(halfTimeEndTime).add(45, "minutes").toDate();
+var timerElement = t.parent().parent().parent().parent().find(".timer");
+var statusElement = t.parent().parent().parent().parent().find(".status"); // Add a new element to display the status
+var startTime = moment.utc(a).subtract(hoursToSubtract, "hours").toDate();
+var delayEndTime = moment(startTime).add(3, "minutes").toDate(); // Add a 5-minute delay
+var firstHalfEndTime = moment(delayEndTime).add(45, "minutes").toDate();
+var halfTimeEndTime = moment(firstHalfEndTime).add(15, "minutes").toDate();
+var secondHalfEndTime = moment(halfTimeEndTime).add(45, "minutes").toDate();
+var extraTimeEnd = moment(secondHalfEndTime).add(30, "minutes").toDate(); // Adding 30 minutes of extra time
 
-                var timerInterval = setInterval(function () {
-                    var currentTime = moment.utc().toDate();
-                    if (currentTime < delayEndTime) {
-                        timerElement.html("<span class='waiting-kick-off'>بانتظار ضربة البداية</span>"); // Display message during the 5-minute delay
-                        statusElement.text(""); // Clear the status element
-                    } else if (currentTime < firstHalfEndTime) {
-                        var timeElapsed = moment(currentTime).diff(delayEndTime);
-                        var minutes = Math.floor(timeElapsed / 60000);
-                        var seconds = Math.floor((timeElapsed % 60000) / 1000);
-                        timerElement.html("`" + minutes + ":" + seconds.toString().padStart(2, "0")); // Add dot above the timer
-                        statusElement.text("الشوط الاول"); // Display "First Half" during the first 45 minutes
-                    } else if (currentTime < halfTimeEndTime) {
-                        timerElement.html("`45:00"); // Display "45:00" during the half-time break with apostrophe
-                        statusElement.text("استراحة"); // Display "Break" during the half-time break
-                    } else if (currentTime < secondHalfEndTime) {
-                        var timeElapsed = moment(currentTime).diff(halfTimeEndTime);
-                        var minutes = Math.floor(timeElapsed / 60000) + 45; // Add 45 to continue from the second half
-                        var seconds = Math.floor((timeElapsed % 60000) / 1000);
-                        timerElement.html("`" + minutes + ":" + seconds.toString().padStart(2, "0")); // Add dot above the timer
-                        statusElement.text("الشوط الثانى"); // Display "Second Half" during the second 45 minutes
-                    } else {
-                        clearInterval(timerInterval);
-                        timerElement.html("`90:00"); // Display "90:00" at the end of the match with apostrophe
-                        statusElement.html("<span class='full-time'>Full Time</span>"); // Display "Full Time" at the end of the match
-                        //t.parent().parent().parent().parent().find(".timer-status").remove(); // Hide the entire timer-status div
-                    }
-                }, 1000);
+var timerInterval = setInterval(function () {
+    var currentTime = moment.utc().toDate();
+    
+    if (currentTime < delayEndTime) {
+        // Display message during the 5-minute delay
+        timerElement.html("<span class='waiting-kick-off'>بانتظار ضربة البداية</span>");
+        statusElement.text(""); // Clear the status element
+    } else if (currentTime < firstHalfEndTime) {
+        // First Half (0-45 minutes)
+        var timeElapsed = moment(currentTime).diff(delayEndTime);
+        var minutes = Math.floor(timeElapsed / 60000);
+        var seconds = Math.floor((timeElapsed % 60000) / 1000);
+        timerElement.html("`" + minutes + ":" + seconds.toString().padStart(2, "0")); // Add dot above the timer
+        statusElement.text("الشوط الاول");
+    } else if (currentTime < halfTimeEndTime) {
+        // Half-time break (45 minutes)
+        timerElement.html("`45:00");
+        statusElement.text("استراحة");
+    } else if (currentTime < secondHalfEndTime) {
+        // Second Half (45-90 minutes)
+        var timeElapsed = moment(currentTime).diff(halfTimeEndTime);
+        var minutes = Math.floor(timeElapsed / 60000) + 45; // Add 45 to continue from the second half
+        var seconds = Math.floor((timeElapsed % 60000) / 1000);
+        timerElement.html("`" + minutes + ":" + seconds.toString().padStart(2, "0")); // Add dot above the timer
+        statusElement.text("الشوط الثانى");
+    } else if (currentTime < extraTimeEnd) {
+        // Extra Time (90-120 minutes)
+        var timeElapsed = moment(currentTime).diff(secondHalfEndTime);
+        var minutes = Math.floor(timeElapsed / 60000) + 90; // Add 90 to account for extra time
+        var seconds = Math.floor((timeElapsed % 60000) / 1000);
+        timerElement.html("`" + minutes + ":" + seconds.toString().padStart(2, "0")); // Add dot above the timer
+        statusElement.text("وقت إضافى"); // Display "Extra Time" during the extra 30 minutes
+    } else {
+        // End of the match
+        clearInterval(timerInterval);
+        timerElement.html("`120:00"); // Display "120:00" at the end of extra time
+        statusElement.html("<span class='full-time'>Full Time</span>"); // Display "Full Time" at the end of the match
+        // Hide or disable any other elements related to the match
+    }
+}, 1000);
+
 
 
                 
