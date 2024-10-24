@@ -338,7 +338,7 @@ const matchData = {
     "2024/10/24": [
         {
             "id": 313,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/blog-post_88.html",
             "fareq1": {
                 "name": "بيراميدز",
                 "logo": "https://img.btolat.com/teamslogo/23165.png?v=927"
@@ -357,7 +357,7 @@ const matchData = {
 },
         {
             "id": 314,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/blog-post_76.html",
             "fareq1": {
                 "name": "العروبة السعودي",
                 "logo": "https://img.btolat.com/teamslogo/15011.png?v=288"
@@ -376,7 +376,7 @@ const matchData = {
 },
         {
             "id": 315,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/blog-post_48.html",
             "fareq1": {
                 "name": "فيرينسفاروش",
                 "logo": "https://img.btolat.com/teamslogo/11132.png?v=573"
@@ -395,7 +395,7 @@ const matchData = {
 },
         {
             "id": 316,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/blog-post_37.html",
             "fareq1": {
                 "name": "آينتراخت فرانكفورت",
                 "logo": "https://img.btolat.com/teamslogo/10347.png?v=515"
@@ -414,7 +414,7 @@ const matchData = {
 },
         {
             "id": 317,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/blog-post_75.html",
             "fareq1": {
                 "name": "روما",
                 "logo": "https://img.btolat.com/teamslogo/11998.png?v=815"
@@ -433,7 +433,7 @@ const matchData = {
 },
         {
             "id": 318,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/blog-post_28.html",
             "fareq1": {
                 "name": "باناثينايكوس",
                 "logo": "https://img.btolat.com/teamslogo/10843.png?v=838"
@@ -452,7 +452,7 @@ const matchData = {
 },
         {
             "id": 319,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/blog-post_36.html",
             "fareq1": {
                 "name": "الأهلي",
                 "logo": "https://img.btolat.com/teamslogo/8883.png?v=658"
@@ -471,7 +471,7 @@ const matchData = {
 },
         {
             "id": 320,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/blog-post_82.html",
             "fareq1": {
                 "name": "الرياض",
                 "logo": "https://img.btolat.com/teamslogo/15016.png?v=528"
@@ -490,7 +490,7 @@ const matchData = {
 },
         {
             "id": 321,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/blog-post_64.html",
             "fareq1": {
                 "name": "فناربخشة",
                 "logo": "https://img.btolat.com/teamslogo/17027.png?v=720"
@@ -509,7 +509,7 @@ const matchData = {
 },
         {
             "id": 322,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/blog-post_40.html",
             "fareq1": {
                 "name": "توتنهام هوتسبر",
                 "logo": "https://img.btolat.com/teamslogo/9406.png?v=155"
