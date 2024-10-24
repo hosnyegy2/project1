@@ -18,6 +18,7 @@ jQuery(document).ready(function ($) {
             r = moment(a, "YYYY/MM/DD h:mm A"),
             n = moment(e, "YYYY/MM/DD h:mm A"),
             s = moment.utc().format("YYYY/MM/DD h:mm A");
+             hasExtraTime = t.data("extra-time"); // Data attribute to determine if the match has extra time
 
         // التحقق مما إذا كان التوقيت الصيفي مفعلًا
         var hoursToSubtract = isDaylightSavingTime() ? 3 : 2; // 3 ساعات للتوقيت الصيفي و 2 للشتوي
@@ -111,7 +112,6 @@ jQuery(document).ready(function ($) {
             statusElement.html("<span class='full-time'>Full Time</span>");
         }
     }, 1000);
-
 
 
                 
