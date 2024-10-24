@@ -173,7 +173,8 @@ function loadMatchesForDate(date) {
         matches.forEach(match => {
             const matchElement = `
                 <div class="m_block egy_sports_item">
-                    <a href="${match.gameUrl}" class="ElGadwl" title="${match.fareq1.name} ضد ${match.fareq2.name}">
+                    <!-- مباراة ${match.fareq1.name} ضد ${match.fareq2.name} فى ${match.btola} -->
+                    <a href="${match.gameUrl}" class="ElGadwl" title="${match.fareq1.name} ضد ${match.fareq2.name} فى ${match.btola}">
                         <div class="Gadwl-Top">
                             <div class="Fareeq-r">
                                 <img alt="${match.fareq1.name}" src="${match.fareq1.logo}" />
