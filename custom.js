@@ -111,7 +111,7 @@ jQuery(document).ready(function ($) {
             statusElement.html("<span class='full-time'>Full Time</span>");
         }
     }, 1000);
-});
+
 
 
                 
