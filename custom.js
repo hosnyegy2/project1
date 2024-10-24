@@ -104,7 +104,7 @@ jQuery(document).ready(function ($) {
             var minutes = Math.floor(timeElapsed / 60000) + 90;
             var seconds = Math.floor((timeElapsed % 60000) / 1000);
             timerElement.html("`" + minutes + ":" + seconds.toString().padStart(2, "0"));
-            statusElement.text("وقت إضافى");
+            statusElement.text("إضافى");
         } else {
             clearInterval(timerInterval);
             timerElement.html("`90:00");
