@@ -91,6 +91,21 @@ function setActiveTab(activeTab) {
     activeTab.classList.add('active');
 }
 
+// دالة للتحقق مما إذا كان التوقيت الصيفي مفعلًا
+function isDaylightSavingTime() {
+    const now = new Date();
+    const january = new Date(now.getFullYear(), 0, 1); // يناير (الشتاء)
+    const july = new Date(now.getFullYear(), 6, 1); // يوليو (الصيف)
+    return Math.max(january.getTimezoneOffset(), july.getTimezoneOffset()) !== now.getTimezoneOffset();
+}
+
+// دالة لتعديل التوقيت بناءً على الصيف أو الشتاء
+function adjustTimeForEgypt(date) {
+    const hoursToAdd = isDaylightSavingTime() ? 2 : 1; // 2 ساعات للصيف و 1 للشتاء
+    return new Date(date.getTime() + (hoursToAdd * 60 * 60 * 1000)); // تعديل الوقت حسب فرق التوقيت
+}
+
+
 // دالة لتحويل رقم اليوم إلى اسم اليوم باللغة العربية
 function getDayName(dateString) {
     const days = ["الأحد", "الإثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"];
@@ -105,26 +120,21 @@ function setDayAndDateInTitle(dateString) {
     titleElement.innerText = `مباريات يوم ${dayName}`; // تغيير النص داخل عنصر titleG
 }
 
-// دالة لتنسيق التاريخ (YYYY/MM/DD)
-function formatDate(date) {
-    return date.toISOString().split('T')[0].replace(/-/g, '/');
-}
-
 // دالة لإنشاء التواريخ في التابات
 function createTabs() {
     const tabsContainer = document.getElementById('tabs-container');
     tabsContainer.innerHTML = '';
 
     // الحصول على التاريخ الحالي
-    const today = new Date();
+    const today = adjustTimeForEgypt(new Date()); // تعديل التوقيت بناءً على الصيف أو الشتاء
 
     // إنشاء مصفوفة للتواريخ المطلوبة (يومان قبل، يومان بعد)
     const dates = [];
     for (let i = -2; i <= 2; i++) {
         const date = new Date(today);
         date.setDate(today.getDate() + i); // تعديل التاريخ حسب قيمة i (يومين قبل ويومين بعد)
-
-        const formattedDate = formatDate(date); // تنسيق التاريخ باستخدام دالة formatDate
+        const adjustedDate = adjustTimeForEgypt(date); // تعديل التوقيت المصري
+        const formattedDate = adjustedDate.toISOString().split('T')[0].replace(/-/g, '/'); // تنسيق التاريخ
         dates.push(formattedDate); // إضافة التاريخ إلى المصفوفة
     }
 
@@ -141,7 +151,7 @@ function createTabs() {
         tab.style.alignItems = 'center'; // محاذاة محتويات التاب في المنتصف
 
         tab.onclick = function () {
-            loadMatchesForDate(date); // تحميل مباريات التاريخ المحدد
+            loadMatchesForDate(date);
             setActiveTab(tab); // تعيين التاب النشط
             setDayAndDateInTitle(date); // تعيين العنوان بعد الضغط على التاب
         };
@@ -159,9 +169,7 @@ function createTabs() {
 
 // دالة لتحميل المباريات لتاريخ محدد
 function loadMatchesForDate(date) {
-    const formattedDate = date; // نستخدم التاريخ بصيغته الموجودة
-
-    const matches = matchData[formattedDate];
+    const matches = matchData[date]; // يجب أن يحتوي هذا المتغير على بيانات المباريات
     const matchesContainer = document.getElementById('matches-container');
     const noMatchesMessage = document.getElementById('no-matches');
 
@@ -172,8 +180,9 @@ function loadMatchesForDate(date) {
 
         matches.forEach(match => {
             const matchElement = `
-                <div class="m_block egy_sports_item">
-                    <a href="${match.gameUrl}" class="ElGadwl" title="${match.fareq1.name} ضد ${match.fareq2.name}">
+                <div class="m_block egy_sports_item ">
+                    <!-- مباراة ${match.fareq1.name} ضد ${match.fareq2.name} فى ${match.btola} -->
+                    <a href="${match.gameUrl}" class="ElGadwl" title="${match.fareq1.name} ضد ${match.fareq2.name} فى ${match.btola}">
                         <div class="Gadwl-Top">
                             <div class="Fareeq-r">
                                 <img alt="${match.fareq1.name}" src="${match.fareq1.logo}" />
@@ -207,7 +216,6 @@ function loadMatchesForDate(date) {
             `;
             matchesContainer.innerHTML += matchElement;
         });
-
         // استدعاء الكود من الرابط الخارجي
         $.getScript("https://raw.githack.com/hosnyegy2/project1/main/custom.js")
             .done(function (script, textStatus) {
@@ -223,16 +231,13 @@ function loadMatchesForDate(date) {
     }
 }
 
-// تعيين مؤقت لتحديث البيانات عند الساعة 12:00 صباحاً بالتوقيت المحلي
-setInterval(function () {
-    const now = new Date();
-
-    // التحقق إذا كان الآن منتصف الليل
-    if (now.getHours() === 0 && now.getMinutes() === 0) {
-        const today = formatDate(now);
-        loadMatchesForDate(today); // تحديث المباريات لليوم الجديد
-    }
-}, 60000); // تحديث كل دقيقة
-
 // استدعاء الدالة عند تحميل الصفحة
 createTabs();
+
+// تعيين مؤقت لتحديث البيانات عند الساعة 12:00 صباحاً
+setInterval(function () {
+    const now = new Date();
+    if (now.getHours() === 0 && now.getMinutes() === 0) {
+        loadMatchesForDate(new Date().toISOString().split('T')[0].replace(/-/g, '/'));
+    }
+}, 60000); // تحديث كل دقيقة
