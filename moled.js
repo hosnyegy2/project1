@@ -462,8 +462,8 @@ const matchData = {
                 "logo": "https://img.btolat.com/teamslogo/8959.png?v=450"
             },
             "btola": "كاس السوبر المصري",
-            "timeStart": "2024/10/24 8:30 PM",
-            "timeEnd": "2024/10/24 10:30 PM",
+            "timeStart": "2024/10/24 8:45 PM",
+            "timeEnd": "2024/10/24 10:45 PM",
             "score": {
                 "team1": 0,
                 "team2": 0
