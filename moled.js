@@ -530,7 +530,7 @@ const matchData = {
     "2024/10/25": [
         {
             "id": 325,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/25.html",
             "fareq1": {
                 "name": "الكرخ",
                 "logo": "https://img.btolat.com/teamslogo/18734.png?v=972"
@@ -549,7 +549,7 @@ const matchData = {
 },
         {
             "id": 323,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/25_25.html",
             "fareq1": {
                 "name": "الخلود",
                 "logo": "https://img.btolat.com/teamslogo/30602.png?v=585"
@@ -568,7 +568,7 @@ const matchData = {
 },
         {
             "id": 326,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/25_57.html",
             "fareq1": {
                 "name": "المغرب الفاسي",
                 "logo": "https://img.btolat.com/teamslogo/13116.png?v=736"
@@ -587,7 +587,7 @@ const matchData = {
 },
         {
             "id": 324,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/25_74.html",
             "fareq1": {
                 "name": "الأهلي السعودي",
                 "logo": "https://img.btolat.com/teamslogo/14990.png?v=643"
@@ -606,27 +606,8 @@ const matchData = {
 },
 
         {
-            "id": 327,
-            "gameUrl": "",
-            "fareq1": {
-                "name": "المغرب التطواني",
-                "logo": "https://img.btolat.com/teamslogo/13117.png?v=599"
-            },
-            "fareq2": {
-                "name": "شباب المحمدية",
-                "logo": "https://img.btolat.com/teamslogo/13129.png?v=671"
-            },
-            "btola": "الدوري المغربي",
-            "timeStart": "2024/10/25 10:00 PM",
-            "timeEnd": "2024/10/26 12:00 AM",
-            "score": {
-                "team1": 0,
-                "team2": 0
-            }
-},
-        {
             "id": 328,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/25_65.html",
             "fareq1": {
                 "name": "ليستر سيتي",
                 "logo": "https://img.btolat.com/teamslogo/9240.png?v=91"
