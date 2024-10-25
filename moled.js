@@ -675,7 +675,7 @@ const matchData = {
                 "name": "بوروسيا دورتموند",
                 "logo": "https://img.btolat.com/teamslogo/10303.png?v=260"
             },
-            "btola": "الدوري الايطالي",
+            "btola": "الدوري الالماني",
             "timeStart": "2024/10/26 4:30 PM",
             "timeEnd": "2024/10/26 6:30 PM",
             "score": {
