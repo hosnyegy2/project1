@@ -1047,7 +1047,66 @@ const matchData = {
             }
 }
     ],
-    "2024/10/28": [],
+    "2024/10/28": [
+        {
+            "id": 351,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "بلدية المحلة",
+                "logo": "https://img.btolat.com/teamslogo/8893.png?v=964"
+            },
+            "fareq2": {
+                "name": "بترول أسيوط",
+                "logo": "https://img.btolat.com/teamslogo/8892.png?v=416"
+            },
+            "btola": "دوري الدرجة الثانية المصري",
+            "timeStart": "2024/10/28 4:00 PM",
+            "timeEnd": "2024/10/28 6:00 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 352,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "اتحاد جدة",
+                "logo": "https://img.btolat.com/teamslogo/15003.png?v=672"
+            },
+            "fareq2": {
+                "name": "الجندل",
+                "logo": "https://img.btolat.com/teamslogo/30605.jpg?v=579"
+            },
+            "btola": "كأس خادم الحرمين",
+            "timeStart": "2024/10/28 7:30 PM",
+            "timeEnd": "2024/10/28 9:30 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+
+        {
+            "id": 354,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "ريال مايوركا",
+                "logo": "https://img.btolat.com/teamslogo/16052.png?v=657"
+            },
+            "fareq2": {
+                "name": "أتلتيك بلباو",
+                "logo": "https://img.btolat.com/teamslogo/15679.png?v=800"
+            },
+            "btola": "الدوري الاسباني",
+            "timeStart": "2024/10/28 10:00 PM",
+            "timeEnd": "2024/10/29 12:00 AM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+}
+    ],
     "2024/10/29": [],
     "2024/10/30": [],
     "2024/10/31": []
