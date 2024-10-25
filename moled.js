@@ -647,7 +647,7 @@ const matchData = {
 },
         {
             "id": 330,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/napoli-vs-lecce.html",
             "fareq1": {
                 "name": "نابولي",
                 "logo": "https://img.btolat.com/teamslogo/11947.png?v=385"
@@ -666,7 +666,7 @@ const matchData = {
 },
         {
             "id": 331,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/augsburg-vs-borussia-dortmund.html",
             "fareq1": {
                 "name": "أوجسبورج",
                 "logo": "https://img.btolat.com/teamslogo/10269.png?v=916"
@@ -685,7 +685,7 @@ const matchData = {
 },
         {
             "id": 332,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/manchester-city-vs-southampton.html",
             "fareq1": {
                 "name": "مانشستر سيتي",
                 "logo": "https://img.btolat.com/teamslogo/9259.png?v=545"
@@ -704,7 +704,7 @@ const matchData = {
 },
         {
             "id": 333,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/blog-post_49.html",
             "fareq1": {
                 "name": "أم صلال",
                 "logo": "https://img.btolat.com/teamslogo/14513.png?v=0"
@@ -723,7 +723,7 @@ const matchData = {
 },
         {
             "id": 334,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/bologna-vs-milan.html",
             "fareq1": {
                 "name": "بولونيا",
                 "logo": "https://img.btolat.com/teamslogo/11822.png?v=699"
@@ -742,7 +742,7 @@ const matchData = {
 },
         {
             "id": 335,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/blog-post_65.html",
             "fareq1": {
                 "name": "الريان",
                 "logo": "https://img.btolat.com/teamslogo/14502.png?v=750"
@@ -761,7 +761,7 @@ const matchData = {
 },
         {
             "id": 336,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/blog-post_43.html",
             "fareq1": {
                 "name": "الهلال السعودي",
                 "logo": "https://img.btolat.com/teamslogo/15001.png?v=23"
@@ -780,7 +780,7 @@ const matchData = {
 },
         {
             "id": 337,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/blog-post_66.html",
             "fareq1": {
                 "name": "الوداد البيضاوي",
                 "logo": "https://img.btolat.com/teamslogo/13137.png?v=519"
@@ -799,7 +799,7 @@ const matchData = {
 },
         {
             "id": 338,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/real-madrid-vs-barcelona.html",
             "fareq1": {
                 "name": "ريال مدريد",
                 "logo": "https://img.btolat.com/teamslogo/16110.png?v=376"
