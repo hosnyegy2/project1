@@ -86,6 +86,7 @@
 ///////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////
 // دالة لتعيين التاب النشط
+// دالة لتعيين التاب النشط
 function setActiveTab(activeTab) {
     const allTabs = document.querySelectorAll('.tab-button');
     allTabs.forEach(tab => tab.classList.remove('active'));
@@ -194,7 +195,11 @@ function loadMatchesForDate(dateString) {
             let status = '';
 
             // تحديد حالة المباراة بناءً على الوقت الحالي
-            if (currentTime < matchStartTime) {
+            const timeDiff = matchStartTime - currentTime; // الفرق في الوقت بين بدء المباراة والوقت الحالي
+
+            if (timeDiff > 0 && timeDiff <= 30 * 60 * 1000) {
+                status = 'started'; // المباراة ستبدأ قريباً (خلال 30 دقيقة)
+            } else if (currentTime < matchStartTime) {
                 status = 'notstarted'; // المباراة لم تبدأ بعد
             } else if (currentTime >= matchStartTime && currentTime <= matchEndTime) {
                 status = 'running'; // المباراة جارية
@@ -263,12 +268,7 @@ function sortMatches() {
     const matchesContainer = document.getElementById('matches-container');
     const matches = Array.from(matchesContainer.getElementsByClassName('egy_sports_item'));
 
-    const order = {
-        'running': 1,
-        'started': 2,
-        'notstarted': 3,
-        'ended': 4
-    };
+    const order = { 'running': 1, 'started': 2, 'notstarted': 3, 'ended': 4 };
 
     matches.sort((a, b) => {
         const aClass = Object.keys(order).find(key => a.classList.contains(key)) || 'ended';
