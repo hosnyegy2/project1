@@ -1090,7 +1090,6 @@ const matchData = {
 }
     ],
     "2024/10/29": [
-
         {
             "id": 356,
             "gameUrl": "",
