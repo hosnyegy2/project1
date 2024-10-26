@@ -85,7 +85,6 @@
 ///////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////
-// تعيين التاب النشط
 function setActiveTab(activeTab) {
     const allTabs = document.querySelectorAll('.tab-button');
     allTabs.forEach(tab => tab.classList.remove('active'));
@@ -106,18 +105,9 @@ function setDayAndDateInTitle(dateString) {
     titleElement.innerText = `مباريات يوم ${dayName}`; // تغيير النص داخل عنصر titleG
 }
 
-// دالة للتحقق مما إذا كان التوقيت الصيفي مفعلًا
-function isDaylightSavingTime() {
-    const now = new Date();
-    const january = new Date(now.getFullYear(), 0, 1); // يناير (الشتاء)
-    const july = new Date(now.getFullYear(), 6, 1); // يوليو (الصيف)
-    return Math.max(january.getTimezoneOffset(), july.getTimezoneOffset()) !== now.getTimezoneOffset();
-}
-
-// دالة لحساب الوقت حسب التوقيت المصري الصيفي أو الشتوي
-function adjustTimeForEgypt(date) {
-    const hoursToAdd = isDaylightSavingTime() ? 3 : 2; // 3 ساعات للصيف و 2 للشتاء
-    return new Date(date.getTime() + (hoursToAdd * 60 * 60 * 1000));
+// دالة لتنسيق التاريخ (YYYY/MM/DD)
+function formatDate(date) {
+    return date.toISOString().split('T')[0].replace(/-/g, '/');
 }
 
 // دالة لإنشاء التواريخ في التابات
@@ -125,17 +115,16 @@ function createTabs() {
     const tabsContainer = document.getElementById('tabs-container');
     tabsContainer.innerHTML = '';
 
+    // الحصول على التاريخ الحالي
     const today = new Date();
-    const egyptTime = adjustTimeForEgypt(today);
-    const formattedDate = egyptTime.toISOString().split('T')[0].replace(/-/g, '/');
 
     // إنشاء مصفوفة للتواريخ المطلوبة (يومان قبل، يومان بعد)
     const dates = [];
     for (let i = -2; i <= 2; i++) {
-        const date = new Date(egyptTime);
-        date.setDate(egyptTime.getDate() + i); // تعديل التاريخ حسب قيمة i (يومين قبل ويومين بعد)
-        const adjustedDate = adjustTimeForEgypt(date);
-        const formattedDate = adjustedDate.toISOString().split('T')[0].replace(/-/g, '/');
+        const date = new Date(today);
+        date.setDate(today.getDate() + i); // تعديل التاريخ حسب قيمة i (يومين قبل ويومين بعد)
+
+        const formattedDate = formatDate(date); // تنسيق التاريخ باستخدام دالة formatDate
         dates.push(formattedDate); // إضافة التاريخ إلى المصفوفة
     }
 
@@ -148,13 +137,13 @@ function createTabs() {
             <div>${date}</div>
         `;
         tab.style.display = 'flex';
-        tab.style.flexDirection = 'column';
-        tab.style.alignItems = 'center';
+        tab.style.flexDirection = 'column'; // لجعل اسم اليوم فوق التاريخ
+        tab.style.alignItems = 'center'; // محاذاة محتويات التاب في المنتصف
 
         tab.onclick = function () {
-            loadMatchesForDate(date);
-            setActiveTab(tab);
-            setDayAndDateInTitle(date);
+            loadMatchesForDate(date); // تحميل مباريات التاريخ المحدد
+            setActiveTab(tab); // تعيين التاب النشط
+            setDayAndDateInTitle(date); // تعيين العنوان بعد الضغط على التاب
         };
 
         tabsContainer.appendChild(tab);
@@ -162,26 +151,29 @@ function createTabs() {
         // تعيين التاب الذي يتوافق مع تاريخ اليوم كنشط عند التحميل
         if (index === 2) { // اليوم الحالي هو التاب الثالث
             tab.classList.add('active');
-            loadMatchesForDate(date);
-            setDayAndDateInTitle(date);
+            loadMatchesForDate(date); // تحميل مباريات اليوم
+            setDayAndDateInTitle(date); // تعيين العنوان عند التحميل لأول مرة
         }
     });
 }
 
 // دالة لتحميل المباريات لتاريخ محدد
-function loadMatchesForDate(dateString) {
-    const matches = matchData[dateString];
+function loadMatchesForDate(date) {
+    const formattedDate = date; // نستخدم التاريخ بصيغته الموجودة
+
+    const matches = matchData[formattedDate];
     const matchesContainer = document.getElementById('matches-container');
     const noMatchesMessage = document.getElementById('no-matches');
 
     matchesContainer.innerHTML = ''; // تفريغ المحتوى القديم
 
     if (matches && matches.length > 0) {
-        noMatchesMessage.style.display = 'none';
+        noMatchesMessage.style.display = 'none'; // إخفاء رسالة لا يوجد مباريات
 
         matches.forEach(match => {
             const matchElement = `
                 <div class="m_block egy_sports_item">
+                    <!-- مباراة ${match.fareq1.name} ضد ${match.fareq2.name} فى ${match.btola} -->
                     <a href="${match.gameUrl}" class="ElGadwl" title="${match.fareq1.name} ضد ${match.fareq2.name} فى ${match.btola}">
                         <div class="Gadwl-Top">
                             <div class="Fareeq-r">
@@ -217,7 +209,7 @@ function loadMatchesForDate(dateString) {
             matchesContainer.innerHTML += matchElement;
         });
 
-        // تحميل النص الخارجي باستخدام مكتبة jQuery
+        // استدعاء الكود من الرابط الخارجي
         $.getScript("https://raw.githack.com/hosnyegy2/project1/main/custom.js")
             .done(function (script, textStatus) {
                 console.log("Script loaded successfully: " + textStatus);
@@ -227,18 +219,21 @@ function loadMatchesForDate(dateString) {
             });
 
     } else {
+        // إظهار رسالة "لا يوجد مباريات" إذا لم يكن هناك مباريات في تاريخ اليوم
         noMatchesMessage.style.display = 'block';
     }
 }
 
+// تعيين مؤقت لتحديث البيانات عند الساعة 12:00 صباحاً بالتوقيت المحلي
+setInterval(function () {
+    const now = new Date();
+
+    // التحقق إذا كان الآن منتصف الليل
+    if (now.getHours() === 0 && now.getMinutes() === 0) {
+        const today = formatDate(now);
+        loadMatchesForDate(today); // تحديث المباريات لليوم الجديد
+    }
+}, 60000); // تحديث كل دقيقة
 
 // استدعاء الدالة عند تحميل الصفحة
 createTabs();
-
-// تعيين مؤقت لتحديث البيانات عند الساعة 12:00 صباحاً
-setInterval(function () {
-    const now = new Date();
-    if (now.getHours() === 0 && now.getMinutes() === 0) {
-        loadMatchesForDate(new Date().toISOString().split('T')[0].replace(/-/g, '/'));
-    }
-}, 60000); // تحديث كل دقيقة
