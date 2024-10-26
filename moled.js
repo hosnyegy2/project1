@@ -721,7 +721,7 @@ const matchData = {
                 "team2": 0
             }
 },
-        
+
         {
             "id": 335,
             "gameUrl": "https://sport.coldady.com/2024/10/blog-post_65.html",
@@ -1089,7 +1089,104 @@ const matchData = {
             }
 }
     ],
-    "2024/10/29": [],
+    "2024/10/29": [
+
+        {
+            "id": 356,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "الطائي",
+                "logo": "https://img.btolat.com/teamslogo/15020.png?v=740"
+            },
+            "fareq2": {
+                "name": "الهلال السعودي",
+                "logo": "https://img.btolat.com/teamslogo/15001.png?v=23"
+            },
+            "btola": "كأس خادم الحرمين",
+            "timeStart": "2024/10/29 6:05 PM",
+            "timeEnd": "2024/10/29 8:05 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 355,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "الأهلي",
+                "logo": "https://img.btolat.com/teamslogo/8883.png?v=658"
+            },
+            "fareq2": {
+                "name": "العين",
+                "logo": "https://img.btolat.com/teamslogo/17231.png?v=104"
+            },
+            "btola": "كأس إنتركونتيننتال",
+            "timeStart": "2024/10/29 8:00 PM",
+            "timeEnd": "2024/10/29 10:00 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 357,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "النصر السعودي",
+                "logo": "https://img.btolat.com/teamslogo/15010.png?v=992"
+            },
+            "fareq2": {
+                "name": "التعاون",
+                "logo": "https://img.btolat.com/teamslogo/15019.png?v=718"
+            },
+            "btola": "كأس خادم الحرمين",
+            "timeStart": "2024/10/29 8:30 PM",
+            "timeEnd": "2024/10/29 10:30 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 358,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "ميلان",
+                "logo": "https://img.btolat.com/teamslogo/11938.png?v=918"
+            },
+            "fareq2": {
+                "name": "نابولي",
+                "logo": "https://img.btolat.com/teamslogo/11947.png?v=385"
+            },
+            "btola": "الدوري الايطالي",
+            "timeStart": "2024/10/29 9:45 PM",
+            "timeEnd": "2024/10/29 11:45 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 359,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "فولفسبورج",
+                "logo": "https://img.btolat.com/teamslogo/10653.png?v=506"
+            },
+            "fareq2": {
+                "name": "بوروسيا دورتموند",
+                "logo": "https://img.btolat.com/teamslogo/10303.png?v=260"
+            },
+            "btola": "كأس المانيا",
+            "timeStart": "2024/10/29 10:45 PM",
+            "timeEnd": "2024/10/30 12:45 AM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+}
+    ],
     "2024/10/30": [],
     "2024/10/31": []
 
