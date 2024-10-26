@@ -263,7 +263,12 @@ function sortMatches() {
     const matchesContainer = document.getElementById('matches-container');
     const matches = Array.from(matchesContainer.getElementsByClassName('egy_sports_item'));
 
-    const order = { 'running': 1, 'started': 2, 'notstarted': 3, 'ended': 4 };
+    const order = {
+        'running': 1,
+        'started': 2,
+        'notstarted': 3,
+        'ended': 4
+    };
 
     matches.sort((a, b) => {
         const aClass = Object.keys(order).find(key => a.classList.contains(key)) || 'ended';
