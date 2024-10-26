@@ -85,6 +85,7 @@
 ///////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////
+// دالة لتعيين التاب النشط
 function setActiveTab(activeTab) {
     const allTabs = document.querySelectorAll('.tab-button');
     allTabs.forEach(tab => tab.classList.remove('active'));
@@ -101,13 +102,32 @@ function getDayName(dateString) {
 // دالة لتحديث العنوان بناءً على اليوم والتاريخ
 function setDayAndDateInTitle(dateString) {
     const titleElement = document.querySelector('.titleG');
-    const dayName = getDayName(dateString); // الحصول على اسم اليوم
-    titleElement.innerText = `مباريات يوم ${dayName}`; // تغيير النص داخل عنصر titleG
+    const dayName = getDayName(dateString);
+    titleElement.innerText = `مباريات يوم ${dayName}`;
 }
 
-// دالة لتنسيق التاريخ (YYYY/MM/DD)
-function formatDate(date) {
-    return date.toISOString().split('T')[0].replace(/-/g, '/');
+// دالة للتحقق مما إذا كان التوقيت الصيفي مفعلًا في مصر بناءً على تواريخ محددة
+function isDaylightSavingTimeInEgypt(date) {
+    const year = date.getFullYear();
+
+    const aprilLastFriday = new Date(year, 3, 30);
+    while (aprilLastFriday.getDay() !== 5) {
+        aprilLastFriday.setDate(aprilLastFriday.getDate() - 1);
+    }
+
+    const octoberLastThursday = new Date(year, 9, 31);
+    while (octoberLastThursday.getDay() !== 4) {
+        octoberLastThursday.setDate(octoberLastThursday.getDate() - 1);
+    }
+
+    return date >= aprilLastFriday && date < octoberLastThursday;
+}
+
+// دالة لحساب الوقت حسب التوقيت المصري الصيفي أو الشتوي
+function adjustTimeForEgypt(date) {
+    date.setHours(0, 0, 0, 0);
+    const hoursToAdd = isDaylightSavingTimeInEgypt(date) ? 3 : 2;
+    return new Date(date.getTime() + (hoursToAdd * 60 * 60 * 1000));
 }
 
 // دالة لإنشاء التواريخ في التابات
@@ -115,20 +135,19 @@ function createTabs() {
     const tabsContainer = document.getElementById('tabs-container');
     tabsContainer.innerHTML = '';
 
-    // الحصول على التاريخ الحالي
     const today = new Date();
+    const egyptTime = adjustTimeForEgypt(today);
+    const formattedDate = egyptTime.toISOString().split('T')[0].replace(/-/g, '/');
 
-    // إنشاء مصفوفة للتواريخ المطلوبة (يومان قبل، يومان بعد)
     const dates = [];
     for (let i = -2; i <= 2; i++) {
-        const date = new Date(today);
-        date.setDate(today.getDate() + i); // تعديل التاريخ حسب قيمة i (يومين قبل ويومين بعد)
-
-        const formattedDate = formatDate(date); // تنسيق التاريخ باستخدام دالة formatDate
-        dates.push(formattedDate); // إضافة التاريخ إلى المصفوفة
+        const date = new Date(egyptTime);
+        date.setDate(egyptTime.getDate() + i);
+        const adjustedDate = adjustTimeForEgypt(date);
+        const formattedDate = adjustedDate.toISOString().split('T')[0].replace(/-/g, '/');
+        dates.push(formattedDate);
     }
 
-    // إنشاء التابات بناءً على التواريخ المحسوبة
     dates.forEach((date, index) => {
         const tab = document.createElement('button');
         tab.classList.add('tab-button');
@@ -137,42 +156,54 @@ function createTabs() {
             <div>${date}</div>
         `;
         tab.style.display = 'flex';
-        tab.style.flexDirection = 'column'; // لجعل اسم اليوم فوق التاريخ
-        tab.style.alignItems = 'center'; // محاذاة محتويات التاب في المنتصف
+        tab.style.flexDirection = 'column';
+        tab.style.alignItems = 'center';
 
         tab.onclick = function () {
-            loadMatchesForDate(date); // تحميل مباريات التاريخ المحدد
-            setActiveTab(tab); // تعيين التاب النشط
-            setDayAndDateInTitle(date); // تعيين العنوان بعد الضغط على التاب
+            loadMatchesForDate(date);
+            setActiveTab(tab);
+            setDayAndDateInTitle(date);
         };
 
         tabsContainer.appendChild(tab);
 
-        // تعيين التاب الذي يتوافق مع تاريخ اليوم كنشط عند التحميل
-        if (index === 2) { // اليوم الحالي هو التاب الثالث
+        if (index === 2) {
             tab.classList.add('active');
-            loadMatchesForDate(date); // تحميل مباريات اليوم
-            setDayAndDateInTitle(date); // تعيين العنوان عند التحميل لأول مرة
+            loadMatchesForDate(date);
+            setDayAndDateInTitle(date);
         }
     });
 }
 
 // دالة لتحميل المباريات لتاريخ محدد
-function loadMatchesForDate(date) {
-    const formattedDate = date; // نستخدم التاريخ بصيغته الموجودة
-
-    const matches = matchData[formattedDate];
+function loadMatchesForDate(dateString) {
+    const matches = matchData[dateString];
     const matchesContainer = document.getElementById('matches-container');
     const noMatchesMessage = document.getElementById('no-matches');
 
-    matchesContainer.innerHTML = ''; // تفريغ المحتوى القديم
+    matchesContainer.innerHTML = '';
 
     if (matches && matches.length > 0) {
-        noMatchesMessage.style.display = 'none'; // إخفاء رسالة لا يوجد مباريات
+        noMatchesMessage.style.display = 'none';
+
+        const currentTime = new Date(); // الحصول على الوقت الحالي
 
         matches.forEach(match => {
+            const matchStartTime = new Date(match.timeStart);
+            const matchEndTime = new Date(match.timeEnd);
+            let status = '';
+
+            // تحديد حالة المباراة بناءً على الوقت الحالي
+            if (currentTime < matchStartTime) {
+                status = 'notstarted'; // المباراة لم تبدأ بعد
+            } else if (currentTime >= matchStartTime && currentTime <= matchEndTime) {
+                status = 'running'; // المباراة جارية
+            } else {
+                status = 'ended'; // المباراة انتهت
+            }
+
             const matchElement = `
-                <div class="m_block egy_sports_item">
+                <div class="m_block egy_sports_item ${status}">
                     <!-- مباراة ${match.fareq1.name} ضد ${match.fareq2.name} فى ${match.btola} -->
                     <a href="${match.gameUrl}" class="ElGadwl" title="${match.fareq1.name} ضد ${match.fareq2.name} فى ${match.btola}">
                         <div class="Gadwl-Top">
@@ -209,31 +240,52 @@ function loadMatchesForDate(date) {
             matchesContainer.innerHTML += matchElement;
         });
 
-        // استدعاء الكود من الرابط الخارجي
+        // تحميل السكربت الخارجي
         $.getScript("https://raw.githack.com/hosnyegy2/project1/main/custom.js")
             .done(function (script, textStatus) {
                 console.log("Script loaded successfully: " + textStatus);
+                // استدعاء دالة الفرز بعد تحميل السكربت
+                setTimeout(() => {
+                    sortMatches();
+                }, 100);
             })
             .fail(function (jqxhr, settings, exception) {
                 console.error("Error loading script: " + exception);
             });
 
     } else {
-        // إظهار رسالة "لا يوجد مباريات" إذا لم يكن هناك مباريات في تاريخ اليوم
         noMatchesMessage.style.display = 'block';
     }
 }
 
-// تعيين مؤقت لتحديث البيانات عند الساعة 12:00 صباحاً بالتوقيت المحلي
+// دالة لترتيب المباريات حسب حالتها
+function sortMatches() {
+    const matchesContainer = document.getElementById('matches-container');
+    const matches = Array.from(matchesContainer.getElementsByClassName('egy_sports_item'));
+
+    const order = { 'running': 1, 'started': 2, 'notstarted': 3, 'ended': 4 };
+
+    matches.sort((a, b) => {
+        const aClass = Object.keys(order).find(key => a.classList.contains(key)) || 'ended';
+        const bClass = Object.keys(order).find(key => b.classList.contains(key)) || 'ended';
+
+        return order[aClass] - order[bClass];
+    });
+
+    // تفريغ الحاوية ثم إضافة المباريات بالترتيب الجديد
+    matchesContainer.innerHTML = '';
+    matches.forEach(match => matchesContainer.appendChild(match));
+
+    console.log("مباريات بعد الفرز:", matches); // طباعة المباريات بعد الفرز
+}
+// استدعاء الدالة عند تحميل الصفحة
+// تأكد من استدعاء هذه الدالة عندما تكون البيانات جاهزة
+createTabs();
+
+// تعيين مؤقت لتحديث البيانات عند الساعة 12:00 صباحاً
 setInterval(function () {
     const now = new Date();
-
-    // التحقق إذا كان الآن منتصف الليل
     if (now.getHours() === 0 && now.getMinutes() === 0) {
-        const today = formatDate(now);
-        loadMatchesForDate(today); // تحديث المباريات لليوم الجديد
+        loadMatchesForDate(new Date().toISOString().split('T')[0].replace(/-/g, '/'));
     }
-}, 60000); // تحديث كل دقيقة
-
-// استدعاء الدالة عند تحميل الصفحة
-createTabs();
+}, 60000);
