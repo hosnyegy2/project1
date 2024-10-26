@@ -721,25 +721,7 @@ const matchData = {
                 "team2": 0
             }
 },
-        {
-            "id": 334,
-            "gameUrl": "https://sport.coldady.com/2024/10/bologna-vs-milan.html",
-            "fareq1": {
-                "name": "بولونيا",
-                "logo": "https://img.btolat.com/teamslogo/11822.png?v=699"
-            },
-            "fareq2": {
-                "name": "ميلان",
-                "logo": "https://img.btolat.com/teamslogo/11938.png?v=918"
-            },
-            "btola": "الدوري الايطالي",
-            "timeStart": "2024/10/26 7:00 PM",
-            "timeEnd": "2024/10/26 9:00 PM",
-            "score": {
-                "team1": 0,
-                "team2": 0
-            }
-},
+        
         {
             "id": 335,
             "gameUrl": "https://sport.coldady.com/2024/10/blog-post_65.html",
