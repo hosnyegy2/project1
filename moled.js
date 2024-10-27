@@ -1003,7 +1003,7 @@ const matchData = {
             },
             "btola": "الدوري الايطالي",
             "timeStart": "2024/10/27 10:45 PM",
-            "timeEnd": "2024/10/28 12:45 PM",
+            "timeEnd": "2024/10/28 12:45 AM",
             "score": {
                 "team1": 0,
                 "team2": 0
@@ -1022,7 +1022,7 @@ const matchData = {
             },
             "btola": "الدوري الفرنسي",
             "timeStart": "2024/10/27 10:45 PM",
-            "timeEnd": "2024/10/28 12:45 PM",
+            "timeEnd": "2024/10/28 12:45 AM",
             "score": {
                 "team1": 0,
                 "team2": 0
