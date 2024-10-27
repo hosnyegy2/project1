@@ -888,8 +888,8 @@ const matchData = {
                 "logo": "https://img.btolat.com/teamslogo/10020.png?v=960"
             },
             "btola": "الدوري الفرنسي",
-            "timeStart": "2024/10/27 6:00 PM",
-            "timeEnd": "2024/10/27 8:00 PM",
+            "timeStart": "2024/10/27 7:00 PM",
+            "timeEnd": "2024/10/27 9:00 PM",
             "score": {
                 "team1": 0,
                 "team2": 0
