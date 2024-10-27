@@ -1186,7 +1186,238 @@ const matchData = {
             }
 }
     ],
-    "2024/10/30": [],
+    "2024/10/30": [
+        {
+            "id": 360,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "حرس الحدود",
+                "logo": "https://img.btolat.com/teamslogo/8928.png?v=550"
+            },
+            "fareq2": {
+                "name": "سموحة",
+                "logo": "https://img.btolat.com/teamslogo/8950.png?v=722"
+            },
+            "btola": "الدوري المصري",
+            "timeStart": "2024/10/30 5:00 PM",
+            "timeEnd": "2024/10/30 7:00 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 361,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "حرس الحدود",
+                "logo": "https://img.btolat.com/teamslogo/8928.png?v=550"
+            },
+            "fareq2": {
+                "name": "سموحة",
+                "logo": "https://img.btolat.com/teamslogo/8950.png?v=722"
+            },
+            "btola": "الدوري المصري",
+            "timeStart": "2024/10/30 5:00 PM",
+            "timeEnd": "2024/10/30 7:00 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+
+        {
+            "id": 363,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "طلائع الجيش",
+                "logo": "https://img.btolat.com/teamslogo/8901.png?v=717"
+            },
+            "fareq2": {
+                "name": "المصري",
+                "logo": "https://img.btolat.com/teamslogo/8908.png?v=943"
+            },
+            "btola": "الدوري المصري",
+            "timeStart": "2024/10/30 8:00 PM",
+            "timeEnd": "2024/10/30 10:00 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 370,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "آينتراخت فرانكفورت",
+                "logo": "https://img.btolat.com/teamslogo/10347.png?v=515"
+            },
+            "fareq2": {
+                "name": "بوروسيا مونشنجلادباخ",
+                "logo": "https://img.btolat.com/teamslogo/10307.png?v=834"
+            },
+            "btola": "كأس المانيا",
+            "timeStart": "2024/10/30 8:00 PM",
+            "timeEnd": "2024/10/30 10:00 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 362,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "إمبولي",
+                "logo": "https://img.btolat.com/teamslogo/11867.png?v=633"
+            },
+            "fareq2": {
+                "name": "إنتر ميلان",
+                "logo": "https://img.btolat.com/teamslogo/11917.png?v=328"
+            },
+            "btola": "الدوري الايطالي",
+            "timeStart": "2024/10/30 8:30 PM",
+            "timeEnd": "2024/10/30 10:30 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 364,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "برايتون",
+                "logo": "https://img.btolat.com/teamslogo/9065.png?v=914"
+            },
+            "fareq2": {
+                "name": "ليفربول",
+                "logo": "https://img.btolat.com/teamslogo/9249.png?v=24"
+            },
+            "btola": "كأس رابطة الدوري الإنجليزي",
+            "timeStart": "2024/10/30 10:30 PM",
+            "timeEnd": "2024/10/31 12:30 AM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 365,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "مانشستر يونايتد",
+                "logo": "https://img.btolat.com/teamslogo/9260.png?v=82"
+            },
+            "fareq2": {
+                "name": "ليستر سيتي",
+                "logo": "https://img.btolat.com/teamslogo/9240.png?v=91"
+            },
+            "btola": "كأس رابطة الدوري الإنجليزي",
+            "timeStart": "2024/10/30 10:45 PM",
+            "timeEnd": "2024/10/31 12:45 AM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 366,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "بريستون نورث إند",
+                "logo": "https://img.btolat.com/teamslogo/9317.png?v=896"
+            },
+            "fareq2": {
+                "name": "آرسنال",
+                "logo": "https://img.btolat.com/teamslogo/9002.png?v=593"
+            },
+            "btola": "كأس رابطة الدوري الإنجليزي",
+            "timeStart": "2024/10/30 10:45 PM",
+            "timeEnd": "2024/10/31 12:45 AM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 367,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "نيوكاسل يونايتد",
+                "logo": "https://img.btolat.com/teamslogo/9287.png?v=746"
+            },
+            "fareq2": {
+                "name": "تشيلسي",
+                "logo": "https://img.btolat.com/teamslogo/9092.png?v=38"
+            },
+            "btola": "كأس رابطة الدوري الإنجليزي",
+            "timeStart": "2024/10/30 10:45 PM",
+            "timeEnd": "2024/10/31 12:45 AM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 368,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "نيوكاسل يونايتد",
+                "logo": "https://img.btolat.com/teamslogo/9287.png?v=746"
+            },
+            "fareq2": {
+                "name": "تشيلسي",
+                "logo": "https://img.btolat.com/teamslogo/9092.png?v=38"
+            },
+            "btola": "كأس رابطة الدوري الإنجليزي",
+            "timeStart": "2024/10/30 10:45 PM",
+            "timeEnd": "2024/10/31 12:45 AM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 369,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "ماينز",
+                "logo": "https://img.btolat.com/teamslogo/10388.png?v=464"
+            },
+            "fareq2": {
+                "name": "بايرن ميونخ",
+                "logo": "https://img.btolat.com/teamslogo/10285.png?v=46"
+            },
+            "btola": "كأس المانيا",
+            "timeStart": "2024/10/30 10:45 PM",
+            "timeEnd": "2024/10/31 12:45 AM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+
+        {
+            "id": 371,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "توتنهام هوتسبر",
+                "logo": "https://img.btolat.com/teamslogo/9406.png?v=155"
+            },
+            "fareq2": {
+                "name": "مانشستر سيتي",
+                "logo": "https://img.btolat.com/teamslogo/9259.png?v=545"
+            },
+            "btola": "كأس رابطة الدوري الإنجليزي",
+            "timeStart": "2024/10/30 11:15 PM",
+            "timeEnd": "2024/10/31 1:15 AM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+}
+    ],
     "2024/10/31": []
 
 };
