@@ -1206,25 +1206,6 @@ const matchData = {
                 "team2": 0
             }
 },
-        {
-            "id": 361,
-            "gameUrl": "",
-            "fareq1": {
-                "name": "حرس الحدود",
-                "logo": "https://img.btolat.com/teamslogo/8928.png?v=550"
-            },
-            "fareq2": {
-                "name": "سموحة",
-                "logo": "https://img.btolat.com/teamslogo/8950.png?v=722"
-            },
-            "btola": "الدوري المصري",
-            "timeStart": "2024/10/30 5:00 PM",
-            "timeEnd": "2024/10/30 7:00 PM",
-            "score": {
-                "team1": 0,
-                "team2": 0
-            }
-},
 
         {
             "id": 363,
@@ -1331,25 +1312,6 @@ const matchData = {
             "fareq2": {
                 "name": "آرسنال",
                 "logo": "https://img.btolat.com/teamslogo/9002.png?v=593"
-            },
-            "btola": "كأس رابطة الدوري الإنجليزي",
-            "timeStart": "2024/10/30 10:45 PM",
-            "timeEnd": "2024/10/31 12:45 AM",
-            "score": {
-                "team1": 0,
-                "team2": 0
-            }
-},
-        {
-            "id": 367,
-            "gameUrl": "",
-            "fareq1": {
-                "name": "نيوكاسل يونايتد",
-                "logo": "https://img.btolat.com/teamslogo/9287.png?v=746"
-            },
-            "fareq2": {
-                "name": "تشيلسي",
-                "logo": "https://img.btolat.com/teamslogo/9092.png?v=38"
             },
             "btola": "كأس رابطة الدوري الإنجليزي",
             "timeStart": "2024/10/30 10:45 PM",
