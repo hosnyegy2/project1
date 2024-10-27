@@ -802,7 +802,7 @@ const matchData = {
     "2024/10/27": [
         {
             "id": 339,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/27.html",
             "fareq1": {
                 "name": "تشيلسي",
                 "logo": "https://img.btolat.com/teamslogo/9092.png?v=38"
@@ -821,7 +821,7 @@ const matchData = {
 },
         {
             "id": 340,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/27_27.html",
             "fareq1": {
                 "name": "كريستال بالاس",
                 "logo": "https://img.btolat.com/teamslogo/9127.png?v=126"
@@ -840,7 +840,7 @@ const matchData = {
 },
         {
             "id": 341,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/27_3.html",
             "fareq1": {
                 "name": "وست هام يونايتد",
                 "logo": "https://img.btolat.com/teamslogo/9427.png?v=444"
@@ -859,7 +859,7 @@ const matchData = {
 },
         {
             "id": 342,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/27_30.html",
             "fareq1": {
                 "name": "بوخوم",
                 "logo": "https://img.btolat.com/teamslogo/10648.png?v=943"
@@ -878,7 +878,7 @@ const matchData = {
 },
         {
             "id": 343,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/27_49.html",
             "fareq1": {
                 "name": "نيس",
                 "logo": "https://img.btolat.com/teamslogo/10033.png?v=483"
@@ -897,7 +897,7 @@ const matchData = {
 },
         {
             "id": 344,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/27_62.html",
             "fareq1": {
                 "name": "آرسنال",
                 "logo": "https://img.btolat.com/teamslogo/9002.png?v=593"
@@ -916,7 +916,7 @@ const matchData = {
 },
         {
             "id": 345,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/27_88.html",
             "fareq1": {
                 "name": "يونيون برلين",
                 "logo": "https://img.btolat.com/teamslogo/10631.png?v=932"
@@ -935,7 +935,7 @@ const matchData = {
 },
         {
             "id": 346,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/27_77.html",
             "fareq1": {
                 "name": "الدحيل",
                 "logo": "https://img.btolat.com/teamslogo/14507.png?v=257"
@@ -954,7 +954,7 @@ const matchData = {
 },
         {
             "id": 347,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/27_79.html",
             "fareq1": {
                 "name": "إنتر ميلان",
                 "logo": "https://img.btolat.com/teamslogo/11917.png?v=328"
@@ -973,7 +973,7 @@ const matchData = {
 },
         {
             "id": 348,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/27_73.html",
             "fareq1": {
                 "name": "ريال بيتيس",
                 "logo": "https://img.btolat.com/teamslogo/16107.png?v=132"
@@ -992,7 +992,7 @@ const matchData = {
 },
         {
             "id": 349,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/27_50.html",
             "fareq1": {
                 "name": "فيورنتينا",
                 "logo": "https://img.btolat.com/teamslogo/11894.png?v=135"
@@ -1011,7 +1011,7 @@ const matchData = {
 },
         {
             "id": 350,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/27_38.html",
             "fareq1": {
                 "name": "أولمبيك مارسيليا",
                 "logo": "https://img.btolat.com/teamslogo/10042.png?v=280"
