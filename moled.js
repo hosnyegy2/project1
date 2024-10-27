@@ -1418,6 +1418,103 @@ const matchData = {
             }
 }
     ],
-    "2024/10/31": []
+    "2024/10/31": [
+        {
+            "id": 372,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "الجونة",
+                "logo": "https://img.btolat.com/teamslogo/8902.png?v=500"
+            },
+            "fareq2": {
+                "name": "زد",
+                "logo": "https://img.btolat.com/teamslogo/25535.png?v=891"
+            },
+            "btola": "الدوري المصري",
+            "timeStart": "2024/10/31 5:00 PM",
+            "timeEnd": "2024/10/31 7:00 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 375,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "السد",
+                "logo": "https://img.btolat.com/teamslogo/14503.png?v=105"
+            },
+            "fareq2": {
+                "name": "الريان",
+                "logo": "https://img.btolat.com/teamslogo/14502.png?v=750"
+            },
+            "btola": "الدوري القطري",
+            "timeStart": "2024/10/31 7:30 PM",
+            "timeEnd": "2024/10/31 9:30 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 373,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "مودرن سبورت",
+                "logo": "https://img.btolat.com/teamslogo/34496.png?v=888"
+            },
+            "fareq2": {
+                "name": "إنبي",
+                "logo": "https://img.btolat.com/teamslogo/8921.png?v=828"
+            },
+            "btola": "الدوري المصري",
+            "timeStart": "2024/10/31 8:00 PM",
+            "timeEnd": "2024/10/31 10:00 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 374,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "اتحاد جدة",
+                "logo": "https://img.btolat.com/teamslogo/15003.png?v=672"
+            },
+            "fareq2": {
+                "name": "الأهلي السعودي",
+                "logo": "https://img.btolat.com/teamslogo/14990.png?v=643"
+            },
+            "btola": "الدوري السعودي",
+            "timeStart": "2024/10/31 9:00 PM",
+            "timeEnd": "2024/10/31 11:00 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+
+        {
+            "id": 376,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "روما",
+                "logo": "https://img.btolat.com/teamslogo/11998.png?v=815"
+            },
+            "fareq2": {
+                "name": "تورينو",
+                "logo": "https://img.btolat.com/teamslogo/12046.png?v=877"
+            },
+            "btola": "الدوري الايطالي",
+            "timeStart": "2024/10/31 10:45 PM",
+            "timeEnd": "2024/11/01 12:45 AM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+}
+    ]
 
 };
