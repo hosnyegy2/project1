@@ -907,8 +907,8 @@ const matchData = {
                 "logo": "https://img.btolat.com/teamslogo/9249.png?v=24"
             },
             "btola": "الدوري الإنجليزي",
-            "timeStart": "2024/10/27 6:30 PM",
-            "timeEnd": "2024/10/27 8:30 PM",
+            "timeStart": "2024/10/27 7:30 PM",
+            "timeEnd": "2024/10/27 9:30 PM",
             "score": {
                 "team1": 1,
                 "team2": 1
@@ -926,8 +926,8 @@ const matchData = {
                 "logo": "https://img.btolat.com/teamslogo/10347.png?v=515"
             },
             "btola": "الدوري الالماني",
-            "timeStart": "2024/10/27 6:30 PM",
-            "timeEnd": "2024/10/27 8:30 PM",
+            "timeStart": "2024/10/27 7:30 PM",
+            "timeEnd": "2024/10/27 9:30 PM",
             "score": {
                 "team1": 0,
                 "team2": 1
@@ -945,8 +945,8 @@ const matchData = {
                 "logo": "https://img.btolat.com/teamslogo/14497.png?v=925"
             },
             "btola": "الدوري القطري",
-            "timeStart": "2024/10/27 6:30 PM",
-            "timeEnd": "2024/10/27 8:30 PM",
+            "timeStart": "2024/10/27 7:30 PM",
+            "timeEnd": "2024/10/27 9:30 PM",
             "score": {
                 "team1": 0,
                 "team2": 0
@@ -964,8 +964,8 @@ const matchData = {
                 "logo": "https://img.btolat.com/teamslogo/11922.png?v=381"
             },
             "btola": "الدوري الايطالي",
-            "timeStart": "2024/10/27 7:00 PM",
-            "timeEnd": "2024/10/27 9:00 PM",
+            "timeStart": "2024/10/27 8:00 PM",
+            "timeEnd": "2024/10/27 10:00 PM",
             "score": {
                 "team1": 0,
                 "team2": 0
