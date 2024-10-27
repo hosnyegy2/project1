@@ -1042,8 +1042,8 @@ const matchData = {
                 "logo": "https://img.btolat.com/teamslogo/8892.png?v=416"
             },
             "btola": "دوري الدرجة الثانية المصري",
-            "timeStart": "2024/10/28 4:00 PM",
-            "timeEnd": "2024/10/28 6:00 PM",
+            "timeStart": "2024/10/28 5:00 PM",
+            "timeEnd": "2024/10/28 7:00 PM",
             "score": {
                 "team1": 0,
                 "team2": 0
@@ -1061,8 +1061,8 @@ const matchData = {
                 "logo": "https://img.btolat.com/teamslogo/30605.jpg?v=579"
             },
             "btola": "كأس خادم الحرمين",
-            "timeStart": "2024/10/28 7:30 PM",
-            "timeEnd": "2024/10/28 9:30 PM",
+            "timeStart": "2024/10/28 8:30 PM",
+            "timeEnd": "2024/10/28 10:30 PM",
             "score": {
                 "team1": 0,
                 "team2": 0
@@ -1081,8 +1081,8 @@ const matchData = {
                 "logo": "https://img.btolat.com/teamslogo/15679.png?v=800"
             },
             "btola": "الدوري الاسباني",
-            "timeStart": "2024/10/28 10:00 PM",
-            "timeEnd": "2024/10/29 12:00 AM",
+            "timeStart": "2024/10/28 11:00 PM",
+            "timeEnd": "2024/10/29 1:00 AM",
             "score": {
                 "team1": 0,
                 "team2": 0
