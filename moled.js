@@ -1002,8 +1002,8 @@ const matchData = {
                 "logo": "https://img.btolat.com/teamslogo/11998.png?v=815"
             },
             "btola": "الدوري الايطالي",
-            "timeStart": "2024/10/27 9:45 PM",
-            "timeEnd": "2024/10/27 11:45 PM",
+            "timeStart": "2024/10/27 10:45 PM",
+            "timeEnd": "2024/10/28 12:45 PM",
             "score": {
                 "team1": 0,
                 "team2": 0
@@ -1021,8 +1021,8 @@ const matchData = {
                 "logo": "https://img.btolat.com/teamslogo/10061.png?v=97"
             },
             "btola": "الدوري الفرنسي",
-            "timeStart": "2024/10/27 9:45 PM",
-            "timeEnd": "2024/10/27 11:45 PM",
+            "timeStart": "2024/10/27 10:45 PM",
+            "timeEnd": "2024/10/28 12:45 PM",
             "score": {
                 "team1": 0,
                 "team2": 0
