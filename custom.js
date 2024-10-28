@@ -93,8 +93,8 @@ jQuery(document).ready(function ($) {
                         statusElement.text("الشوط الثانى"); // Display "Second Half" during the second 45 minutes
                     } else {
                         clearInterval(timerInterval);
-                        timerElement.html("`90:00"); // Display "90:00" at the end of the match with apostrophe
-                        statusElement.html("<span class='full-time'>+</span>"); // Display "Full Time" at the end of the match
+                        timerElement.html("`+90"); // Display "90:00" at the end of the match with apostrophe
+                        statusElement.html(""); // Display "Full Time" at the end of the match
                         //t.parent().parent().parent().parent().find(".timer-status").remove(); // Hide the entire timer-status div
                     }
                 }, 1000);
