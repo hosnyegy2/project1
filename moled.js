@@ -1102,8 +1102,8 @@ const matchData = {
                 "logo": "https://img.btolat.com/teamslogo/15001.png?v=23"
             },
             "btola": "كأس خادم الحرمين",
-            "timeStart": "2024/10/28 11:30 PM",
-            "timeEnd": "2024/10/29 1:30 AM",
+            "timeStart": "2024/10/28 11:40 PM",
+            "timeEnd": "2024/10/29 1:40 AM",
             "score": {
                 "team1": 0,
                 "team2": 0
