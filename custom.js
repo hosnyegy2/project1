@@ -94,7 +94,7 @@ jQuery(document).ready(function ($) {
                     } else {
                         clearInterval(timerInterval);
                         timerElement.html("`90:00"); // Display "90:00" at the end of the match with apostrophe
-                        statusElement.html("<span class='full-time'>Full Time</span>"); // Display "Full Time" at the end of the match
+                        statusElement.html("<span class='full-time'>+</span>"); // Display "Full Time" at the end of the match
                         //t.parent().parent().parent().parent().find(".timer-status").remove(); // Hide the entire timer-status div
                     }
                 }, 1000);
