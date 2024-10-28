@@ -1032,7 +1032,7 @@ const matchData = {
     "2024/10/28": [
         {
             "id": 351,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/blog-post_71.html",
             "fareq1": {
                 "name": "بلدية المحلة",
                 "logo": "https://img.btolat.com/teamslogo/8893.png?v=964"
@@ -1051,7 +1051,7 @@ const matchData = {
 },
         {
             "id": 352,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/blog-post_46.html",
             "fareq1": {
                 "name": "اتحاد جدة",
                 "logo": "https://img.btolat.com/teamslogo/15003.png?v=672"
@@ -1071,7 +1071,7 @@ const matchData = {
 
         {
             "id": 354,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/blog-post_90.html",
             "fareq1": {
                 "name": "ريال مايوركا",
                 "logo": "https://img.btolat.com/teamslogo/16052.png?v=657"
