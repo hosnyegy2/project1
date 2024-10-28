@@ -220,7 +220,7 @@ function loadMatchesForDate(dateString) {
                                 <span class="bouton">
                                     <p id="msmsma" style="font-size: 13px;">جاري التحميل</p>
                                 </span>
-                                <div class="${status}">
+                                <div>
                                     <div class="fc_time">
                                         <span id="hdaf1">${match.score.team1}</span> - <span id="hdaf2">${match.score.team2}</span>
                                     </div>
