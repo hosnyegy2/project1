@@ -106,8 +106,8 @@ jQuery(document).ready(function ($) {
                         isMatchLive = true;
                     } else {
                         clearInterval(timerInterval);
-                        timerElement.html("`+90");
-                        statusElement.html("");
+                        timerElement.html("`90");
+                        statusElement.html("<span class='full-time'>+ ض</span>");
                         progressBarElement.css("width", "100%");
                         isMatchLive = false;
                     }
