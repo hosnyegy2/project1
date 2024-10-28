@@ -1092,7 +1092,7 @@ const matchData = {
     "2024/10/29": [
         {
             "id": 356,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/blog-post_29.html",
             "fareq1": {
                 "name": "الطائي",
                 "logo": "https://img.btolat.com/teamslogo/15020.png?v=740"
@@ -1111,7 +1111,7 @@ const matchData = {
 },
         {
             "id": 355,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/29.html",
             "fareq1": {
                 "name": "الأهلي",
                 "logo": "https://img.btolat.com/teamslogo/8883.png?v=658"
@@ -1130,7 +1130,7 @@ const matchData = {
 },
         {
             "id": 357,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/29_29.html",
             "fareq1": {
                 "name": "النصر السعودي",
                 "logo": "https://img.btolat.com/teamslogo/15010.png?v=992"
@@ -1149,7 +1149,7 @@ const matchData = {
 },
         {
             "id": 358,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/29_67.html",
             "fareq1": {
                 "name": "ميلان",
                 "logo": "https://img.btolat.com/teamslogo/11938.png?v=918"
@@ -1168,7 +1168,7 @@ const matchData = {
 },
         {
             "id": 359,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/29_98.html",
             "fareq1": {
                 "name": "فولفسبورج",
                 "logo": "https://img.btolat.com/teamslogo/10653.png?v=506"
