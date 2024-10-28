@@ -74,7 +74,7 @@ jQuery(document).ready(function ($) {
                 var timerInterval = setInterval(function () {
                     var currentTime = moment.utc().toDate();
                     if (currentTime < delayEndTime) {
-                        timerElement.html("<span class='waiting-kick-off'>بانتظار ضربة البداية</span>"); // Display message during the 5-minute delay
+                        timerElement.html("<span class='waiting-kick-off'>بانتظار البداية</span>"); // Display message during the 5-minute delay
                         statusElement.text(""); // Clear the status element
                     } else if (currentTime < firstHalfEndTime) {
                         var timeElapsed = moment(currentTime).diff(delayEndTime);
@@ -110,7 +110,7 @@ jQuery(document).ready(function ($) {
 
                 if (currentTime < delayEndTime) {
                     // Display message during the 5-minute delay
-                    timerElement.html("<span class='waiting-kick-off'>بانتظار ضربة البداية</span>");
+                    timerElement.html("<span class='waiting-kick-off'>بانتظار البداية</span>");
                     statusElement.text(""); // Clear the status element
                     progressBarElement.css("width", "0%"); // Reset progress bar width
                     isMatchLive = false;
