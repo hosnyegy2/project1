@@ -9,7 +9,6 @@ function loadMatchesForToday() {
 
         return Math.max(january.getTimezoneOffset(), july.getTimezoneOffset()) !== now.getTimezoneOffset();
     }
-
     // حساب فرق التوقيت بناءً على الصيف أو الشتاء لوقت عرض الجدول فقط
     const hoursToAdd = isDaylightSavingTime() ? 3 : 2; // 3 ساعات للصيف و 2 للشتاء
     const egyptTime = new Date(today.getTime() + (hoursToAdd * 60 * 60 * 1000)); // تعديل وقت عرض الجدول فقط
