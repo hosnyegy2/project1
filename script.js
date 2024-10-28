@@ -23,14 +23,30 @@ function loadMatchesForToday() {
     if (matches && matches.length > 0) {
         noMatchesMessage.style.display = 'none'; // إخفاء رسالة لا يوجد مباريات
 
+        const currentTime = new Date(); // الحصول على الوقت الحالي
+
         matches.forEach(match => {
-            // هنا نترك توقيت المباراة كما هو دون تعديل
-            const matchTime = new Date(match.timeStart);
+            const matchStartTime = new Date(match.timeStart);
+            const matchEndTime = new Date(match.timeEnd);
+            let status = '';
+
+            // تحديد حالة المباراة بناءً على الوقت الحالي
+            const timeDiff = matchStartTime - currentTime; // الفرق في الوقت بين بدء المباراة والوقت الحالي
+
+            if (timeDiff > 0 && timeDiff <= 30 * 60 * 1000) {
+                status = 'started'; // المباراة ستبدأ قريباً (خلال 30 دقيقة)
+            } else if (currentTime < matchStartTime) {
+                status = 'notstarted'; // المباراة لم تبدأ بعد
+            } else if (currentTime >= matchStartTime && currentTime <= matchEndTime) {
+                status = 'running'; // المباراة جارية
+            } else {
+                status = 'ended'; // المباراة انتهت
+            }
 
             const matchElement = `
-                <div class="m_block egy_sports_item">
+                <div class="m_block egy_sports_item ${status}">
                     <!-- مباراة ${match.fareq1.name} ضد ${match.fareq2.name} فى ${match.btola} -->
-                    <a href="${match.gameUrl}" class="ElGadwl" title="${match.fareq1.name} ضد ${match.fareq2.name}">
+                    <a href="${match.gameUrl}" class="ElGadwl" title="${match.fareq1.name} ضد ${match.fareq2.name} فى ${match.btola}">
                         <div class="Gadwl-Top">
                             <div class="Fareeq-r">
                                 <img alt="${match.fareq1.name}" src="${match.fareq1.logo}" />
@@ -64,6 +80,10 @@ function loadMatchesForToday() {
             `;
             matchesContainer.innerHTML += matchElement;
         });
+
+        setTimeout(() => {
+            sortMatches();
+        }, 100);
 
     } else {
         // إظهار رسالة "لا يوجد مباريات اليوم" إذا لم يكن هناك مباريات في تاريخ اليوم
@@ -267,7 +287,12 @@ function sortMatches() {
     const matchesContainer = document.getElementById('matches-container');
     const matches = Array.from(matchesContainer.getElementsByClassName('egy_sports_item'));
 
-    const order = { 'running': 1, 'started': 2, 'notstarted': 3, 'ended': 4 };
+    const order = {
+        'running': 1,
+        'started': 2,
+        'notstarted': 3,
+        'ended': 4
+    };
 
     matches.sort((a, b) => {
         const aClass = Object.keys(order).find(key => a.classList.contains(key)) || 'ended';
