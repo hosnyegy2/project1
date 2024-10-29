@@ -105,7 +105,6 @@ setInterval(function () {
 ///////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////
 // دالة لتعيين التاب النشط
-// دالة لتعيين التاب النشط
 function setActiveTab(activeTab) {
     const allTabs = document.querySelectorAll('.tab-button');
     allTabs.forEach(tab => tab.classList.remove('active'));
