@@ -1,6 +1,84 @@
 // البيانات الديناميكية لكل يوم
 const matchData = {
 
+    "2024/11/01": [
+        {
+            "id": 379,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "الوكرة",
+                "logo": "https://img.btolat.com/teamslogo/14508.png?v=214"
+            },
+            "fareq2": {
+                "name": "أم صلال",
+                "logo": "https://img.btolat.com/teamslogo/14513.png?v=0"
+            },
+            "btola": "الدوري القطري",
+            "timeStart": "2024/11/01 7:30 PM",
+            "timeEnd": "2024/11/01 9:30 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 377,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "الزمالك",
+                "logo": "https://img.btolat.com/teamslogo/8959.png?v=450"
+            },
+            "fareq2": {
+                "name": "البنك الاهلي",
+                "logo": "https://img.btolat.com/teamslogo/34371.png?v=565"
+            },
+            "btola": "الدوري المصري",
+            "timeStart": "2024/11/01 9:00 PM",
+            "timeEnd": "2024/11/01 11:00 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 378,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "النصر السعودي",
+                "logo": "https://img.btolat.com/teamslogo/15010.png?v=992"
+            },
+            "fareq2": {
+                "name": "الهلال السعودي",
+                "logo": "https://img.btolat.com/teamslogo/15001.png?v=23"
+            },
+            "btola": "الدوري السعودي",
+            "timeStart": "2024/11/01 9:00 PM",
+            "timeEnd": "2024/11/01 11:00 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 380,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "ليل الفرنسي",
+                "logo": "https://img.btolat.com/teamslogo/10004.png?v=8"
+            },
+            "fareq2": {
+                "name": "أولمبيك ليون",
+                "logo": "https://img.btolat.com/teamslogo/10040.png?v=325"
+            },
+            "btola": "الدوري الفرنسي",
+            "timeStart": "2024/11/01 11:00 PM",
+            "timeEnd": "2024/11/02 1:00 AM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+}
+    ],
     "2024/10/16": [],
     "2024/10/17": [],
     "2024/10/18": [],
