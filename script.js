@@ -152,21 +152,23 @@ function adjustTimeForEgypt(date) {
 // دالة لإنشاء التواريخ في التابات
 function createTabs() {
     const tabsContainer = document.getElementById('tabs-container');
-    tabsContainer.innerHTML = '';
+    tabsContainer.innerHTML = ''; // مسح التابات القديمة
 
+    // الحصول على التاريخ الحالي
     const today = new Date();
+    today.setHours(0, 0, 0, 0);
     const egyptTime = adjustTimeForEgypt(today);
-    const formattedDate = egyptTime.toISOString().split('T')[0].replace(/-/g, '/');
 
+    // إنشاء مصفوفة التواريخ لتشمل التاريخ الحالي ويومان قبله ويومان بعده
     const dates = [];
     for (let i = -2; i <= 2; i++) {
         const date = new Date(egyptTime);
-        date.setDate(egyptTime.getDate() + i);
-        const adjustedDate = adjustTimeForEgypt(date);
-        const formattedDate = adjustedDate.toISOString().split('T')[0].replace(/-/g, '/');
+        date.setDate(egyptTime.getDate() + i); // إضافة أو طرح الأيام بناءً على i
+        const formattedDate = date.toISOString().split('T')[0].replace(/-/g, '/'); // تنسيق التاريخ
         dates.push(formattedDate);
     }
 
+    // إضافة التابات بناءً على التواريخ المحسوبة
     dates.forEach((date, index) => {
         const tab = document.createElement('button');
         tab.classList.add('tab-button');
