@@ -201,17 +201,32 @@ function loadMatchesForDate(dateString) {
     const matches = matchData[dateString];
     const matchesContainer = document.getElementById('matches-container');
     const noMatchesMessage = document.getElementById('no-matches');
-    const loadingSpinner = document.getElementById('loading-spinner'); // عنصر التحميل
 
-    // إظهار أيقونة التحميل
-    loadingSpinner.style.display = 'flex';
-    matchesContainer.innerHTML = ''; // تفريغ المحتوى القديم
+    matchesContainer.innerHTML = '';
 
     if (matches && matches.length > 0) {
         noMatchesMessage.style.display = 'none';
 
-        // استكمال كود تحميل المباريات
+        const currentTime = new Date(); // الحصول على الوقت الحالي
+
         matches.forEach(match => {
+            const matchStartTime = new Date(match.timeStart);
+            const matchEndTime = new Date(match.timeEnd);
+            let status = '';
+
+            // تحديد حالة المباراة بناءً على الوقت الحالي
+            const timeDiff = matchStartTime - currentTime; // الفرق في الوقت بين بدء المباراة والوقت الحالي
+
+            if (timeDiff > 0 && timeDiff <= 30 * 60 * 1000) {
+                status = 'started'; // المباراة ستبدأ قريباً (خلال 30 دقيقة)
+            } else if (currentTime < matchStartTime) {
+                status = 'notstarted'; // المباراة لم تبدأ بعد
+            } else if (currentTime >= matchStartTime && currentTime <= matchEndTime) {
+                status = 'running'; // المباراة جارية
+            } else {
+                status = 'ended'; // المباراة انتهت
+            }
+
             const matchElement = `
                 <div class="m_block egy_sports_item ${status}">
                     <!-- مباراة ${match.fareq1.name} ضد ${match.fareq2.name} فى ${match.btola} -->
@@ -250,23 +265,21 @@ function loadMatchesForDate(dateString) {
             matchesContainer.innerHTML += matchElement;
         });
 
-        // بعد الانتهاء من تحميل المباريات، إخفاء أيقونة التحميل
+        // تحميل السكربت الخارجي
         $.getScript("https://raw.githack.com/hosnyegy2/project1/main/custom.js")
             .done(function (script, textStatus) {
                 console.log("Script loaded successfully: " + textStatus);
+                // استدعاء دالة الفرز بعد تحميل السكربت
                 setTimeout(() => {
                     sortMatches();
                 }, 100);
-                loadingSpinner.style.display = 'none'; // إخفاء أيقونة التحميل بعد التحميل
             })
             .fail(function (jqxhr, settings, exception) {
                 console.error("Error loading script: " + exception);
-                loadingSpinner.style.display = 'none'; // إخفاء أيقونة التحميل حتى عند وجود خطأ
             });
 
     } else {
         noMatchesMessage.style.display = 'block';
-        loadingSpinner.style.display = 'none'; // إخفاء أيقونة التحميل عند عدم وجود مباريات
     }
 }
 
