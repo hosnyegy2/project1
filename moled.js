@@ -1163,7 +1163,7 @@ const matchData = {
             "timeEnd": "2024/10/30 12:45 PM",
             "score": {
                 "team1": 0,
-                "team2": 0
+                "team2": 1
             }
 },
         {
