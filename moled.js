@@ -1159,8 +1159,8 @@ const matchData = {
                 "logo": "https://img.btolat.com/teamslogo/11947.png?v=385"
             },
             "btola": "الدوري الايطالي",
-            "timeStart": "2024/10/29 9:45 PM",
-            "timeEnd": "2024/10/29 11:45 PM",
+            "timeStart": "2024/10/29 10:45 PM",
+            "timeEnd": "2024/10/30 12:45 PM",
             "score": {
                 "team1": 0,
                 "team2": 0
