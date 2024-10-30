@@ -14,6 +14,8 @@
             "btola": "الدوري القطري",
             "timeStart": "2024/11/01 7:30 PM",
             "timeEnd": "2024/11/01 9:30 PM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 0,
                 "team2": 0
@@ -33,6 +35,8 @@
             "btola": "الدوري المصري",
             "timeStart": "2024/11/01 9:00 PM",
             "timeEnd": "2024/11/01 11:00 PM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 0,
                 "team2": 0
@@ -52,6 +56,8 @@
             "btola": "الدوري السعودي",
             "timeStart": "2024/11/01 9:00 PM",
             "timeEnd": "2024/11/01 11:00 PM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 0,
                 "team2": 0
@@ -71,6 +77,8 @@
             "btola": "الدوري الفرنسي",
             "timeStart": "2024/11/01 11:00 PM",
             "timeEnd": "2024/11/02 1:00 AM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 0,
                 "team2": 0
@@ -117,6 +125,8 @@
             "btola": "الدوري الإنجليزي",
             "timeStart": "2024/10/27 4:00 PM",
             "timeEnd": "2024/10/27 6:00 PM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 2,
                 "team2": 1
@@ -136,6 +146,8 @@
             "btola": "الدوري الإنجليزي",
             "timeStart": "2024/10/27 4:00 PM",
             "timeEnd": "2024/10/27 6:00 PM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 1,
                 "team2": 0
@@ -155,6 +167,8 @@
             "btola": "الدوري الإنجليزي",
             "timeStart": "2024/10/27 4:00 PM",
             "timeEnd": "2024/10/27 6:00 PM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 2,
                 "team2": 1
@@ -174,6 +188,8 @@
             "btola": "الدوري الالماني",
             "timeStart": "2024/10/27 4:30 PM",
             "timeEnd": "2024/10/27 6:30 PM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 0,
                 "team2": 5
@@ -193,6 +209,8 @@
             "btola": "الدوري الفرنسي",
             "timeStart": "2024/10/27 7:00 PM",
             "timeEnd": "2024/10/27 9:00 PM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 2,
                 "team2": 1
@@ -212,6 +230,8 @@
             "btola": "الدوري الإنجليزي",
             "timeStart": "2024/10/27 7:35 PM",
             "timeEnd": "2024/10/27 9:35 PM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 2,
                 "team2": 2
@@ -231,6 +251,8 @@
             "btola": "الدوري الالماني",
             "timeStart": "2024/10/27 7:30 PM",
             "timeEnd": "2024/10/27 9:30 PM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 1,
                 "team2": 1
@@ -250,6 +272,8 @@
             "btola": "الدوري القطري",
             "timeStart": "2024/10/27 7:30 PM",
             "timeEnd": "2024/10/27 9:30 PM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 1,
                 "team2": 1
@@ -269,6 +293,8 @@
             "btola": "الدوري الايطالي",
             "timeStart": "2024/10/27 8:00 PM",
             "timeEnd": "2024/10/27 10:00 PM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 4,
                 "team2": 4
@@ -288,6 +314,8 @@
             "btola": "الدوري الاسباني",
             "timeStart": "2024/10/27 8:30 PM",
             "timeEnd": "2024/10/27 10:30 PM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 1,
                 "team2": 0
@@ -307,6 +335,8 @@
             "btola": "الدوري الايطالي",
             "timeStart": "2024/10/27 10:45 PM",
             "timeEnd": "2024/10/28 12:45 AM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 5,
                 "team2": 1
@@ -326,6 +356,8 @@
             "btola": "الدوري الفرنسي",
             "timeStart": "2024/10/27 10:45 PM",
             "timeEnd": "2024/10/28 12:45 AM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 0,
                 "team2": 3
@@ -347,6 +379,8 @@
             "btola": "دوري الدرجة الثانية المصري",
             "timeStart": "2024/10/28 5:00 PM",
             "timeEnd": "2024/10/28 7:00 PM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 1,
                 "team2": 1
@@ -366,6 +400,8 @@
             "btola": "كأس خادم الحرمين",
             "timeStart": "2024/10/28 8:30 PM",
             "timeEnd": "2024/10/28 10:30 PM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 2,
                 "team2": 0
@@ -386,6 +422,8 @@
             "btola": "الدوري الاسباني",
             "timeStart": "2024/10/28 11:00 PM",
             "timeEnd": "2024/10/29 1:00 AM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 0,
                 "team2": 0
@@ -407,6 +445,8 @@
             "btola": "كأس خادم الحرمين",
             "timeStart": "2024/10/29 6:05 PM",
             "timeEnd": "2024/10/29 8:05 PM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 1,
                 "team2": 4
@@ -426,6 +466,8 @@
             "btola": "كأس إنتركونتيننتال",
             "timeStart": "2024/10/29 8:00 PM",
             "timeEnd": "2024/10/29 10:00 PM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 3,
                 "team2": 0
@@ -445,6 +487,8 @@
             "btola": "كأس خادم الحرمين",
             "timeStart": "2024/10/29 8:30 PM",
             "timeEnd": "2024/10/29 10:30 PM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 0,
                 "team2": 1
@@ -464,6 +508,8 @@
             "btola": "الدوري الايطالي",
             "timeStart": "2024/10/29 10:45 PM",
             "timeEnd": "2024/10/30 12:45 AM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 0,
                 "team2": 2
@@ -483,6 +529,8 @@
             "btola": "كأس المانيا",
             "timeStart": "2024/10/29 10:45 PM",
             "timeEnd": "2024/10/30 12:45 AM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 1,
                 "team2": 0
@@ -504,6 +552,8 @@
             "btola": "الدوري المصري",
             "timeStart": "2024/10/30 6:00 AM",
             "timeEnd": "2024/10/30 8:00 AM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 0,
                 "team2": 0
@@ -524,6 +574,8 @@
             "btola": "الدوري المصري",
             "timeStart": "2024/10/30 8:00 PM",
             "timeEnd": "2024/10/30 10:00 PM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 0,
                 "team2": 0
@@ -543,6 +595,8 @@
             "btola": "كأس المانيا",
             "timeStart": "2024/10/30 8:00 PM",
             "timeEnd": "2024/10/30 10:00 PM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 0,
                 "team2": 0
@@ -562,6 +616,8 @@
             "btola": "الدوري الايطالي",
             "timeStart": "2024/10/30 8:30 PM",
             "timeEnd": "2024/10/30 10:30 PM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 0,
                 "team2": 0
@@ -581,6 +637,8 @@
             "btola": "كأس رابطة الدوري الإنجليزي",
             "timeStart": "2024/10/30 10:30 PM",
             "timeEnd": "2024/10/31 12:30 AM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 0,
                 "team2": 0
@@ -600,6 +658,8 @@
             "btola": "كأس رابطة الدوري الإنجليزي",
             "timeStart": "2024/10/30 10:45 PM",
             "timeEnd": "2024/10/31 12:45 AM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 0,
                 "team2": 0
@@ -619,6 +679,8 @@
             "btola": "كأس رابطة الدوري الإنجليزي",
             "timeStart": "2024/10/30 10:45 PM",
             "timeEnd": "2024/10/31 12:45 AM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 0,
                 "team2": 0
@@ -638,6 +700,8 @@
             "btola": "كأس رابطة الدوري الإنجليزي",
             "timeStart": "2024/10/30 10:45 PM",
             "timeEnd": "2024/10/31 12:45 AM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 0,
                 "team2": 0
@@ -657,6 +721,8 @@
             "btola": "كأس المانيا",
             "timeStart": "2024/10/30 10:45 PM",
             "timeEnd": "2024/10/31 12:45 AM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 0,
                 "team2": 0
@@ -677,6 +743,8 @@
             "btola": "كأس رابطة الدوري الإنجليزي",
             "timeStart": "2024/10/30 11:15 PM",
             "timeEnd": "2024/10/31 1:15 AM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 0,
                 "team2": 0
@@ -698,6 +766,8 @@
             "btola": "الدوري المصري",
             "timeStart": "2024/10/31 5:00 PM",
             "timeEnd": "2024/10/31 7:00 PM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 0,
                 "team2": 0
@@ -717,6 +787,8 @@
             "btola": "الدوري القطري",
             "timeStart": "2024/10/31 7:30 PM",
             "timeEnd": "2024/10/31 9:30 PM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 0,
                 "team2": 0
@@ -736,6 +808,8 @@
             "btola": "الدوري المصري",
             "timeStart": "2024/10/31 8:00 PM",
             "timeEnd": "2024/10/31 10:00 PM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 0,
                 "team2": 0
@@ -755,6 +829,8 @@
             "btola": "الدوري السعودي",
             "timeStart": "2024/10/31 9:00 PM",
             "timeEnd": "2024/10/31 11:00 PM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 0,
                 "team2": 0
@@ -775,6 +851,8 @@
             "btola": "الدوري الايطالي",
             "timeStart": "2024/10/31 10:45 PM",
             "timeEnd": "2024/11/01 12:45 AM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 0,
                 "team2": 0
