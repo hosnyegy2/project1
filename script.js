@@ -43,18 +43,19 @@ function setDayAndDateInTitle(dateString) {
 function isDaylightSavingTimeInEgypt(date) {
     const year = date.getFullYear();
 
-    const aprilLastFriday = new Date(year, 3, 30);
+    const aprilLastFriday = new Date(year, 4, 30);
     while (aprilLastFriday.getDay() !== 5) {
         aprilLastFriday.setDate(aprilLastFriday.getDate() - 1);
     }
 
-    const octoberLastThursday = new Date(year, 9, 31);
+    const octoberLastThursday = new Date(year, 10, 31);
     while (octoberLastThursday.getDay() !== 4) {
         octoberLastThursday.setDate(octoberLastThursday.getDate() - 1);
     }
 
     return date >= aprilLastFriday && date < octoberLastThursday;
 }
+
 
 // دالة لحساب الوقت حسب التوقيت المصري الصيفي أو الشتوي
 function adjustTimeForEgypt(date) {
