@@ -1,109 +1,23 @@
-function loadMatchesForToday() {
-    const today = new Date();
+let matchData = {}; // تعريف متغير لتخزين بيانات المباريات
 
-    // دالة للتحقق مما إذا كان التوقيت الصيفي مفعلًا
-    function isDaylightSavingTime() {
-        const now = new Date();
-        const january = new Date(now.getFullYear(), 0, 1); // يناير (الشتاء)
-        const july = new Date(now.getFullYear(), 6, 1); // يوليو (الصيف)
-
-        return Math.max(january.getTimezoneOffset(), july.getTimezoneOffset()) !== now.getTimezoneOffset();
-    }
-    // حساب فرق التوقيت بناءً على الصيف أو الشتاء لوقت عرض الجدول فقط
-    const hoursToAdd = isDaylightSavingTime() ? 3 : 2; // 3 ساعات للصيف و 2 للشتاء
-    const egyptTime = new Date(today.getTime() + (hoursToAdd * 60 * 60 * 1000)); // تعديل وقت عرض الجدول فقط
-
-    const formattedDate = egyptTime.toISOString().split('T')[0].replace(/-/g, '/'); // الحصول على تاريخ اليوم بصيغة YYYY/MM/DD
-    const matches = matchData[formattedDate];
-    const matchesContainer = document.getElementById('matches-container');
-    const noMatchesMessage = document.getElementById('no-matches');
-
-    matchesContainer.innerHTML = ''; // تفريغ المحتوى القديم
-
-    if (matches && matches.length > 0) {
-        noMatchesMessage.style.display = 'none'; // إخفاء رسالة لا يوجد مباريات
-
-        const currentTime = new Date(); // الحصول على الوقت الحالي
-
-        matches.forEach(match => {
-            const matchStartTime = new Date(match.timeStart);
-            const matchEndTime = new Date(match.timeEnd);
-            let status = '';
-
-            // تحديد حالة المباراة بناءً على الوقت الحالي
-            const timeDiff = matchStartTime - currentTime; // الفرق في الوقت بين بدء المباراة والوقت الحالي
-
-            if (timeDiff > 0 && timeDiff <= 30 * 60 * 1000) {
-                status = 'started'; // المباراة ستبدأ قريباً (خلال 30 دقيقة)
-            } else if (currentTime < matchStartTime) {
-                status = 'notstarted'; // المباراة لم تبدأ بعد
-            } else if (currentTime >= matchStartTime && currentTime <= matchEndTime) {
-                status = 'running'; // المباراة جارية
-            } else {
-                status = 'ended'; // المباراة انتهت
+// دالة لجلب بيانات المباريات من ملف JSON
+function loadMatchData() {
+    fetch('https://raw.githack.com/hosnyegy2/project1/main/moled.json') // استبدل 'matches.json' بالمسار الصحيح للملف
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
             }
-
-            const matchElement = `
-                <div class="m_block egy_sports_item ${status}">
-                    <!-- مباراة ${match.fareq1.name} ضد ${match.fareq2.name} فى ${match.btola} -->
-                    <a href="${match.gameUrl}" class="ElGadwl" title="${match.fareq1.name} ضد ${match.fareq2.name} فى ${match.btola}">
-                        <div class="Gadwl-Top">
-                            <div class="Fareeq-r">
-                                <img alt="${match.fareq1.name}" src="${match.fareq1.logo}" />
-                                <span>${match.fareq1.name}</span>
-                            </div>
-                            <div class="Fareeq-c">
-                                <span class="bouton">
-                                    <p id="msmsma" style="font-size: 13px;">جاري التحميل</p>
-                                </span>
-                                <div>
-                                    <div class="fc_time">
-                                        <span id="hdaf1">${match.score.team1}</span> - <span id="hdaf2">${match.score.team2}</span>
-                                    </div>
-                                    <div class="date stay" data-start="${match.timeStart}" data-gameends="${match.timeEnd}" id="${match.id}"></div>
-                                    <div class="timer-status">
-                                        <span class="timer"></span>
-                                        <span class="status"></span>
-                                    </div>
-                                    <div class="progress-bar-container">
-                                        <div class="progress-bar" style="width: 0%;"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="Fareeq-l">
-                                <img alt="${match.fareq2.name}" src="${match.fareq2.logo}" />
-                                <span>${match.fareq2.name}</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            `;
-            matchesContainer.innerHTML += matchElement;
+            return response.json();
+        })
+        .then(data => {
+            matchData = data; // تخزين البيانات في المتغير matchData
+            createTabs(); // استدعاء الدالة لإنشاء التابات بعد تحميل البيانات
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
         });
-
-        setTimeout(() => {
-            sortMatches();
-        }, 100);
-
-    } else {
-        // إظهار رسالة "لا يوجد مباريات اليوم" إذا لم يكن هناك مباريات في تاريخ اليوم
-        noMatchesMessage.style.display = 'block';
-    }
 }
 
-// استدعاء الدالة عند تحميل الصفحة
-loadMatchesForToday();
-
-// تعيين مؤقت لتحديث البيانات عند الساعة 12:00 صباحاً
-setInterval(function () {
-    const now = new Date();
-    if (now.getHours() === 0 && now.getMinutes() === 0) {
-        loadMatchesForToday();
-    }
-}, 60000); // تحديث كل دقيقة
-///////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////
 // دالة لتعيين التاب النشط
 function setActiveTab(activeTab) {
     const allTabs = document.querySelectorAll('.tab-button');
@@ -198,7 +112,7 @@ function createTabs() {
 
 // دالة لتحميل المباريات لتاريخ محدد
 function loadMatchesForDate(dateString) {
-    const matches = matchData[dateString];
+    const matches = matchData[dateString]; // جلب المباريات من البيانات
     const matchesContainer = document.getElementById('matches-container');
     const noMatchesMessage = document.getElementById('no-matches');
 
@@ -229,7 +143,6 @@ function loadMatchesForDate(dateString) {
 
             const matchElement = `
                 <div class="m_block egy_sports_item ${status}">
-                    <!-- مباراة ${match.fareq1.name} ضد ${match.fareq2.name} فى ${match.btola} -->
                     <a href="${match.gameUrl}" class="ElGadwl" title="${match.fareq1.name} ضد ${match.fareq2.name} فى ${match.btola}">
                         <div class="Gadwl-Top">
                             <div class="Fareeq-r">
@@ -279,7 +192,7 @@ function loadMatchesForDate(dateString) {
             });
 
     } else {
-        noMatchesMessage.style.display = 'block';
+        noMatchesMessage.style.display = 'block'; // عرض رسالة عدم وجود مباريات
     }
 }
 
@@ -308,9 +221,9 @@ function sortMatches() {
 
     console.log("مباريات بعد الفرز:", matches); // طباعة المباريات بعد الفرز
 }
-// استدعاء الدالة عند تحميل الصفحة
-// تأكد من استدعاء هذه الدالة عندما تكون البيانات جاهزة
-createTabs();
+
+// استدعاء الدالة لجلب بيانات المباريات عند تحميل الصفحة
+loadMatchData();
 
 // تعيين مؤقت لتحديث البيانات عند الساعة 12:00 صباحاً
 setInterval(function () {
