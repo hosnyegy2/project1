@@ -532,7 +532,7 @@ const matchData = {
             "caller": "",
             "score": {
                 "team1": 0,
-                "team2": 0
+                "team2": 2
             }
 },
         {
@@ -552,7 +552,7 @@ const matchData = {
             "channel": "",
             "caller": "",
             "score": {
-                "team1": 1,
+                "team1": 2,
                 "team2": 1
             }
 },
@@ -574,7 +574,7 @@ const matchData = {
             "caller": "",
             "score": {
                 "team1": 0,
-                "team2": 0
+                "team2": 3
             }
 },
         {
