@@ -509,8 +509,8 @@ const matchData = {
             "channel": "",
             "caller": "",
             "score": {
-                "team1": 0,
-                "team2": 0
+                "team1": 1,
+                "team2": 3
             }
 },
 
@@ -552,8 +552,8 @@ const matchData = {
             "channel": "",
             "caller": "",
             "score": {
-                "team1": 0,
-                "team2": 0
+                "team1": 1,
+                "team2": 1
             }
 },
         {
