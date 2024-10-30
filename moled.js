@@ -494,7 +494,7 @@ const matchData = {
     "2024/10/30": [
         {
             "id": 360,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/30.html",
             "fareq1": {
                 "name": "حرس الحدود",
                 "logo": "https://img.btolat.com/teamslogo/8928.png?v=550"
@@ -506,6 +506,8 @@ const matchData = {
             "btola": "الدوري المصري",
             "timeStart": "2024/10/30 5:00 PM",
             "timeEnd": "2024/10/30 7:00 PM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 0,
                 "team2": 0
@@ -514,7 +516,7 @@ const matchData = {
 
         {
             "id": 363,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/30_30.html",
             "fareq1": {
                 "name": "طلائع الجيش",
                 "logo": "https://img.btolat.com/teamslogo/8901.png?v=717"
@@ -526,6 +528,8 @@ const matchData = {
             "btola": "الدوري المصري",
             "timeStart": "2024/10/30 8:00 PM",
             "timeEnd": "2024/10/30 10:00 PM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 0,
                 "team2": 0
@@ -533,7 +537,7 @@ const matchData = {
 },
         {
             "id": 370,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/30_61.html",
             "fareq1": {
                 "name": "آينتراخت فرانكفورت",
                 "logo": "https://img.btolat.com/teamslogo/10347.png?v=515"
@@ -545,6 +549,8 @@ const matchData = {
             "btola": "كأس المانيا",
             "timeStart": "2024/10/30 8:00 PM",
             "timeEnd": "2024/10/30 10:00 PM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 0,
                 "team2": 0
@@ -552,7 +558,7 @@ const matchData = {
 },
         {
             "id": 362,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/30_12.html",
             "fareq1": {
                 "name": "إمبولي",
                 "logo": "https://img.btolat.com/teamslogo/11867.png?v=633"
@@ -564,6 +570,8 @@ const matchData = {
             "btola": "الدوري الايطالي",
             "timeStart": "2024/10/30 8:30 PM",
             "timeEnd": "2024/10/30 10:30 PM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 0,
                 "team2": 0
@@ -571,7 +579,7 @@ const matchData = {
 },
         {
             "id": 364,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/30_20.html",
             "fareq1": {
                 "name": "برايتون",
                 "logo": "https://img.btolat.com/teamslogo/9065.png?v=914"
@@ -583,6 +591,8 @@ const matchData = {
             "btola": "كأس رابطة الدوري الإنجليزي",
             "timeStart": "2024/10/30 10:30 PM",
             "timeEnd": "2024/10/31 12:30 AM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 0,
                 "team2": 0
@@ -590,7 +600,7 @@ const matchData = {
 },
         {
             "id": 365,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/30_68.html",
             "fareq1": {
                 "name": "مانشستر يونايتد",
                 "logo": "https://img.btolat.com/teamslogo/9260.png?v=82"
@@ -602,6 +612,8 @@ const matchData = {
             "btola": "كأس رابطة الدوري الإنجليزي",
             "timeStart": "2024/10/30 10:45 PM",
             "timeEnd": "2024/10/31 12:45 AM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 0,
                 "team2": 0
@@ -609,7 +621,7 @@ const matchData = {
 },
         {
             "id": 366,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/30_89.html",
             "fareq1": {
                 "name": "بريستون نورث إند",
                 "logo": "https://img.btolat.com/teamslogo/9317.png?v=896"
@@ -621,6 +633,8 @@ const matchData = {
             "btola": "كأس رابطة الدوري الإنجليزي",
             "timeStart": "2024/10/30 10:45 PM",
             "timeEnd": "2024/10/31 12:45 AM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 0,
                 "team2": 0
@@ -628,7 +642,7 @@ const matchData = {
 },
         {
             "id": 368,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/blog-post_30.html",
             "fareq1": {
                 "name": "نيوكاسل يونايتد",
                 "logo": "https://img.btolat.com/teamslogo/9287.png?v=746"
@@ -640,6 +654,8 @@ const matchData = {
             "btola": "كأس رابطة الدوري الإنجليزي",
             "timeStart": "2024/10/30 10:45 PM",
             "timeEnd": "2024/10/31 12:45 AM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 0,
                 "team2": 0
@@ -647,7 +663,7 @@ const matchData = {
 },
         {
             "id": 369,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/blog-post_57.html",
             "fareq1": {
                 "name": "ماينز",
                 "logo": "https://img.btolat.com/teamslogo/10388.png?v=464"
@@ -659,6 +675,8 @@ const matchData = {
             "btola": "كأس المانيا",
             "timeStart": "2024/10/30 10:45 PM",
             "timeEnd": "2024/10/31 12:45 AM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 0,
                 "team2": 0
@@ -667,7 +685,7 @@ const matchData = {
 
         {
             "id": 371,
-            "gameUrl": "",
+            "gameUrl": "https://sport.coldady.com/2024/10/blog-post_13.html",
             "fareq1": {
                 "name": "توتنهام هوتسبر",
                 "logo": "https://img.btolat.com/teamslogo/9406.png?v=155"
@@ -679,6 +697,8 @@ const matchData = {
             "btola": "كأس رابطة الدوري الإنجليزي",
             "timeStart": "2024/10/30 11:15 PM",
             "timeEnd": "2024/10/31 1:15 AM",
+            "channel": "",
+            "caller": "",
             "score": {
                 "team1": 0,
                 "team2": 0
