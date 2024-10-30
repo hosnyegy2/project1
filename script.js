@@ -104,6 +104,26 @@ setInterval(function () {
 ///////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////
+let matchData = {}; // تعريف متغير لتخزين بيانات المباريات
+
+// دالة لجلب بيانات المباريات من ملف JSON
+function loadMatchData() {
+    fetch('https://raw.githack.com/hosnyegy2/project1/main/moled.json') // استبدل 'matches.json' بالمسار الصحيح للملف
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            matchData = data; // تخزين البيانات في المتغير matchData
+            createTabs(); // استدعاء الدالة لإنشاء التابات بعد تحميل البيانات
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
+}
+
 // دالة لتعيين التاب النشط
 function setActiveTab(activeTab) {
     const allTabs = document.querySelectorAll('.tab-button');
@@ -198,7 +218,7 @@ function createTabs() {
 
 // دالة لتحميل المباريات لتاريخ محدد
 function loadMatchesForDate(dateString) {
-    const matches = matchData[dateString];
+    const matches = matchData[dateString]; // جلب المباريات من البيانات
     const matchesContainer = document.getElementById('matches-container');
     const noMatchesMessage = document.getElementById('no-matches');
 
@@ -229,7 +249,6 @@ function loadMatchesForDate(dateString) {
 
             const matchElement = `
                 <div class="m_block egy_sports_item ${status}">
-                    <!-- مباراة ${match.fareq1.name} ضد ${match.fareq2.name} فى ${match.btola} -->
                     <a href="${match.gameUrl}" class="ElGadwl" title="${match.fareq1.name} ضد ${match.fareq2.name} فى ${match.btola}">
                         <div class="Gadwl-Top">
                             <div class="Fareeq-r">
@@ -279,7 +298,7 @@ function loadMatchesForDate(dateString) {
             });
 
     } else {
-        noMatchesMessage.style.display = 'block';
+        noMatchesMessage.style.display = 'block'; // عرض رسالة عدم وجود مباريات
     }
 }
 
@@ -308,9 +327,9 @@ function sortMatches() {
 
     console.log("مباريات بعد الفرز:", matches); // طباعة المباريات بعد الفرز
 }
-// استدعاء الدالة عند تحميل الصفحة
-// تأكد من استدعاء هذه الدالة عندما تكون البيانات جاهزة
-createTabs();
+
+// استدعاء الدالة لجلب بيانات المباريات عند تحميل الصفحة
+loadMatchData();
 
 // تعيين مؤقت لتحديث البيانات عند الساعة 12:00 صباحاً
 setInterval(function () {
