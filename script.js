@@ -149,66 +149,46 @@ function adjustTimeForEgypt(date) {
     return new Date(date.getTime() + (hoursToAdd * 60 * 60 * 1000));
 }
 
-let matchData = null; // تعيين null للتأكد من أن البيانات لم يتم تحميلها بعد
-
-// دالة لجلب بيانات المباريات من ملف JSON
-function loadMatchData() {
-    fetch('https://raw.githack.com/hosnyegy2/project1/main/moled.json')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok ' + response.statusText);
-            }
-            return response.json();
-        })
-        .then(data => {
-            matchData = data; // تخزين البيانات في المتغير matchData
-            createTabs(); // استدعاء الدالة لإنشاء التابات بعد تحميل البيانات
-        })
-        .catch(error => {
-            console.error('There was a problem with the fetch operation:', error);
-        });
-}
-
 // دالة لإنشاء التواريخ في التابات
 function createTabs() {
-    if (!matchData) {
-        console.warn("matchData لم يتم تحميله بعد."); // التأكد من تحميل البيانات
-        return;
-    }
     const tabsContainer = document.getElementById('tabs-container');
     tabsContainer.innerHTML = ''; // مسح التابات القديمة
 
+    // الحصول على التاريخ الحالي
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     const egyptTime = adjustTimeForEgypt(today);
 
+    // إنشاء مصفوفة التواريخ لتشمل التاريخ الحالي ويومان قبله ويومان بعده
     const dates = [];
     for (let i = -2; i <= 2; i++) {
         const date = new Date(egyptTime);
-        date.setDate(egyptTime.getDate() + i);
-        const formattedDate = date.toISOString().split('T')[0].replace(/-/g, '/');
+        date.setDate(egyptTime.getDate() + i); // إضافة أو طرح الأيام بناءً على i
+        const formattedDate = date.toISOString().split('T')[0].replace(/-/g, '/'); // تنسيق التاريخ
         dates.push(formattedDate);
     }
 
+    // إضافة التابات بناءً على التواريخ المحسوبة
     dates.forEach((date, index) => {
         const tab = document.createElement('button');
         tab.classList.add('tab-button');
-        tab.innerHTML = `<div>${getDayName(date)}</div><div>${date}</div>`;
+        tab.innerHTML = `
+            <div>${getDayName(date)}</div>
+            <div>${date}</div>
+        `;
         tab.style.display = 'flex';
         tab.style.flexDirection = 'column';
         tab.style.alignItems = 'center';
 
         tab.onclick = function () {
-            if (matchData) { // التأكد من أن البيانات محملة قبل محاولة عرض المباريات
-                loadMatchesForDate(date);
-                setActiveTab(tab);
-                setDayAndDateInTitle(date);
-            }
+            loadMatchesForDate(date);
+            setActiveTab(tab);
+            setDayAndDateInTitle(date);
         };
 
         tabsContainer.appendChild(tab);
 
-        if (index === 2 && matchData) {
+        if (index === 2) {
             tab.classList.add('active');
             loadMatchesForDate(date);
             setDayAndDateInTitle(date);
@@ -218,10 +198,6 @@ function createTabs() {
 
 // دالة لتحميل المباريات لتاريخ محدد
 function loadMatchesForDate(dateString) {
-    if (!matchData) {
-        console.warn("matchData لم يتم تحميله بعد."); // التأكد من تحميل البيانات
-        return;
-    }
     const matches = matchData[dateString];
     const matchesContainer = document.getElementById('matches-container');
     const noMatchesMessage = document.getElementById('no-matches');
@@ -230,27 +206,30 @@ function loadMatchesForDate(dateString) {
 
     if (matches && matches.length > 0) {
         noMatchesMessage.style.display = 'none';
-        const currentTime = new Date();
+
+        const currentTime = new Date(); // الحصول على الوقت الحالي
 
         matches.forEach(match => {
             const matchStartTime = new Date(match.timeStart);
             const matchEndTime = new Date(match.timeEnd);
             let status = '';
 
-            const timeDiff = matchStartTime - currentTime;
+            // تحديد حالة المباراة بناءً على الوقت الحالي
+            const timeDiff = matchStartTime - currentTime; // الفرق في الوقت بين بدء المباراة والوقت الحالي
 
             if (timeDiff > 0 && timeDiff <= 30 * 60 * 1000) {
-                status = 'started';
+                status = 'started'; // المباراة ستبدأ قريباً (خلال 30 دقيقة)
             } else if (currentTime < matchStartTime) {
-                status = 'notstarted';
+                status = 'notstarted'; // المباراة لم تبدأ بعد
             } else if (currentTime >= matchStartTime && currentTime <= matchEndTime) {
-                status = 'running';
+                status = 'running'; // المباراة جارية
             } else {
-                status = 'ended';
+                status = 'ended'; // المباراة انتهت
             }
 
             const matchElement = `
                 <div class="m_block egy_sports_item ${status}">
+                    <!-- مباراة ${match.fareq1.name} ضد ${match.fareq2.name} فى ${match.btola} -->
                     <a href="${match.gameUrl}" class="ElGadwl" title="${match.fareq1.name} ضد ${match.fareq2.name} فى ${match.btola}">
                         <div class="Gadwl-Top">
                             <div class="Fareeq-r">
@@ -286,9 +265,11 @@ function loadMatchesForDate(dateString) {
             matchesContainer.innerHTML += matchElement;
         });
 
+        // تحميل السكربت الخارجي
         $.getScript("https://raw.githack.com/hosnyegy2/project1/main/custom.js")
             .done(function (script, textStatus) {
                 console.log("Script loaded successfully: " + textStatus);
+                // استدعاء دالة الفرز بعد تحميل السكربت
                 setTimeout(() => {
                     sortMatches();
                 }, 100);
@@ -296,12 +277,11 @@ function loadMatchesForDate(dateString) {
             .fail(function (jqxhr, settings, exception) {
                 console.error("Error loading script: " + exception);
             });
+
     } else {
         noMatchesMessage.style.display = 'block';
     }
 }
-
-loadMatchData();
 
 // دالة لترتيب المباريات حسب حالتها
 function sortMatches() {
@@ -328,8 +308,9 @@ function sortMatches() {
 
     console.log("مباريات بعد الفرز:", matches); // طباعة المباريات بعد الفرز
 }
-
-// استدعاء الدالة لجلب بيانات المباريات عند تحميل الصفحة
+// استدعاء الدالة عند تحميل الصفحة
+// تأكد من استدعاء هذه الدالة عندما تكون البيانات جاهزة
+createTabs();
 
 // تعيين مؤقت لتحديث البيانات عند الساعة 12:00 صباحاً
 setInterval(function () {
