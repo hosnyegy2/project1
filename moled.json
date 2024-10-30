@@ -96,7 +96,27 @@
             }
 }
     ],
-    "2024/11/02": [],
+    "2024/10/30": [
+         {
+            "id": 360,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "حرس الحدود",
+                "logo": "https://img.btolat.com/teamslogo/8928.png?v=550"
+            },
+            "fareq2": {
+                "name": "سموحة",
+                "logo": "https://img.btolat.com/teamslogo/8950.png?v=722"
+            },
+            "btola": "الدوري المصري",
+            "timeStart": "2024/10/30 5:00 PM",
+            "timeEnd": "2024/10/30 7:00 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+}
+    ],
     "2024/11/03": [],
     "2024/11/04": [],
     "2024/11/05": []
