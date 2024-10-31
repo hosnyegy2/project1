@@ -790,8 +790,8 @@
             "channel": "",
             "caller": "",
             "score": {
-                "team1": 0,
-                "team2": 0
+                "team1": 2,
+                "team2": 1
             }
 },
         {
@@ -832,7 +832,7 @@
             "channel": "",
             "caller": "",
             "score": {
-                "team1": 0,
+                "team1": 1,
                 "team2": 0
             }
 },
@@ -854,7 +854,7 @@
             "channel": "",
             "caller": "",
             "score": {
-                "team1": 0,
+                "team1": 1,
                 "team2": 0
             }
 }
