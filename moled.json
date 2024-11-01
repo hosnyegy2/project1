@@ -339,7 +339,239 @@
             }
 }
     ],
-    "2024/11/03": [],
+    "2024/11/03": [
+        {
+            "id": 393,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "أتالانتا يونايتد",
+                "logo": "https://img.btolat.com/teamslogo/27212.png"
+            },
+            "fareq2": {
+                "name": "إنتر ميامي",
+                "logo": "https://img.btolat.com/teamslogo/32374.png"
+            },
+            "btola": "الدوري الامريكي الممتاز",
+            "channel": "لم تحدد بعد",
+            "caller": "لم يحدد بعد",
+            "timeStart": "2024/11/03 1:00 AM",
+            "timeEnd": "2024/11/03 3:00 AM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 394,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "نابولي",
+                "logo": "https://img.btolat.com/teamslogo/11947.png"
+            },
+            "fareq2": {
+                "name": "أتالانتا",
+                "logo": "https://img.btolat.com/teamslogo/11811.png"
+            },
+            "btola": "الدوري الايطالي",
+            "channel": "لم تحدد بعد",
+            "caller": "لم يحدد بعد",
+            "timeStart": "2024/11/03 12:30 PM",
+            "timeEnd": "2024/11/03 2:30 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 395,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "أتلتيكو مدريد",
+                "logo": "https://img.btolat.com/teamslogo/15692.png"
+            },
+            "fareq2": {
+                "name": "لاس بالماس",
+                "logo": "https://img.btolat.com/teamslogo/16040.png"
+            },
+            "btola": "الدوري الاسباني",
+            "channel": "بى ان سبورت",
+            "caller": "لم يحدد بعد",
+            "timeStart": "2024/11/03 2:00 PM",
+            "timeEnd": "2024/11/03 4:00 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 396,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "توتنهام هوتسبر",
+                "logo": "https://img.btolat.com/teamslogo/9406.png"
+            },
+            "fareq2": {
+                "name": "أستون فيلا",
+                "logo": "https://img.btolat.com/teamslogo/9008.png"
+            },
+            "btola": "الدوري الإنجليزي",
+            "channel": "بى ان سبورت",
+            "caller": "لم يحدد بعد",
+            "timeStart": "2024/11/03 3:00 PM",
+            "timeEnd": "2024/11/03 5:00 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 397,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "الصفاقسي",
+                "logo": "https://img.btolat.com/teamslogo/16927.png"
+            },
+            "fareq2": {
+                "name": "الأولمبي الباجي",
+                "logo": "https://img.btolat.com/teamslogo/16945.png"
+            },
+            "btola": "الدوري التونسي",
+            "channel": "لم تحدد بعد",
+            "caller": "لم يحدد بعد",
+            "timeStart": "2024/11/03 3:30 PM",
+            "timeEnd": "2024/11/03 5:30 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 398,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "النجم الساحلي",
+                "logo": "https://img.btolat.com/teamslogo/16934.png"
+            },
+            "fareq2": {
+                "name": "الترجي التونسي",
+                "logo": "https://img.btolat.com/teamslogo/16933.png"
+            },
+            "btola": "الدوري التونسي",
+            "channel": "لم تحدد بعد",
+            "caller": "لم يحدد بعد",
+            "timeStart": "2024/11/03 3:30 PM",
+            "timeEnd": "2024/11/03 5:30 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 399,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "برشلونة",
+                "logo": "https://img.btolat.com/teamslogo/15702.png"
+            },
+            "fareq2": {
+                "name": "إسبانيول",
+                "logo": "https://img.btolat.com/teamslogo/16009.png"
+            },
+            "btola": "الدوري الاسباني",
+            "channel": "bein sports",
+            "caller": "لم يحدد بعد",
+            "timeStart": "2024/11/03 4:15 PM",
+            "timeEnd": "2024/11/03 6:15 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 400,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "مانشستر يونايتد",
+                "logo": "https://img.btolat.com/teamslogo/9260.png"
+            },
+            "fareq2": {
+                "name": "تشيلسي",
+                "logo": "https://img.btolat.com/teamslogo/9092.png"
+            },
+            "btola": "الدوري الإنجليزي",
+            "channel": "bein sports",
+            "caller": "لم يحدد بعد",
+            "timeStart": "2024/11/03 5:30 PM",
+            "timeEnd": "2024/11/03 7:30 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 401,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "هيلاس فيرونا",
+                "logo": "https://img.btolat.com/teamslogo/11914.png"
+            },
+            "fareq2": {
+                "name": "روما",
+                "logo": "https://img.btolat.com/teamslogo/11998.png"
+            },
+            "btola": "الدوري الايطالي",
+            "channel": "قنوات ابو ظبى الرياضية",
+            "caller": "لم يحدد بعد",
+            "timeStart": "2024/11/03 6:00 PM",
+            "timeEnd": "2024/11/03 8:00 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 402,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "الفتح الرباطي",
+                "logo": "https://img.btolat.com/teamslogo/13106.png"
+            },
+            "fareq2": {
+                "name": "الوداد البيضاوي",
+                "logo": "https://img.btolat.com/teamslogo/13137.png"
+            },
+            "btola": "الدوري المغربي",
+            "channel": "المغربية الرياضية",
+            "caller": "لم يحدد بعد",
+            "timeStart": "2024/11/03 7:00 PM",
+            "timeEnd": "2024/11/03 9:00 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+},
+        {
+            "id": 403,
+            "gameUrl": "",
+            "fareq1": {
+                "name": "إنتر ميلان",
+                "logo": "https://img.btolat.com/teamslogo/11917.png"
+            },
+            "fareq2": {
+                "name": "فينيتسيا",
+                "logo": "https://img.btolat.com/teamslogo/12088.png"
+            },
+            "btola": "الدوري الايطالي",
+            "channel": "قنوات ابو ظبى الرياضية",
+            "caller": "لم يحدد بعد",
+            "timeStart": "2024/11/03 8:45 PM",
+            "timeEnd": "2024/11/03 10:45 PM",
+            "score": {
+                "team1": 0,
+                "team2": 0
+            }
+}
+    ],
     "2024/11/04": [],
     "2024/11/05": [],
     "2024/11/06": [],
