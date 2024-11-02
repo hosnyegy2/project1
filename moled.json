@@ -316,27 +316,6 @@
                 "team1": 0,
                 "team2": 0
             }
-},
-        {
-            "id": 392,
-            "gameUrl": "https://sport.coldady.com/2024/11/02112024_57.html",
-            "fareq1": {
-                "name": "فالنسيا",
-                "logo": "https://img.btolat.com/teamslogo/16261.png"
-            },
-            "fareq2": {
-                "name": "ريال مدريد",
-                "logo": "https://img.btolat.com/teamslogo/16110.png"
-            },
-            "btola": "الدوري الاسباني",
-            "channel": "بى ان سبورت",
-            "caller": "لم يحدد بعد",
-            "timeStart": "2024/11/02 9:00 PM",
-            "timeEnd": "2024/11/02 11:00 PM",
-            "score": {
-                "team1": 0,
-                "team2": 0
-            }
 }
     ],
     "2024/11/03": [
