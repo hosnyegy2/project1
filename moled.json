@@ -103,7 +103,7 @@
             "timeStart": "2024/11/02 1:30 PM",
             "timeEnd": "2024/11/02 3:30 PM",
             "score": {
-                "team1": 0,
+                "team1": 1,
                 "team2": 0
             }
 },
@@ -124,8 +124,8 @@
             "timeStart": "2024/11/02 3:30 PM",
             "timeEnd": "2024/11/02 5:30 PM",
             "score": {
-                "team1": 0,
-                "team2": 0
+                "team1": 7,
+                "team2": 2
             }
 },
         {
@@ -145,7 +145,7 @@
             "timeStart": "2024/11/02 3:30 PM",
             "timeEnd": "2024/11/02 5:30 PM",
             "score": {
-                "team1": 0,
+                "team1": 3,
                 "team2": 0
             }
 },
@@ -166,8 +166,8 @@
             "timeStart": "2024/11/02 4:00 PM",
             "timeEnd": "2024/11/02 6:00 PM",
             "score": {
-                "team1": 0,
-                "team2": 0
+                "team1": 2,
+                "team2": 1
             }
 },
         {
@@ -187,8 +187,8 @@
             "timeStart": "2024/11/02 4:00 PM",
             "timeEnd": "2024/11/02 6:00 PM",
             "score": {
-                "team1": 0,
-                "team2": 0
+                "team1": 2,
+                "team2": 1
             }
 },
         {
@@ -250,7 +250,7 @@
             "timeStart": "2024/11/02 5:00 PM",
             "timeEnd": "2024/11/02 7:00 PM",
             "score": {
-                "team1": 0,
+                "team1": 1,
                 "team2": 0
             }
 },
@@ -272,7 +272,7 @@
             "timeEnd": "2024/11/02 8:00 PM",
             "score": {
                 "team1": 0,
-                "team2": 0
+                "team2": 2
             }
 },
         {
@@ -292,8 +292,8 @@
             "timeStart": "2024/11/02 8:00 PM",
             "timeEnd": "2024/11/02 10:00 PM",
             "score": {
-                "team1": 0,
-                "team2": 0
+                "team1": 5,
+                "team2": 2
             }
 },
         {
@@ -314,7 +314,7 @@
             "timeEnd": "2024/11/02 10:45 PM",
             "score": {
                 "team1": 0,
-                "team2": 0
+                "team2": 1
             }
 }
     ],
