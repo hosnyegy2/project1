@@ -336,8 +336,8 @@
             "timeStart": "2024/11/03 1:00 AM",
             "timeEnd": "2024/11/03 3:00 AM",
             "score": {
-                "team1": 0,
-                "team2": 0
+                "team1": 1,
+                "team2": 1
             }
 },
         {
