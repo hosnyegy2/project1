@@ -88,7 +88,7 @@ jQuery(document).ready(function ($) {
                         minutes = Math.floor(timeElapsed / 60000);
                         seconds = Math.floor((timeElapsed % 60000) / 1000);
                         timerElement.html("`" + minutes + ":" + seconds.toString().padStart(2, "0"));
-                        statusElement.text("الشوط الاول");
+                        statusElement.text("ش1");
                         progress = (currentTime - delayEndTime) / (firstHalfEndTime - delayEndTime) * 100;
                         isMatchLive = true;
                     } else if (currentTime < halfTimeEndTime) {
@@ -101,7 +101,7 @@ jQuery(document).ready(function ($) {
                         minutes = Math.floor(timeElapsed / 60000) + 45;
                         seconds = Math.floor((timeElapsed % 60000) / 1000);
                         timerElement.html("`" + minutes + ":" + seconds.toString().padStart(2, "0"));
-                        statusElement.text("الشوط الثانى");
+                        statusElement.text("ش2");
                         progress = (currentTime - halfTimeEndTime) / (secondHalfEndTime - halfTimeEndTime) * 100;
                         isMatchLive = true;
                     } else {
