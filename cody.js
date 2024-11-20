@@ -15,9 +15,9 @@ jQuery(document).ready(function ($) {
         var t = $(this),
             a = t.data("start"),
             e = t.data("gameends"),
-            r = moment(a, "YYYY/MM/DD h:mm A"),
-            n = moment(e, "YYYY/MM/DD h:mm A"),
-            s = moment.utc().format("YYYY/MM/DD h:mm A");
+            r = moment(a, "YYYY-MM-DD HH:mm:ss"),
+            n = moment(e, "YYYY-MM-DD HH:mm:ss"),
+            s = moment.utc().format("YYYY-MM-DD HH:mm:ss");
 
         // التحقق مما إذا كان التوقيت الصيفي مفعلًا
         var hoursToSubtract = isDaylightSavingTime() ? 3 : 2; // 3 ساعات للتوقيت الصيفي و 2 للشتوي
@@ -29,7 +29,7 @@ jQuery(document).ready(function ($) {
             case m > 30:
                 var i = moment.utc(a).subtract(hoursToSubtract, "hours").toDate();
                 t.parent().find(".fc_time").addClass("fc_time_show").text(moment(i).format("LT").replace("PM", "PM").replace("AM", "AM")),
-                i = moment(i).format("YYYY/MM/DD h:mm A"),
+                i = moment(i).format("YYYY-MM-DD HH:mm:ss"),
                 t.parent().parent().parent().parent().find(".hoverG div").html("لم تبدأ المباراة بعد"),
                 t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html(" لم تبدأ "),
                 t.parent().parent().parent().parent().addClass("notstarted"),
@@ -40,21 +40,21 @@ jQuery(document).ready(function ($) {
             case m > 0:
                 i = moment.utc(a).subtract(hoursToSubtract, "hours").toDate(),
                 t.parent().find(".fc_time").addClass("fc_time_show").text(moment(i).format("LT").replace("PM", "PM").replace("AM", "AM")),
-                i = moment(i).format("YYYY/MM/DD h:mm A"),
+                i = moment(i).format("YYYY-MM-DD HH:mm:ss"),
                 t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html(" تبدأ قريبا "),
                 t.parent().parent().parent().parent().addClass("started"),
                 t.parents(".egy_sports_item").addClass("soon"),
                 t.parent().parent().parent().parent().find(".hoverG div").html("تبدأ المباراة قريبا"),
                 t.parent().parent().parent().parent().find(".timer-status").remove(),
                 i = moment.utc(a).subtract(hoursToSubtract, "hours").toDate(),
-                i = moment(i).format("YYYY/MM/DD h:mm A"),
+                i = moment(i).format("YYYY-MM-DD HH:mm:ss"),
                 t.countdowntimer({ dateAndTime: i });
                 break;
 
             case o > 0:
                 i = moment.utc(a).subtract(hoursToSubtract, "hours").toDate(),
                 t.parent().find(".result_match").addClass("result_show"),
-                i = moment(i).format("YYYY/MM/DD h:mm A"),
+                i = moment(i).format("YYYY-MM-DD HH:mm:ss"),
                 t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html("جارية الان"),
                 t.parent().parent().parent().parent().addClass("runing"),
                 t.parents(".egy_sports_item").addClass("live"),
