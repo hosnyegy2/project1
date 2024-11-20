@@ -1,0 +1,724 @@
+#related-matches {
+    width: 100%;
+    margin-bottom: 15px;
+    overflow: hidden;
+/*    margin-top: 4px;*/
+}
+
+#related-matches h1,
+#related-matches h6 {
+    color: #f6c017;
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0;
+    padding: 5px 20px 11px 7px !important;
+    background-color: #323335;
+    display: none
+}
+
+#related-matches ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding: 6px 0 0;
+    display: inline-block;
+    float: right;
+    width: 100%
+}
+
+ul#yestrday_home,
+ul#tommorw_home {
+    display: none
+}
+
+p.champion {
+    font-size: 10px;
+    padding: 4px;
+    background: #fff;
+    overflow: hidden;
+    border-top: 1px solid #ddd
+}
+
+#related-matches ul span.no-matches {
+    background-color: #fff;
+    border-bottom: 1px solid #f3f3f3;
+    height: auto;
+    padding: 10px 0;
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    box-shadow: 0 1px 9px -6px
+}
+
+#related-matches #tab-links {
+    width: 100%;
+    float: right;
+    height: auto;
+    display: flex;
+    justify-content: space-between
+}
+
+.egyflex {
+    width: 100%;
+    display: flex;
+    flex-direction: column
+}
+
+#related-matches #tab-links a {
+    width: 33.33333333333333%;
+    display: inline-block;
+    color: #8c8d8e;
+    text-align: center;
+    float: right;
+    background: #212224;
+    height: auto;
+    padding: 12px 0;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer
+}
+
+#related-matches #tab-links a.active {
+    background-color: #00a88c;
+    color: #fff !important
+}
+
+.match-item {
+    background-color: #fff;
+    border-bottom: 1px solid #d7d7d7;
+    height: auto;
+    padding: 10px 0
+}
+
+.match-item a > div:nth-of-type(1),
+.match-item a > div:nth-of-type(2) {
+    width: 50%;
+    float: right;
+    position: relative
+}
+
+.match-item a > div:nth-of-type(1) b,
+.match-item a > div:nth-of-type(2) b {
+    position: absolute;
+    top: 5px;
+/*    top: 0;*/
+    font-size: 22px
+}
+
+.match-item a > div:nth-of-type(1) img,
+.match-item a > div:nth-of-type(2) img {
+    vertical-align: middle;
+    width: 24px;
+    height: 24px
+}
+
+.match-item a > div:nth-of-type(1) span,
+.match-item a > div:nth-of-type(2) span {
+    font-size: 11px
+}
+
+.match-item a > div:nth-of-type(1) {
+    text-align: left;
+    direction: ltr;
+    padding: 0 0 0 29px
+}
+
+.match-item a > div:nth-of-type(1) b {
+    left: 12px
+}
+
+.match-item a > div:nth-of-type(1) span {
+    padding-left: 3px
+}
+
+.match-item a > div:nth-of-type(2) {
+    padding: 0 29px 0 0
+}
+
+.match-item a > div:nth-of-type(2) b {
+    right: 12px
+}
+
+.match-item a > div:nth-of-type(2) span {
+    padding-right: 3px
+}
+
+.match-item a > div:nth-of-type(3) {
+    width: 57px;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 1.5
+}
+
+.match-item .time {
+    color: #a3a3a3;
+    color: #333;
+    font-size: 11px !important;
+    font-weight: bold;
+    font-family: sans-serif;
+    direction: ltr
+}
+
+.match-item svg {
+    width: 14px;
+    height: 14px;
+    fill: #a3a3a3;
+    vertical-align: middle;
+    margin-left: 2px
+}
+
+.status.comming-soon {
+    background-color: rgb(107 166 50);
+    border: 1px solid #70c320;
+    color: #fff
+}
+
+.status.comming {
+    background-color: #00a88c;
+    border: 1px solid #20a891;
+    color: #fff;
+}
+
+.status {
+    font-size: 10px;
+    display: inline-block;
+    width: 100%;
+    background-color: #141415;
+    color: #fff;
+    padding: 3px 0;
+    text-align: center
+}
+
+.status.over {
+    background-color: #2c2d2f;
+    color: #fff;
+    line-height: 1.5
+}
+
+.status.live {
+    background-color: #b40001;
+    color: #fff;
+    -webkit-animation: pulse linear 300ms infinite;
+    -khtml-animation: pulse linear 300ms infinite;
+    -moz-animation: pulse linear 300ms infinite;
+    -ms-animation: pulse linear 300ms infinite;
+    -o-animation: pulse linear 300ms infinite;
+    animation: pulse linear 300ms infinite
+}
+
+.modern .match-item {
+    padding: 5px 0 0;
+    height: 73px;
+    border-bottom: none;
+    margin-bottom: 6px;
+    box-shadow: 0 1px 9px -6px
+}
+
+.modern .match-item a {
+    position: relative;
+    display: inline-block;
+    width: 100%
+}
+
+.modern .match-item a * {
+    cursor: pointer
+}
+
+.modern .match-item a > div:nth-of-type(1),
+.modern .match-item a > div:nth-of-type(2) {
+    padding: 0
+}
+
+.modern .match-item a > div:nth-of-type(1) div,
+.modern .match-item a > div:nth-of-type(2) div {
+    width: 60%;
+    text-align: center;
+    padding: 0;
+    padding: 6px 0
+}
+
+b.home-score,
+b.away-score {
+    font-family: sans-serif
+}
+
+.modern .match-item a > div:nth-of-type(1) b,
+.modern .match-item a > div:nth-of-type(2) b {}
+
+.modern .match-item a > div:nth-of-type(1) b text,
+.modern .match-item a > div:nth-of-type(2) b text {
+    font-size: .5em
+}
+
+.modern .match-item a > div:nth-of-type(1) span,
+.modern .match-item a > div:nth-of-type(2) span {
+    display: block;
+    font-size: 11px !important;
+    line-height: 1.1;
+    line-height: 2.1;
+    font-weight: bold
+}
+
+.modern .match-item a > div:nth-of-type(1) b {
+    left: 38px
+}
+
+.modern .match-item a > div:nth-of-type(1) div {
+    float: right
+}
+
+.modern .match-item a > div:nth-of-type(2) b {
+    right: 38px
+}
+
+.modern .match-item a > div:nth-of-type(2) div {
+    float: left
+}
+
+.modern .match-item a > div:nth-of-type(3) {
+    width: 50px;
+    height: 36px;
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    margin-left: -25px;
+    text-align: center;
+    font-size: 9px
+}
+
+@media only screen and (min-width:61em) {
+    .main_body {
+        width: 55%;
+        width: -moz-calc(100% - 320px);
+        width: -webkit-calc(100% - 320px);
+        width: -o-calc(100% - 320px);
+        width: calc(100% - 320px);
+        margin: 0 0 20px 10px
+    }
+
+    .main_body .title {
+        padding: 30px 30px 53px 20px;
+        min-height: 175px
+    }
+
+    .main_body .title p {
+        font-size: .3em
+    }
+
+    .main_body .article {
+        font-size: 30px
+    }
+
+    .main_body .grid-item.news-card {
+        font-size: 22px;
+        margin-top: 20px
+    }
+
+    .main_body .grid-item.news-card .media-container {
+        clear: none;
+        padding: 10px
+    }
+
+    .main_body .grid-item.news-card .media-container .media-img,
+    .main_body .grid-item.news-card .media-container .media-body {
+        width: 100%
+    }
+
+    .main_body .grid-item.news-card .media-container .media-body {
+        padding: 5px 0 10px
+    }
+
+    .main_body .details #details_content {
+        font-size: .55em
+    }
+
+    .main_body .details p,
+    .main_body .details table {
+        margin: 0 0 40px
+    }
+
+    .main_body .details p {
+        line-height: 1.8
+    }
+
+    .main_body .details .tags {
+        padding: 0 0 10px
+    }
+
+    .main_body .details .tags a {
+        height: 23px;
+        line-height: 1.5
+    }
+
+    .main_body .details #extra .match-item a > div:nth-of-type(1),
+    .main_body .details #extra .match-item a > div:nth-of-type(2) {
+        padding: 0
+    }
+
+    .main_body .details #extra .match-item a > div:nth-of-type(1) b,
+    .main_body .details #extra .match-item a > div:nth-of-type(2) b {
+        top: -14px
+    }
+
+    .main_body .details #extra .match-item a > div:nth-of-type(1) div,
+    .main_body .details #extra .match-item a > div:nth-of-type(2) div {
+        width: 70%;
+        text-align: center;
+        line-height: 1.5
+    }
+
+    .main_body .details #extra .match-item a > div:nth-of-type(1) div span,
+    .main_body .details #extra .match-item a > div:nth-of-type(2) div span {
+        display: block
+    }
+
+    .main_body .details #extra .match-item a > div:nth-of-type(1) b {
+        left: 20px
+    }
+
+    .main_body .details #extra .match-item a > div:nth-of-type(1) div {
+        float: right
+    }
+
+    .main_body .details #extra .match-item a > div:nth-of-type(2) b {
+        right: 20px
+    }
+
+    .main_body .details #extra .match-item a > div:nth-of-type(2) div {
+        float: left
+    }
+
+    .main_body .details #extra .match-item a > div:nth-of-type(3) {
+        top: 52px
+    }
+
+    .main_body .details #extra .match-item .status {
+        font-size: 12px
+    }
+
+    .main_body .details .related,
+    .main_body .details .quote,
+    .main_body .details .v_object {
+        margin-bottom: 20px;
+        clear: both
+    }
+
+    .main_body .details .related {
+        margin: 10px 20px 10px 0
+    }
+
+    .main_body .details .related a {
+        margin-bottom: 15px
+    }
+
+    .main_body .details .related h1,
+    .main_body .details .related h6 {
+        font-size: 1.3em
+    }
+
+    .social_bar {
+        top: auto;
+        bottom: 0
+    }
+
+    .side {
+        margin: 0 10px 20px 0;
+        width: 300px
+    }
+
+    .side .news-block {
+        height: auto !important
+    }
+
+    .side .news-block h1,
+    .side .news-block h6 {
+        font-size: 15px !important
+    }
+
+    .side .news-block.sm {
+        width: 49.8% !important;
+        margin-bottom: 80px
+    }
+
+    .side .news-block.sm h1,
+    .side .news-block.sm h6 {
+        font-size: 12px !important;
+        position: absolute;
+        top: 15px;
+        margin-top: 25px
+    }
+
+    .side .news-block.sm h1 a,
+    .side .news-block.sm h6 a {
+        color: #000;
+        overflow: hidden;
+        text-shadow: none;
+        height: 68px
+    }
+
+    .side .news-block.sm header {
+        bottom: 40px !important
+    }
+
+    .side .grid-item h1,
+    .side .grid-item h6 {
+        font-size: 17px;
+        padding: 12px 20px 14px
+    }
+
+    .side .grid-item.views-card {
+        font-size: 16px
+    }
+
+    .side .grid-item.views-card a {
+        padding: 20px 20px 20px 50px;
+        font-size: .8em;
+        line-height: 1.8
+    }
+
+    .side > div:not(.ads) {
+        padding: 0
+    }
+
+    .side > iframe {
+        padding: 0 0 20px
+    }
+
+    #related-matches h1,
+    #related-matches h6 {
+        font-size: 15px
+    }
+
+    #related-matches .match-item .status,
+    #related-matches .match-item .time {
+        font-size: 10px
+    }
+
+    #related-matches .match-item .time {
+        display: inline-block;
+        margin-top: 2px;
+    }
+}
+
+@media only screen and (min-width:47em) {
+    .main_body .article {
+        font-size: 37px
+    }
+
+    .main_body .grid-item.news-card {
+        display: inline-block;
+        width: 100%;
+        margin: 0;
+        background-color: #fff;
+        font-size: 30px
+    }
+
+    .main_body .grid-item.news-card .media-container {
+        width: 50%;
+        box-shadow: none
+    }
+
+    .main_body .grid-item.news-card .media-container:nth-child(2n) {
+        clear: both
+    }
+
+    .main_body .grid-item.news-card .more-news {
+        font-size: .85em
+    }
+
+    .main_body .details .related {
+        width: 45%
+    }
+
+    .main_body .details .related a {
+        font-size: .6em;
+        margin-bottom: 20px
+    }
+
+    .main_body .details .right_border {
+        margin-right: 20px
+    }
+
+    .main_body .details .quote {
+        font-size: .6em
+    }
+
+    .main_body .details #extra .match-item b {
+        top: 3px
+    }
+
+    .main_body .details #extra .match-item a > div:nth-of-type(3) {
+        top: 38px;
+        width: 70px;
+        margin-left: -35px
+    }
+
+    .main_body .details .right_border {
+        width: 39%;
+        float: left
+    }
+
+    .side .grid-item.views-card {
+        font-size: 25.5px
+    }
+
+    .side .grid-item.views-card a {
+        padding: 30px 30px 30px 70px
+    }
+
+    #related-matches h1,
+    #related-matches h6 {
+        font-size: 25.5px
+    }
+
+    .match-item a > div:nth-of-type(1) span,
+    .match-item a > div:nth-of-type(2) span {
+        font-size: 18px
+    }
+
+    .match-item a > div:nth-of-type(1) {
+        padding: 0 0 0 50px
+    }
+
+    .match-item a > div:nth-of-type(2) {
+        padding: 0 50px 0 0
+    }
+
+    .match-item a > div:nth-of-type(3) {
+        width: 70px
+    }
+
+    .match-item .status {
+        font-size: 14px
+    }
+
+    .match-item .time {
+        font-size: 12px
+    }
+
+    .social_bar.top {
+        left: 54px;
+        top: 0
+    }
+}
+
+@media only screen and (min-width:37em) {
+    .main_body .details #details_content {
+        font-size: .62em
+    }
+
+    .main_body .details #extra .match-item {
+        padding: 20px 0
+    }
+
+    .main_body .details #extra .match-item b {
+        top: 11px
+    }
+
+    .main_body .details #extra .match-item a > div:nth-of-type(1) span,
+    .main_body .details #extra .match-item a > div:nth-of-type(2) span {
+        font-size: 18px
+    }
+
+    .main_body .details #extra .match-item a > div:nth-of-type(1) {
+        padding: 0 0 0 91px
+    }
+
+    .main_body .details #extra .match-item a > div:nth-of-type(1) b {
+        left: 60px
+    }
+
+    .main_body .details #extra .match-item a > div:nth-of-type(2) {
+        padding: 0 91px 0 0
+    }
+
+    .main_body .details #extra .match-item a > div:nth-of-type(2) b {
+        right: 60px
+    }
+
+    .main_body .details #extra .match-item a > div:nth-of-type(3) {
+        position: absolute;
+        top: 30px;
+        width: 50px;
+        left: 50%;
+        margin-left: -25px
+    }
+
+    .main_body .details #extra .player h2 {
+        font-size: 18px;
+        line-height: .5
+    }
+
+    .main_body .details #extra .team a {
+        font-size: 18px
+    }
+
+    .main_body .details #extra .team a img {
+        width: 24px;
+        height: 24px
+    }
+
+    .main_body .details .tags a {
+        height: 29px;
+        line-height: 1.3
+    }
+
+    .main_body .grid-item.news-card .media-container .media-body a {
+        font-size: .7em
+    }
+
+    .side #main-news .col-md-6 {
+        width: 100% !important;
+        flex-basis: 100% !important
+    }
+
+    .side .grid-item.views-card {
+        font-size: 20px
+    }
+
+    #related-matches h1,
+    #related-matches h6 {
+        font-size: 20px
+    }
+
+    .match-item a > div:nth-of-type(1) span,
+    .match-item a > div:nth-of-type(2) span {
+        font-size: 14px
+    }
+
+    #section-links img {
+        width: auto
+    }
+
+    .social_bar.top {
+        display: inline-block
+    }
+}
+
+.egy_sports_events-event_item span.commingsoon {
+    background-color: #080;
+    border: 1px solid #4e4f50;
+    color: #fff
+}
+
+.egy_sports_events-event_item.live {
+    order: 1
+}
+
+.egy_sports_events-event_item.commingsoon {
+    order: 2
+}
+
+.egy_sports_events-event_item {
+    order: 3
+}
+
+.egy_sports_events-event_item.finshed {
+    order: 4
+}
+
+.m_block.egy_sports_events-event_item.live.finshed,
+.m_block.egy_sports_events-event_item.finshed {
+    order: 5
+}
