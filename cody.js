@@ -60,66 +60,6 @@ jQuery(document).ready(function ($) {
                 t.parents(".egy_sports_item").addClass("live"),
                 t.parent().parent().parent().parent().find(".timer-status").show(),
                 t.parent().parent().parent().parent().find(".hoverG div").html("شاهد المبارة الان");
-                
-                
-               // Add timer and progress bar functionality
-                var timerElement = t.parent().parent().parent().parent().find(".timer");
-                var statusElement = t.parent().parent().parent().parent().find(".status");
-                var progressBarElement = t.parent().parent().parent().parent().find(".progress-bar");
-
-                var startTime = moment.utc(a).subtract(hoursToSubtract, "hours").toDate();
-                var delayEndTime = moment(startTime).add(3, "minutes").toDate();
-                var firstHalfEndTime = moment(delayEndTime).add(45, "minutes").toDate();
-                var halfTimeEndTime = moment(firstHalfEndTime).add(15, "minutes").toDate();
-                var secondHalfEndTime = moment(halfTimeEndTime).add(45, "minutes").toDate();
-
-                var timerInterval = setInterval(function () {
-                    var currentTime = moment.utc().toDate();
-                    var isMatchLive = false;
-                    var timeElapsed, minutes, seconds, progress;
-
-                    if (currentTime < delayEndTime) {
-                        timerElement.html("<span class='waiting-kick-off'>بانتظار البداية</span>");
-                        statusElement.text("");
-                        progressBarElement.css("width", "0%");
-                        isMatchLive = false;
-                    } else if (currentTime < firstHalfEndTime) {
-                        timeElapsed = moment(currentTime).diff(delayEndTime);
-                        minutes = Math.floor(timeElapsed / 60000);
-                        seconds = Math.floor((timeElapsed % 60000) / 1000);
-                        timerElement.html("`" + minutes + ":" + seconds.toString().padStart(2, "0"));
-                        statusElement.text("ش1");
-                        progress = (currentTime - delayEndTime) / (firstHalfEndTime - delayEndTime) * 100;
-                        isMatchLive = true;
-                    } else if (currentTime < halfTimeEndTime) {
-                        timerElement.html("`45:00");
-                        statusElement.text("استراحة");
-                        progressBarElement.css("width", "50%");
-                        isMatchLive = false;
-                    } else if (currentTime < secondHalfEndTime) {
-                        timeElapsed = moment(currentTime).diff(halfTimeEndTime);
-                        minutes = Math.floor(timeElapsed / 60000) + 45;
-                        seconds = Math.floor((timeElapsed % 60000) / 1000);
-                        timerElement.html("`" + minutes + ":" + seconds.toString().padStart(2, "0"));
-                        statusElement.text("ش2");
-                        progress = (currentTime - halfTimeEndTime) / (secondHalfEndTime - halfTimeEndTime) * 100;
-                        isMatchLive = true;
-                    } else {
-                        clearInterval(timerInterval);
-                        timerElement.html("`90");
-                        statusElement.html("<span class='full-time'>+ ض</span>");
-                        progressBarElement.css("width", "100%");
-                        isMatchLive = false;
-                    }
-
-                    // Update progress bar only if the match is live
-                    if (isMatchLive) {
-                        progressBarElement.css("width", progress + "%");
-                        progressBarElement.parent().addClass("match-live");
-                    } else {
-                        progressBarElement.parent().removeClass("match-live");
-                    }
-                }, 1000);
 
                 break;
 
