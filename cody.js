@@ -29,6 +29,7 @@ jQuery(document).ready(function ($) {
             case m > 30:
                 var i = moment.utc(a).subtract(hoursToSubtract, "hours").toDate();
                 t.parent().find(".fc_time").addClass("fc_time_show").text(moment(i).format("LT").replace("PM", "PM").replace("AM", "AM")),
+                i = moment(i).format("YYYY/MM/DD h:mm A"),
                 t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html(" لم تبدأ "),
                 t.parent().parent().parent().parent().addClass("notstarted"),
                 t.countdowntimer({ dateAndTime: i });
@@ -37,6 +38,7 @@ jQuery(document).ready(function ($) {
             case m > 0:
                 i = moment.utc(a).subtract(hoursToSubtract, "hours").toDate(),
                 t.parent().find(".fc_time").addClass("fc_time_show").text(moment(i).format("LT").replace("PM", "PM").replace("AM", "AM")),
+                i = moment(i).format("YYYY/MM/DD h:mm A"),
                 t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html(" تبدأ قريبا "),
                 t.parent().parent().parent().parent().addClass("started"),
                 t.parents(".egy_sports_item").addClass("soon"),
@@ -46,6 +48,7 @@ jQuery(document).ready(function ($) {
             case o > 0:
                 i = moment.utc(a).subtract(hoursToSubtract, "hours").toDate(),
                 t.parent().find(".result_match").addClass("result_show"),
+                i = moment(i).format("YYYY/MM/DD h:mm A"),
                 t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html("جارية الان"),
                 t.parent().parent().parent().parent().addClass("runing"),
                 t.parents(".egy_sports_item").addClass("live"),
