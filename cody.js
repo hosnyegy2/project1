@@ -13,7 +13,7 @@ jQuery(document).ready(function ($) {
             n = moment(e, "YYYY-MM-DD HH:mm:ss"),
             s = moment.utc().format("YYYY-MM-DD HH:mm:ss");
 
-        var hoursToSubtract = isDaylightSavingTime() ? 3 : 2; // تحديد الفارق الزمني
+        var hoursToSubtract = isDaylightSavingTime(); // تحديد الفارق الزمني
 
         var m = r.subtract(hoursToSubtract, "hours").diff(s, "minutes"),
             o = n.subtract(hoursToSubtract, "hours").diff(s, "minutes");
