@@ -4,11 +4,11 @@ jQuery(document).ready(function ($) {
     // دالة للتحقق مما إذا كان التوقيت الصيفي مفعلًا
     function isDaylightSavingTime() {
         const now = new Date();
-        const january = new Date(now.getFullYear(), 0, 1); // شهر يناير (التوقيت الشتوي)
-        const july = new Date(now.getFullYear(), 6, 1); // شهر يوليو (التوقيت الصيفي)
+        const october = new Date(now.getFullYear(), 10, 31); // شهر يناير (التوقيت الشتوي)
+        const april = new Date(now.getFullYear(), 4, 30); // شهر يوليو (التوقيت الصيفي)
 
         // مقارنة فرق التوقيت بين الشتاء والصيف
-        return Math.max(january.getTimezoneOffset(), july.getTimezoneOffset()) !== now.getTimezoneOffset();
+        return Math.max(october.getTimezoneOffset(), april.getTimezoneOffset()) !== now.getTimezoneOffset();
     }
 
     $("a.ElGadwl .date").each(function () {
