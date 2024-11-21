@@ -1,10 +1,141 @@
-/* الوضع الفاتح */
+
+
+/*--بداية تنسيقات جدول المباريات--*/
+
+.egy-channel-page{
+    text-align: center;
+}
+.inner-channel{
+    width: 100%;
+    text-align: center;
+    margin: 10px auto;
+}
+.inner-channel input{
+	background: #d00;
+    border: none;
+    padding: 10px 0;
+    min-width: 24%;
+    color: #FFF;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: all .3s ease-in-out;
+}
+.inner-channel input:hover, .inner-channel input:link{
+    background: #51b240;
+}
+.inner-channel input:link, .inner-channel input:visited, .inner-channel input:focus{
+    background: #51b240;
+}
+.inner-channel button{
+	background: #d00;
+    width: 24.6%;
+    color: #FFF;
+    font-weight: bold;
+    transition: all .3s ease-in-out;
+    color: #FFF;
+	line-height: 40px;
+    padding: 0;
+    border: none;
+    border-radius: 4px;
+}
+.inner-channel button:hover, .inner-channel button:link{
+    background: #51b240;
+}
+.inner-channel button:link, .inner-channel button:visited, .inner-channel button:focus{
+    background: #51b240;
+}
+.channel-iframe{
+	width: 100%;
+    overflow: hidden;
+    margin: 5px auto;
+    height: 475px;
+    background: #111;
+}
+
+.channel-iframe iframe{
+    height: 468px;
+    width: 100%;
+    margin: auto;
+/*max-width: 700px;*/
+}
+
+.egy-channel-page h1{
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+div.blog-posts.hfeed > div > div > div > div.post.hentry.uncustomized-post-template > h2{
+    text-align: right;
+    font-size: 24px;
+    line-height: 1.5;
+}
+
+.egy-table{
+	position: relative;
+    width: 100%;
+}
+.inner-table{
+	width: 100%;
+    background: #FFF;
+    position: relative;
+}
+
+.egy-table .overlay{
+    background: transparent;
+    position: absolute;
+    top: 58px;
+    bottom: 0;
+    height: 100%;
+    right: 0;
+    left: 17px;
+    z-index: 99;
+    max-width: 358px;
+}
+.inner-table iframe{
+    width: 100%;
+}
+
+
+.attention-user {
+    margin: 10px 0;
+    text-align: right;
+}
+
+#main-wrapper {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.inner-channel i{
+	background: #555152;
+    line-height: 40px;
+    width: 35px;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    margin: 0;
+    float: right;
+    border-left: 1px solid #837f7f;
+    transition: all .3s ease-in-out;
+}
+.inner-channel button:hover i{
+    background: #51b240;
+}
+
+.inner-channel i:link, .inner-channel i:visited, .inner-channel i:focus{
+    background: #51b240;
+}
+
+
+
+/* gadwl */
 a.ElGadwl {
     position: relative;
     display: block;
     overflow: hidden;
-    box-shadow: 0 1px 2px rgba(43, 59, 93, .15);
-    border: 1px solid #e0e1e3;
+    box-shadow: 0 1px 2px rgba(43, 59, 93, 0.15);
+    border: 1px solid #d6d6d6;
     border-radius: 5px;
     color: #222;
     margin-bottom: 12px;
@@ -12,50 +143,16 @@ a.ElGadwl {
 }
 
 .Gadwl-Top {
-    display: block;
+    display: flex;
     overflow: hidden;
     clear: both;
     border-bottom: 1px solid #ddd;
     text-align: center;
-    padding: 10px 25px
+    padding: 10px 0;
+    align-items: center;
+    justify-content: center;
 }
 
-.Fareeq-r {
-    float: right;
-    justify-content: flex-start
-}
-
-.Fareeq-l {
-    float: left;
-    justify-content: flex-end
-}
-
-.mrl40 {
-    margin-left: 0;
-    font-weight: bold
-}
-
-.mrl40 a {
-    display: inline-block;
-    padding: 0 7px;
-    text-align: center;
-}
-
-.mrl40 a.facebook {
-    color: #3f729b;
-}
-
-.mrl40 a.twitter {
-    color: #29c5f6;
-}
-
-.mrl40 a.youtube {
-    color: #c92228;
-}
-
-.mrl40 a.instagram {
-    color: #c92228;
-}
 
 .Fareeq-c {
     display: inline-block;
@@ -83,71 +180,113 @@ a.ElGadwl {
 
 .Fareeq-r span,
 .Fareeq-l span {
-    font-size: 15px;
     color: #222;
-    width: 100%
+    width: 100%;
+    font-size: 12px;
 }
-.match_card .Fareeq-r span, .match_card .Fareeq-l span {
-    font-size: 20px;
-}
+
 .Fareeq-r,
 .Fareeq-l {
     display: flex;
     align-items: center;
-    width: calc((100% - 110px) / 2);
+    width: calc((100% - 110px)/ 2);
     text-align: center;
-    height: 62px;
-    margin-top: 2px
-}
-
-.Fareeq-l {
-    float: left;
-    display: block !important
+    flex-direction: column;
 }
 
 .Fareeq-c span {
     position: relative;
     height: 34px;
     line-height: 33px;
-    font-size: 14px;
+    font-size: 16px;
     display: block;
-    background: none;
-    color: #000;
-    border-radius: 3px
+    border-radius: 10px;
+}
+.game-duration-timer {
+    color: #ff0101;
 }
 
+
+.egy_sports_item.live {
+    order: 1
+}
+
+.egy_sports_item.finshed {
+    order: 4
+}
+
+.egy_sports_item {
+    order: 3
+}
+
+.m_block.egy_sports_item.soon {
+    order: 2
+}
+.progress-bar-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    height: 6px;
+    border-radius: 5px;
+    margin-top: 0;
+    position: relative;
+    top: -10px;
+    display: none; /* Hide by default */
+}
+
+.progress-bar-container.match-live {
+  display: block; /* Show when match is live */
+}
+.progress-bar {
+  height: 100%;
+  background-color: #e87e10;
+  border-radius: 5px;
+  transition: width 0.5s;
+}
+
+.timer-status {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    margin-top: -15px !important;
+}
+.timer-status .timer {
+    color: #e87e10 !important;
+    background: none;
+    border-radius: 0 !important;
+    margin-left: 1px;
+    direction: ltr;
+}
+.timer-status span.status {
+    font-size: 8px !important;
+    border-radius: 0;
+    background: none;
+	color: #e87e10;
+}
+.waiting-kick-off{
+    font-size: 8px !important;
+    color: #e87e10;
+    background: none !important;
+}
+.timer-status .status .full-time {
+    font-size: 10px;
+}
 .Fareeq-l span {
     display: inline-block;
-    width: calc(100% - 62px);
     vertical-align: middle;
-    height: 62px;
     text-align: center;
-    line-height: 62px
 }
 
 .Gadwl-Bot {
     text-align: center;
-    height: 36px;
+    height: 38px;
     line-height: 36px;
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    opacity: 0.6;
-    background: #e3e6ec;
 }
 
 .Gadwl-Bot .cols {
-    font-size: 12px;
+    font-size: 14px;
     display: inline-block;
-    width: calc((100% - 7px) / 3);
-    border-right: 1px solid #d6d1d1
-}
-
-.Gadwl-Bot .cols span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: calc((100% - 7px)/3);
+    border-right: 1px solid #cecece
 }
 
 .Gadwl-Bot .cols:first-of-type {
@@ -172,7 +311,7 @@ a.ElGadwl {
     justify-content: center;
     z-index: 9999;
     border-radius: 5px;
-    background: rgba(255, 255, 255, .6);
+    background: rgba(255, 255, 255, 0.6);
     opacity: 0
 }
 
@@ -200,46 +339,54 @@ a.ElGadwl:hover .hoverG {
     display: flex;
     overflow: hidden;
     align-items: center;
-    margin-bottom: 12px
+    margin-bottom: 12px;
+	justify-content: space-between;
 }
 
 .bouttonsG a {
     float: right;
-    width: calc((100% - 10px) / 3);
+    width: calc((100% - 10px)/3);
     text-align: center;
-    height: 40px;
-    background-color: #051038;
-    font-size: 14px;
-    color: #fff;
+    height: 44px;
+    line-height: 42px;
+    background: #053553;
+    border-radius: 10px;
+    color: #ded6d6 !important;
     font-weight: 400;
     margin-right: 5px;
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .bouttonsG a:first-of-type {
     margin-right: 0
 }
 
-.bouttonsG .active,
-.bouttonsG a:hover {
-    background-color: #e23b48;
-    box-shadow: 0 5px 14px rgba(0, 0, 0, .15), 0 1px 5px rgba(0, 0, 0, .12);
-    color: #fff
-}
-
-.titleG {
-    font-size: 18px;
-    float: right;
-    width: 300px;
-    color: #000000;
+.bouttonsG .active, .bouttonsG a:hover {
+    background: #b50000;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.15), 0 1px 5px rgba(0, 0, 0, 0.12);
+    color: #fff !important;
 }
 
 .bouttonsG {
     float: left;
     width: calc(100% - 300px)
+}
+
+
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.loading-spinner img {
+    width: 50px;
+    height: 50px;
+}
+
+
+body * {
+    direction: rtl
 }
 
 .boxGadwlTare5 {
@@ -249,32 +396,18 @@ a.ElGadwl:hover .hoverG {
     line-height: 49px;
     display: flex;
     align-items: center;
-    box-shadow: 0 1px 2px rgba(43, 59, 93, .15);
+    box-shadow: 0 1px 2px rgba(43, 59, 93, 0.15);
     border: 1px solid #d6d6d6;
     background: #f3f3f3;
     justify-content: space-between;
-    padding: 0 16px;
-    color: #000000;
+    padding: 0 20px;
 }
 
 .r,
 .l {
-    text-align: center;
-    font-size: 17px;
-    position: relative
+    font-size: 17px
 }
-.l,.r {
-    display: flex;
-    align-items: center;
-}
-.r svg{margin-left: 5px}
-button#dark-mode-toggle {
-    margin-right: 10px;
-    cursor: pointer;
-    background: none;
-    color: #000000;
-    border: none;
-}
+
 .Gadwl-Bot .cols svg {
     width: 14px;
     display: inline-block;
@@ -291,6 +424,10 @@ button#dark-mode-toggle {
     font-weight: bold
 }
 
+.bouttonsG a {
+    font-size: 16px
+}
+
 .lapelnothome aside#sidepar-wid,
 .lapelnothome div#main {
     display: block
@@ -301,24 +438,16 @@ button#dark-mode-toggle {
 }
 
 .mainposts {
+    float: right;
+    width: calc((100% - 320px - 15px) / 1);
     display: block;
     background: #fff;
     clear: both;
     border-radius: 8px;
-    box-shadow: 0 0 5px 1px rgba(0, 0, 0, .12);
-    /*    padding: 15px;*/
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.12);
+    padding: 20px;
     overflow: hidden;
-    margin: 0 0 21px
-}
-
-.mainposts-popular {
-    display: block;
-    background: #fff;
-    clear: both;
-    border-radius: 8px;
-    box-shadow: 0 0 5px 1px rgba(0, 0, 0, .12);
-    overflow: hidden;
-    margin: 0 0 21px
+    margin: 0 0 15px
 }
 
 .mainposts div#Blog1 {
@@ -330,6 +459,10 @@ button#dark-mode-toggle {
     padding: 0;
     overflow: hidden;
     margin: 0
+}
+
+.home .mainposts {
+    display: none
 }
 
 .post-outer .items {
@@ -344,81 +477,15 @@ button#dark-mode-toggle {
     margin-top: 8px
 }
 
-.headline {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    padding: 0 15px;
-    height: 47px;
-    -ms-flex-line-pack: center;
-    align-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    border-bottom: 2px solid #e8e9eb;
-    background-color: #051038;
-    position: relative;
-    font-weight: 600;
-    font-size: 21px;
-    color: #fff;
-    margin-bottom: 15px;
+.post .Elgadwl-sc {
+    display: blok
 }
 
-.headline .title {
-    display: inline-block;
-    font-size: 16px;
-    z-index: 2000;
-    position: relative
+/*
+.post .bixixixasd {
+    display: none;
 }
-
-.headline .title a {
-    color: #fff
-}
-
-a.Lapel-Link {
-    background: #552a86;
-    color: #ffffff;
-    float: left;
-    padding: 6px 20px 6px;
-    font-size: 13px;
-    border-radius: 2px;
-    z-index: 999999;
-    position: relative
-}
-
-.Sp-Normal .moreLink:before,
-.post-outer .moreLink:before,
-a.Lapel-Link:before {
-    width: 16px;
-    height: 16px;
-    content: "";
-    position: absolute;
-    left: 7px;
-    top: 8px;
-    color: #000;
-    padding: 5px;
-    display: block;
-    opacity: 0;
-    transition: .2s ease-out
-}
-
-.Lapel-Link:hover:before {
-    opacity: 1;
-    transition: .3s ease-out;
-    left: 10px;
-    top: 7px
-}
-
-
-a.Lapel-Link:after {
-    content: "";
-    position: absolute;
-    right: -5px;
-    background: #fff;
-    height: 8px;
-    width: 5px;
-    top: 40%
-}
+*/
 
 .post aside#sidepar-wid {
     display: block
@@ -453,7 +520,7 @@ a.Lapel-Link:after {
     display: block;
     text-align: center;
     overflow: hidden;
-    box-shadow: 0 1px 2px rgba(43, 59, 93, .15);
+    box-shadow: 0 1px 2px rgba(43, 59, 93, 0.15);
     border: 1px solid #d6d6d6;
     background: #f3f3f3
 }
@@ -500,10 +567,9 @@ a.linkankn:hover {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    box-shadow: 0 1px 2px rgba(43, 59, 93, .15);
+    box-shadow: 0 1px 2px rgba(43, 59, 93, 0.15);
     border: 1px solid #d6d6d6;
-    background: #f3f3f3;
-    color: #000000;
+    background: #f3f3f3
 }
 
 .latwgdmobaryat span#rsrsr,
@@ -514,23 +580,18 @@ a.linkankn:hover {
     display: inline-block;
     border-radius: 50%
 }
-
 .blocettks {
-    background: #fff;
-    margin-bottom: 15px;
-    overflow: hidden;
-    width: 100%
+    background: #ffffff;
 }
-
 .Elgadwl-sc {
     display: block;
-    background: #fff;
     clear: both;
     border-radius: 8px;
-    box-shadow: 0 0 5px 1px rgba(0, 0, 0, .12);
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.12);
+    padding: 20px;
     overflow: hidden;
-    padding: 20px 20px 5px;
-    border: 1px solid #e2e2e2;
+    margin: 0 0 15px;
+    padding: 20px 20px 5px 20px
 }
 
 .home .shareButton a {
@@ -561,11 +622,9 @@ a.ic-share {
 }
 
 .shareButton.home {
-    display: block;
-    padding: 15px;
-    margin: 15px 0;
-    overflow: hidden;
-    width: 100%
+    padding: 0;
+    margin: 0;
+    border: 0
 }
 
 .title-dafga {
@@ -594,6 +653,19 @@ a.ic-share {
     line-height: 1;
     background: transparent !important
 }
+
+/*
+.bixixixasd {
+    padding: 8px;
+    box-shadow: none;
+    border-radius: 0;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.12);
+    background: #fff !important;
+    overflow: hidden;
+}
+*/
 
 div#HTML17,
 div#HTML16 {
@@ -630,13 +702,10 @@ div#gawdlshare .widget a {
     float: right
 }
 
-.date.stay {
-    display: none
-}
 
 a.ElGadwl.notstarted .hoverG div,
 a.ElGadwl.notstarted .Fareeq-c span.bouton {
-    background: #0277bd;
+    background: #0052e6;
     color: #fff
 }
 
@@ -651,7 +720,7 @@ a.ElGadwl.started .Fareeq-c span.bouton {
 }
 
 a.ElGadwl.started .hoverG {
-    border: 1px solid #0277bd
+    border: 1px solid #EE5A24
 }
 
 a.ElGadwl.runing .hoverG div,
@@ -666,7 +735,7 @@ a.ElGadwl.runing .hoverG {
 
 a.ElGadwl.endded .hoverG div,
 a.ElGadwl.endded .Fareeq-c span.bouton {
-    background: #2d3436;
+    background: #27ae60;
     color: #fff
 }
 
@@ -683,30 +752,8 @@ a.ElGadwl.endded .hoverG {
     font-size: 16px
 }
 
-.result_show,
-.fc_time_show {
-    display: block
-}
-
-.result_match.result_show {
-    font-family: sans-serif
-}
-
-.result_match span#hdaf1,
-.result_match span#hdaf2 {
-    display: inline-block;
-    vertical-align: middle;
-    background: transparent;
-    padding: 0 10px;
-    font-size: 16px
-}
-
 a.ElGadwl:hover span.bouton {
     opacity: 0 !important
-}
-
-.Fareeq-c div {
-    opacity: 0
 }
 
 .Fareeq-c div * {
@@ -785,7 +832,6 @@ div#Tomorrow {
     height: 18px;
     vertical-align: middle;
     margin-left: 10px;
-    margin-left: 2px
 }
 
 .Sp-posts1 .items a.author,
@@ -797,142 +843,98 @@ div#Tomorrow {
 
 .post .latwgdmobaryat,
 .post .boxGadwlTare5 {
-    font-weight: bold
+    font-weight: bold;
 }
 
 img.ririri,
 img.lilili {
     padding: 0;
-    border: 0
+    border: 0;
 }
 
 .post .linkankn {
     direction: rtl;
     height: 43px;
-    line-height: 42px
+    line-height: 42px;
 }
 
 .hoverG {
-    display: none
+    display: none;
 }
 
 a.ElGadwl:hover span.bouton {
-    opacity: 1 !important
+    opacity: 1 !important;
 }
 
 .post .latwgdmobaryat,
 .post .boxGadwlTare5 {
-    font-weight: bold
+    font-weight: bold;
 }
 
 img.ririri,
 img.lilili {
     padding: 0;
-    border: 0
+    border: 0;
 }
 
 .post .linkankn {
     direction: rtl;
     padding-top: 8px;
-    padding-bottom: 8px !important
+    padding-bottom: 8px !important;
 }
 
 .post .hoverG {
-    display: none
+    display: none;
 }
 
 .post a.ElGadwl:hover span.bouton {
-    opacity: 1 !important
-}
-
-.post .Fareeq-r img,
-.post .Fareeq-l img {
-    width: 75px;
-    height: 75px
+    opacity: 1 !important;
 }
 
 .post .Fareeq-l span {
     width: calc(100% - 75px);
     line-height: 75px;
-    height: 75px
+    height: 75px;
 }
 
 .post .Fareeq-r,
 .post .Fareeq-l {
-    height: 75px
+    height: 75px;
 }
 
 .post .Fareeq-c div {
-    margin-top: 20px
+    margin-top: 0;
 }
 
 .post .Fareeq-c {
     width: 90px;
-    margin: 15px 0 0
+    margin: 15px 0 0;
 }
 
 .post-match .Gadwl-Top {
     padding: 50px 40px;
-    padding-bottom: 35px
+    padding-bottom: 35px;
 }
 
 .post-match .Gadwl-Top {
-    background: #222 url(../img/bg-player.jpg);
-    overflow: hidden;
-    display: block;
-    background-size: cover;
-    background-position: center;
-    background-blend-mode: overlay;
-    object-fit: cover;
-}
-
-.mainposts {
-    display: block;
-    background: #fff;
-    clear: both;
-    border-radius: 8px;
-    box-shadow: 0 0 5px 1px rgba(0, 0, 0, .12);
-    padding: 15px;
-    overflow: hidden;
-    margin: 0 0 15px;
-}
-
-.post-body.entry-content p {
-    font-size: 16px;
-    padding: 15px 0;
-    line-height: 1.8;
-}
-
-.post-title {
-    padding: 10px 0 15px;
-    margin: 0 0 15px;
-    border-bottom: solid 1px #ddd;
+    background: url(../img/6669999.jpg);
+    background-position: 50%;
 }
 
 .post-match .Gadwl-Top * {
-    color: #fff
+    color: #fff;
 }
 
 .post .hoverG div {
     padding: 8px 30px;
     background: #3560ab;
     color: #fff;
-    border-radius: 3px
+    border-radius: 3px;
 }
 
 .post .Fareeq-l span,
 .post .Fareeq-r span {
-    font-weight: bold
-}
-
-.Fareeq-r img,
-.Fareeq-l img {
-    padding: 0;
-    border: 0;
-    width: 62px;
-    height: 62px;
-    display: block;
-    vertical-align: middle
+    font-weight: bold;
 }
 
 .post .Gadwl-Bot {
@@ -946,41 +948,29 @@ img.lilili {
     border-radius: 3px;
     box-shadow: 0 0 5px 1px #8c8c8c;
     border-right: 1px solid #bcbcbc;
-    border-left: 1px solid #bcbcbc
+    border-left: 1px solid #bcbcbc;
+}
+
+.Gadwl-Bot .cols {
+    font-size: 14px;
+    display: inline-block;
+    width: calc((100% - 7px)/3);
+    border-right: 1px solid #cecece;
 }
 
 .post a.ElGadwl {
     box-shadow: none;
     border: 0;
-    overflow: initial
+    overflow: initial;
 }
 
-ul.about-match li {
-    padding: 15px 10px;
-    font-size: 14px;
-    display: block;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    line-height: 1.5;
-}
-
-ul.about-match li i {
-    font-style: normal;
-    margin-left: 10px;
-    background: #fff;
-    padding: 10px;
-    border-radius: 50%;
-}
-
-.card-title-match {
-    padding: 15px 0;
-}
-
+/*Start servers-name*/
 .video-container {
     overflow: hidden;
     display: block;
     width: 100%;
-    margin: 0 auto 0
+    margin: 0px auto 0px;
+    float: right
 }
 
 .servers-name {
@@ -988,73 +978,16 @@ ul.about-match li i {
     overflow: hidden;
     padding: 3px 0;
     float: right;
-    width: 100%
+    width: 100%;
+    background: #000;
 }
 
 .video-con {
     display: block;
-    width: 100%;
-    margin-bottom: 15px;
+    width: 100%
 }
 
-iframe#iframe {
-    background: #000;
-}
-
-.share-links {
-    text-align: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    gap: 10px;
-    width: 100%;
-    overflow: hidden;
-    padding: 15px 0;
-}
-
-a.social-icon {
-    height: 40px;
-    display: flex;
-    -webkit-box-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    border-radius: 10px;
-    font-size: 21px;
-    -moz-transition: 0.2s ease-in;
-    -ms-transition: 0.2s ease-in;
-    -o-transition: 0.2s ease-in;
-    -webkit-transition: 0.2s ease-in;
-    transition: 0.2s ease-in;
-}
-
-a.social-icon:hover {
-    margin-top: -5px;
-}
-
-a.social-icon.facebook {
-    background: #1c4eb8;
-}
-
-a.social-icon.twitter {
-    background: #000;
-}
-
-a.social-icon.linkedin {
-    background: #0077b5;
-}
-
-a.social-icon.whatsapp {
-    background: #59c31a;
-}
-
-a.social-icon.pinterest {
-    background: #f00;
-}
-
-.servers-name.button {
+.servers-name .button {
     display: block;
     position: relative;
     cursor: pointer;
@@ -1064,8 +997,8 @@ a.social-icon.pinterest {
     float: right;
     z-index: 3;
     top: auto;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
-    box-shadow: 0 0 0 #d6d6d6;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0px 0 #d6d6d6;
     color: #fff;
     border-radius: 1px;
     height: 43px;
@@ -1074,19 +1007,20 @@ a.social-icon.pinterest {
     overflow: hidden;
     box-sizing: border-box;
     font-family: Changa;
-    font-weight: 600
+    font-weight: 600;
 }
 
 .servers-name .button {
-    background: #1f1f1b;
+    background: #552a86;
     font-size: 16px;
-    width: calc((100% - 16px) / 4);
+    /*    width: calc((100% - 8px)/2);*/
+    width: calc((100% - 16px)/4);
     margin: 0 2px 2px
 }
 
 .servers-name .button a {
     color: #fff;
-    font-family: Changa
+    font-family: Changa;
 }
 
 .servers-name .button::before {
@@ -1096,7 +1030,7 @@ a.social-icon.pinterest {
     position: absolute;
     right: 0;
     font: normal normal normal 16px/42px FontAwesome;
-    background: #1f1f1b;
+    background: #7142a7;
     height: 43px;
     top: 0;
     width: 40px
@@ -1109,140 +1043,246 @@ a.social-icon.pinterest {
     color: rgb(255, 255, 255)
 }
 
+
+/*لون وحجم وفراغات و وخط الزر*/
 .video-container .servers-name .button.active,
 .video-container .button:hover {
     background: #9e1414
 }
 
-/*Start Order By order for Jadwal*/
+/*لون الزر المفعل*/
+@media screen and (max-width : 800px) {
+    .servers-name .button {
+        font-size: 14px
+    }
 
-.tabcontent {
-    display: none;
-    flex-direction: column;
+    /*
+    .servers-name .button {
+    width: calc((100% - 16px)/4);
+}
+*/
+
+    .servers-name .button {
+        padding-right: 5px
+    }
+
+    .servers-name .button::before {
+        display: none
+    }
 }
 
-.egy_sports_events-event_item.live {
-    order: 1
+@media screen and (max-width : 355px) {
+    .servers-name .button {
+        font-size: 13px
+    }
 }
 
-.egy_sports_events-event_item.finshed {
-    order: 4
-}
+/*End servers-name*/
+/*Start 2 button under play video*/
 
-.egy_sports_events-event_item {
-    order: 3
-}
-
-.m_block.egy_sports_events-event_item.soon {
-    order: 2
-}
-
-.egy_sports_item.live {
-    order: 1
-}
-
-.egy_sports_item.finshed {
-    order: 4
-}
-
-.egy_sports_item {
-    order: 3
-}
-
-.m_block.egy_sports_item.soon {
-    order: 2
-}
-
-.progress-bar-container {
+.tope3lan {
+    overflow: hidden;
     width: 100%;
-    background-color: #e0e0e0;
-    height: 6px;
-    border-radius: 5px;
-    margin-top: 0;
-    position: relative;
-    top: -10px;
-    display: none;
-    /* Hide by default */
 }
 
-.progress-bar-container.match-live {
+.tope3lan a {
+    color: #fff !important;
+    text-decoration: none;
+}
+
+.tope3lan a {
+    float: right;
+    width: 50%;
+}
+
+.e3laan22 {
+    margin-top: 10px;
+    margin-bottom: 10px;
     display: block;
-    /* Show when match is live */
-}
-
-.progress-bar {
-    height: 100%;
-    background-color: #76c7c0;
-    border-radius: 5px;
-    transition: width 0.5s;
-}
-
-.timer-status {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    margin-top: -10px !important;
-    border-radius: 0;
-}
-.match_card .timer-status {
-    margin-top: 0px !important;
-}
-.timer-status .timer {
-    color: #ff7200 !important;
-    border-radius: 0 !important;
-    margin-left: 1px;
-    direction: ltr;
-    font-size: 15px;
-}
-.match_card .timer-status .timer {
-    font-size: 17px;
-}
-.match_card .timer-status span.status {
-    font-size: 15px !important;
-}
-.timer-status span.status {
-    font-size: 12px !important;
-    border-radius: 0;
-}
-
-.stoppage-time {
-    color: greenyellow;
-    /* لجعل العنصر أكثر وضوحًا */
-    font-size: 8px !important;
-}
-
-.timer-status .status .full-time {
-    font-size: 10px;
-}
-
-.waiting-kick-off {
-    font-size: 8px !important;
-    color: #f00;
-    background: none !important;
-}
-/* CSS Loader */
-/* عنصر التحميل */
-div#loader {
+    padding: 15px 5px;
+    line-height: 15px;
     text-align: center;
-    height: 65px;
-    align-items: center;
-    justify-content: center;
+    background-color: #552a86;
+    color: #fff;
+    font-size: 16px;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(43, 59, 93, 0.15);
+    box-sizing: border-box;
+    height: 50px;
 }
-/* إخفاء محتوى التابات افتراضيًا */
-.tabcontent {
+
+.BigBanner {
+    display: block;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.BigBanner img{
+    display:block;margin:0px auto; max-width:100%; height:auto;
+}
+.SmallBanner {
     display: none;
 }
+.SmallBanner img{
+    display:block;margin:0px auto; max-width:100%; height:auto;
+}
+@media screen and (max-width : 600px) {
+    .BigBanner {
+        display: none;
+    }
 
-/*End Order By order for Jadwal*/
-/*End media By Hosny Egy*/
+    .SmallBanner {
+        display: block;
+    }
+    .Fareeq-r img,
+    .Fareeq-l img {
+        padding: 0;
+        border: 0;
+        width: 62px;
+        height: auto;
+        display: block;
+        vertical-align: middle
+    }
+}
+div.SeoPlusAds {
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 15px;
+}
+/*End 2 button under play video*/
+div#importantTeams {
+    padding: 30px 0 5px;
+    margin: auto;
+    width: 1200px;
+    max-width: 100%;
+    overflow: hidden;
+}
+ul.importantTeams {
+    display: flex;
+    clear: both;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    list-style: none;
+}
+ul.importantTeams li {
+    text-align: center;
+    width: 100%;
+    margin: 4px 2px;
+    position: relative;
+    float: right;
+    z-index: 3;
+    flex: 1;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ul.importantTeams li a {
+    text-align: center;
+    margin: auto;
+    font-size: 12px;
+    background: #eef2fb;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 5px;
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid #e9e5e5;
+    border-bottom: 1px solid;
+}
+ul.importantTeams li a:hover{
+    opacity: .8;
+}
+@media only screen and (max-width: 960px) {
+        ul.importantTeams {
+        width: 100%;
+        direction: rtl;
+        text-align: center;
+        overflow: auto;
+        overflow-y: auto;
+        overflow-y: auto;
+        overflow-y: hidden;
+        margin: 0 auto;
+    }
+    ul.importantTeams li {
+        text-align: center;
+        width: 100%;
+        position: relative;
+        float: right;
+        z-index: 3;
+        box-sizing: border-box;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        grid-template-columns: 110px auto;
+        grid-gap: 10px;
+        margin: 0;
+    }
+}
+@media only screen and (max-width: 680px) {
+    ul.importantTeams {
+        width: 100%;
+        direction: rtl;
+        text-align: center;
+        overflow: auto;
+        overflow-y: auto;
+        overflow-y: auto;
+        overflow-y: hidden;
+        margin: 0 auto;
+    }
+    ul.importantTeams li {
+        text-align: center;
+        width: 100%;
+        position: relative;
+        float: right;
+        z-index: 3;
+        box-sizing: border-box;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        grid-template-columns: 110px auto;
+        grid-gap: 10px;
+        margin: 0;
+    }
+    ul.importantTeams li a .entry-image {
+        width: 32px;
+        height: 32px;
+    }
+    ul.importantTeams li a .entry-title {
+        font-size: 10px;
+    }
+}
+ul.importantTeams li a .is-image {
+    width: 100%;
+    height: auto;
+    margin: 0 0 15px;
+    background: none;
+}
+ul.importantTeams li a .entry-title {
+    font-size: 12px;
+    padding: 10px 0;
+}
+ul.importantTeams li a .entry-image{
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: auto;
+}
 
+
+/*=================
+responsev
+===================*/
 @media screen and (max-width:1100px) {
     .par-top {
-        width: 98%
+        width: 98%;
     }
 
     .par-bottom .container {
-        width: 98%
+        width: 98%;
     }
 
     div#top-social-L {
@@ -1295,7 +1335,7 @@ div#loader {
     }
 
     .mainposts {
-        margin-bottom: 15px !important
+        margin-bottom: 15px !important;
     }
 
     .open.nav1,
@@ -1410,27 +1450,91 @@ div#loader {
     }
 }
 
-
-@media screen and (max-width:765px) {
+@media screen and (max-width:860px) {
     .post .Gadwl-Bot {
         text-align: center;
         height: 41px;
-        line-height: 42px
+        line-height: 42px;
+         !important: ;
     }
-
+    .m_block.egy_sports_item.ended.finshed .Fareeq-c div{
+        margin-top: 0;
+    }
     .Gadwl-Bot {
         text-align: center;
         height: 41px;
-        line-height: 42px
+        line-height: 42px;
     }
 
-    .Fareeq-c div {
-        margin-top: 8px
+    a.ic-share {
+        display: none
+    }
+
+    .home .shareButton a {
+        width: calc((100% - 18px) / 3)
+    }
+
+    .bouttonsG a {
+        font-size: 15px;
+        height: 44px;
+        line-height: 47px;
     }
 
     .boxGadwlTare5 {
         height: 49px;
-        line-height: 53px
+        line-height: 53px;
+         !important
+    }
+
+    .Sp-posts1 .posts:nth-of-type(odd),
+    .post .Sp-posts1 .posts:nth-of-type(odd) {
+        margin-left: 15px !important
+    }
+
+    .Sp-posts1 .posts,
+    .post .Sp-posts1 .posts {
+        width: calc((100% - 15px) / 2);
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        margin-bottom: 15px !important
+    }
+
+    .Sp-3colList .posts:nth-last-of-type(1),
+    .Sp-3colList .posts:nth-last-of-type(2) {
+        margin-bottom: 0 !important;
+        border-bottom: 0 !important;
+        padding-bottom: 0 !important
+    }
+
+    .Sp-slide .posts:not(:first-of-type) .rnav-title {
+        padding: 0 5px;
+        max-height: initial !important;
+        height: inherit !important
+    }
+
+    .Sp-slide .posts:not(:first-of-type) {
+        vertical-align: top;
+        height: inherit !important
+    }
+
+    .mid-top-footer .footer-col {
+        width: calc((100% - 30px) / 3);
+        margin-left: 15px
+    }
+
+    .Sp-3colList .posts:nth-child(odd) {
+        margin-left: 15px !important
+    }
+
+    .Sp-3colList .posts {
+        overflow: hidden;
+        width: calc((100% - 15px) / 2);
+        margin: 0 0;
+        vertical-align: top;
+        display: inline-block;
+        margin-bottom: 15px !important;
+        padding-bottom: 15px !important;
+        border-bottom: 1px solid #eee !important
     }
 
     .r-r,
@@ -1441,13 +1545,54 @@ div#loader {
         margin: 0
     }
 
+    .Sp-slide .posts:nth-of-type(1) {
+        height: 300px;
+        right: 0;
+        width: 100%;
+        float: none;
+        padding: 0;
+        margin-bottom: 15px
+    }
+
+    .Sp-slide .posts:nth-of-type(1) .thumb {
+        height: 300px
+    }
+
+    .Sp-slide .posts:not(:first-of-type) {
+        margin: 0 0 0 15px;
+        width: calc((100% - 45px) / 4);
+        padding: 0 !important;
+        float: none;
+        display: inline-block;
+        right: 0 !important;
+        left: 0 !important
+    }
+
+    .Sp-slide .posts:last-of-type {
+        margin-left: 0 !important
+    }
+
+    a.linkankn {
+        height: 43px;
+        line-height: 46px;
+         !important
+    }
+
+    .post .linkankn {
+        height: 43px;
+        line-height: 46px;
+         !important
+    }
+}
+
+@media screen and (max-width:720px) {
     .post .Fareeq-l span {
         width: auto;
         float: none;
         display: block;
         line-height: 1.5em;
         vertical-align: initial;
-        height: auto
+        height: auto;
     }
 
     p#msmsma {
@@ -1464,9 +1609,7 @@ div#loader {
         display: block;
         float: none;
         text-align: center;
-        width: 36px;
-        height: 36px;
-        margin: 5px auto 0;
+        margin: 0 auto
     }
 
     .Fareeq-r,
@@ -1474,6 +1617,11 @@ div#loader {
         display: block;
         height: auto;
         margin-top: 1px
+    }
+
+    .titlewrapper .title {
+        width: auto;
+        top: 8px
     }
 
     .Fareeq-l span {
@@ -1488,26 +1636,36 @@ div#loader {
     .Fareeq-l span,
     .Fareeq-r span {
         font-size: 10px;
-        margin-top: 2px
+        margin-top: 6px
     }
 
     .Fareeq-c {
         width: 90px;
-        margin: 10px 0
+        margin: 0
+    }
+    .post .Fareeq-c {
+        margin: 0;
     }
 
     .Gadwl-Top {
         padding: 8px 5px 6px
     }
 
+    .r,
+    .l {
+        font-size: 16px;
+        padding: 0;
+        text-align: center !important
+    }
+
     .Fareeq-r,
     .Fareeq-l {
-        width: calc((100% - 90px) / 2)
+        width: calc((100% - 90px)/ 2)
     }
 
     .post .Fareeq-r,
     .post .Fareeq-l {
-        width: calc((100% - 150px) / 2)
+        width: calc((100% - 150px)/ 2);
     }
 
     .Fareeq-l {
@@ -1518,42 +1676,234 @@ div#loader {
         margin-right: -6px
     }
 
-    .titleG {
-        display: none
-    }
-
-    .boxTitleG {
-        margin-bottom: 0;
-    }
-
-    div.tab.bouttonsG {
+    .bouttonsG {
         float: none;
-        width: 100%;
-        padding: 10px 0 !important;
+        width: 100%
     }
 
     .bouttonsG a {
-        font-size: 10px
+        font-size: 15px;
+    }
+
+    .headline .title {
+        padding: 8px 20px 6px
+    }
+
+    a.Lapel-Link {
+        padding: 8px 20px 6px
+    }
+
+    .Lapel-Link:hover {
+        padding: 8px 20px 6px 35px
+    }
+
+    footer {
+        padding: 15px
+    }
+
+    .mid-top-footer .footer-col .widget {
+        margin-bottom: 30px
+    }
+
+    .mid-top-footer .footer-col {
+        float: none;
+        width: 100%;
+        margin-left: 0 !important
+    }
+
+    .bottom-footer {
+        padding: 0;
+        box-shadow: none
+    }
+
+    .bottom-footer .yemen {
+        display: block !important;
+        float: none;
+        text-align: center;
+        margin-bottom: 10px;
+        min-height: auto
+    }
+
+    .yemen a[title="SeoPlus Template"] {
+        display: inline-block !important;
+    }
+
+    .bottom-footer .shmal {
+        float: none;
+        margin-top: 0;
+        margin: 0 auto;
+        text-align: center
+    }
+
+    .shareButton a:nth-of-type(4) {
+        margin-right: 0
+    }
+
+    .shareButton a {
+        width: calc((100% - 19px) / 3)
+    }
+
+    .shareButton.home a span {
+        padding: 12px 5px 10px !important
+    }
+
+    .Elgadwl-sc {
+        padding: 15px 5px 0;
+    }
+}
+
+@media screen and (max-width:640px) {
+    .post-outer:nth-of-type(3n+2) {
+        margin: 0 0 10px 0
+    }
+
+    .post-outer:nth-of-type(2n+2) {
+        margin: 0 15px 10px 0
+    }
+
+    .post-outer {
+        width: calc((100% - 15px) / 2)
+    }
+
+    .post .Sp-posts1 .posts:nth-last-of-type(1),
+    .post .Sp-posts1 .posts:nth-last-of-type(2),
+    .post .Sp-posts1 .posts:nth-last-of-type(3) {
+        margin-bottom: 15px !important
+    }
+
+    .textst {
+        font-size: 35px
+    }
+
+    .sides {
+        width: 100%;
+        float: none;
+        margin: 0 !important
+    }
+
+    .Sp-posts5 .posts:nth-of-type(1) {
+        margin-left: 0;
+        padding-left: 0;
+        width: 100%;
+        display: block;
+        margin-bottom: 15px;
+        border-left: 0;
+        height: initial
+    }
+
+    .Sp-posts5 .posts:nth-of-type(1) a.thumb {
+        width: 100%;
+        height: 250px;
+        margin-left: 0
+    }
+
+    .Sp-posts5 .posts {
+        margin-left: 15px;
+        float: none
+    }
+
+    .Sp-posts5 .posts:nth-of-type(3),
+    .Sp-posts5 .posts:nth-of-type(5) {
+        margin-left: 0
+    }
+
+    .Sp-posts5 .posts:nth-last-of-type(1),
+    .Sp-posts5 .posts:nth-last-of-type(2) {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: 0
+    }
+
+    .Sp-posts5 .posts:nth-of-type(1) h3.rnav-title a {
+        font-size: 16px
+    }
+
+    .Sp-posts1 .posts:nth-of-type(odd),
+    .post .Sp-posts1 .posts:nth-of-type(odd) {
+        margin-left: 0 !important
+    }
+
+    .Sp-posts1 .posts,
+    .post .Sp-posts1 .posts {
+        width: 100%;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        margin-bottom: 15px !important
+    }
+
+    .Sp-posts1 .posts:nth-last-of-type(1),
+    .post .Sp-posts1 .posts:nth-last-of-type(1) {
+        margin-bottom: 0 !important
+    }
+
+    .Sp-slide .posts:nth-of-type(3),
+    .Sp-slide .posts:nth-of-type(5) {
+        margin-left: 0 !important
+    }
+
+    .Sp-slide .posts:not(:first-of-type) {
+        width: calc((100% - 15px) / 2);
+        margin-bottom: 15px
+    }
+
+    .Sp-slide .posts:nth-last-of-type(1),
+    .Sp-slide .posts:nth-last-of-type(2) {
+        margin-bottom: 0
+    }
+
+    .Sp-Normal .cont {
+        width: calc((100% - 195px) / 1)
+    }
+
+    .Sp-Normal .thumb {
+        width: 180px
+    }
+
+    .Sp-Normal span.category {
+        display: none !important
+    }
+}
+
+@media screen and (max-width:550px) {
+
+    .Fareeq-r img,
+    .Fareeq-l img {
+        width: 55px;
+        height: auto;
     }
 
     .Gadwl-Bot .cols {
-        width: calc((100% - 4px) / 2);
+        width: calc((100% - 4px)/2);
         height: 41px;
-        overflow: hidden
+        overflow: hidden;
     }
 
     .Fareeq-c span {
-        height: 26px;
-        line-height: 26px;
-        font-size: 10px;
+        font-size: 11px !important;
     }
+    a.ElGadwl.runing .hoverG div, a.ElGadwl.runing .Fareeq-c span.bouton, a.ElGadwl.endded .hoverG div, a.ElGadwl.endded .Fareeq-c span.bouton, a.ElGadwl.started .hoverG div, a.ElGadwl.started .Fareeq-c span.bouton, a.ElGadwl.notstarted .hoverG div, a.ElGadwl.notstarted .Fareeq-c span.bouton {
+        font-size: 10px !important;
+        width: 60px;
+        margin: auto;
+        height: 24px;
+        line-height: 24px;
+    }
+    .timer-status span.status {
+        font-size: 8px !important;
+    }
+    .Fareeq-c {
+        width: 100px;
+    }
+
+    .post .Fareeq-r img,
+    .post .Fareeq-l img {
+        width: 62px;
+        height: auto;
+    }
+
     .post-match .Gadwl-Top {
         padding: 50px 15px;
         padding-bottom: 35px
-    }
-
-    .l {
-        padding-right: 45px
     }
 
     .Gadwl-Bot .cols:last-of-type {
@@ -1561,27 +1911,173 @@ div#loader {
     }
 
     .Gadwl-Bot .cols {
-        width: calc((100% - 4px) / 2);
+        width: calc((100% - 4px)/2);
         height: 41px;
         overflow: hidden
     }
 
-    .Fareeq-c div {
+    .bouttonsG a {
         font-size: 15px
     }
 
-    .Fareeq-c {
-        width: 80px
+    .topic-nav-cont .newPost,
+    .topic-nav-cont .oldPost {
+        float: none;
+        width: 100%;
+    }
+
+    .topic-nav-cont .newPost {
+        margin-bottom: 5px;
+    }
+
+    .Sp-3colList .posts:nth-child(odd) {
+        margin-left: 0 !important
+    }
+
+    .Sp-posts5 .posts:not(:last-of-type),
+    .Sp-posts5 .posts:nth-last-of-type(2),
+    .Sp-3colList .posts,
+    .Sp-3colList .posts:nth-last-of-type(2) {
+        margin-left: 0;
+        float: none;
+        width: 100%;
+        margin-bottom: 15px !important;
+        padding-bottom: 15px !important;
+        border-bottom: 1px solid #eee !important
+    }
+
+    .Sp-posts5 .posts:nth-last-of-type(1) {
+        width: 100%
+    }
+}
+
+@media screen and (max-width:480px) {
+    .post-outer:nth-of-type(3n+2) {
+        margin: 0 0 10px 0
+    }
+
+    .post-outer:nth-of-type(2n+2) {
+        margin: 0 0 10px 0
+    }
+
+    .post-outer {
+        width: 100%;
+        margin: 0 0 10px 0
+    }
+
+    .Sp-Normal .thumb {
+        width: 50vw;
+        margin-bottom: 15px;
+        width: 100%;
+        float: none
+    }
+
+    .Sp-Normal .cont {
+        width: 100%;
+        float: none
+    }
+
+    .Sp-Normal span.category {
+        display: inline-block !important
+    }
+
+    .Sp-slide .posts:nth-of-type(1) .cont {
+        top: -110px;
+        margin: -80px 15px 0
+    }
+
+    .Sp-slide .items a,
+    .Sp-slide .items span {
+        font-size: 11px
+    }
+
+    .Sp-slide .items a svg {
+        width: 11px
+    }
+
+    .reactions-label {
+        display: block;
+        text-align: center;
+        margin-bottom: 15px
+    }
+
+    iframe.reactions-iframe {
+        width: 210px;
+        height: 20px;
+        position: relative;
+        right: -10px;
+        display: block;
+        vertical-align: middle;
+        text-align: center;
+        margin: 0 auto
+    }
+
+    .author-profile {
+        padding: 15px
+    }
+
+    .authorph {
+        width: 80px;
+        height: 80px;
+        right: 0;
+        left: 0;
+        top: 0;
+        margin: 0 auto;
+        position: relative;
+        z-index: 3;
+        margin-bottom: 15px
+    }
+
+    .dshdsgn {
+        padding-left: 0;
+        padding-right: 0;
+        min-height: 80px;
+        text-align: center
+    }
+
+    #siki-page-number {
+        font-size: 12px;
+        padding: 15px 0
+    }
+
+    .siki-next-prev span {
+        font-size: 13px !important
+    }
+
+    div#rx-options {
+        float: right !important
+    }
+}
+
+@media screen and (max-width:360px) {
+
+    .qnwat img.lilili,
+    .qnwat img.ririri {
+        display: none
+    }
+
+    .bouttonsG a {
+        font-size: 13px
+    }
+
+    .Fareeq-r img,
+    .Fareeq-l img {
+        width: 32px;
+    }
+
+    .Fareeq-l span,
+    .Fareeq-r span {
+        font-size: 10px
     }
 
     .Gadwl-Bot {
         text-align: center;
         height: 39px;
-        line-height: 40px
+        line-height: 40px;
     }
 
     .Gadwl-Bot .cols {
-        width: calc((100% - 4px) / 2);
+        width: calc((100% - 4px)/2);
         height: 39px;
         overflow: hidden
     }
@@ -1590,31 +2086,186 @@ div#loader {
         font-size: 13px
     }
 
+    .shareButton a {
+        width: calc((100% - 4px) / 2);
+        margin-right: 0 !important
+    }
+
+    .Sp-posts1 .posts,
+    .Sp-posts1 .posts:nth-last-of-type(2),
+    .post .Sp-posts1 .posts,
+    .post .Sp-posts1 .posts:nth-last-of-type(2) {
+        margin: 0 0 15px !important;
+        width: 100% !important;
+        display: block;
+        overflow: hidden
+    }
+
+    .Sp-slide .posts:not(:first-of-type) {
+        width: 100%;
+        margin: 0 0 15px !important
+    }
+
+    .Sp-slide .posts:nth-last-of-type(1) {
+        margin-bottom: 0 !important
+    }
+
+    .post .Sp-posts1 .posts:nth-last-of-type(3) {
+        margin-bottom: 15px !important
+    }
+}
+
+@media screen and (max-width:350px) {
+
+    .Fareeq-r img,
+    .Fareeq-l img {
+        width: 45px;
+        height: auto;
+        margin-top: 5px
+    }
+
+    .Fareeq-l span,
+    .Fareeq-r span {
+        font-size: 12px
+    }
+
     .Fareeq-c {
         width: 75px
     }
 
+	.Fareeq-c div {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width:384px) {
     .post-match .Gadwl-Top {
         padding: 40px 10px;
-        padding: 50px 10px 40px
+        padding: 50px 10px 40px;
+        /*        padding-bottom: 25px*/
     }
+}
+
+@media screen and (max-width:375px) {
 
     .Fareeq-c {
         width: 85px
     }
-    .r, .l {
-        font-size: 11px;
+
+    a.linkankn {
+        font-size: 14px;
+        margin: 11px 0
     }
 
+    .r,
     .l {
-        padding-right: 35px
-    }
-    
-    .match_card .Fareeq-r span, .match_card .Fareeq-l span {
-        font-size: 13px;
-    }
-    .timer-status {
-        margin-top: 0px !important;
+        font-size: 12px;
+        padding: 0;
     }
 
+    .bouttonsG a {
+        font-size: 13px
+    }
 }
+
+.date.stay {
+    color: #c600ff;
+}
+.disShow {
+    display: none;
+}
+.activeShow {
+    display: block
+}
+/*is-dark a.ElGadwl Start*/
+.is-dark ul.importantTeams li a {
+    background: #333232;
+    border: 1px solid #424242;
+    border-bottom: 1px solid;
+}
+.is-dark .blocettks {
+    background: #000000;
+}
+.is-dark .boxGadwlTare5 {
+    margin-bottom: 12px;
+    border-radius: 5px;
+    height: 49px;
+    line-height: 49px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 1px 2px rgba(43, 59, 93, 0.15);
+    border: 1px solid #373434;
+    background: #141414;
+}
+.is-dark .Fareeq-c div {
+    font-size: 16px;
+    margin-top: 8px;
+    color: #fff;
+}
+.is-dark .game-duration-timer{
+    color: #00ff1f !important;
+}
+.is-dark .progress-bar-container {
+    width: 100%;
+    background-color: #333030;
+    height: 6px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.is-dark a.ElGadwl.notstarted .hoverG div, .is-dark a.ElGadwl.notstarted .Fareeq-c span.bouton {
+    background: #0052e6;
+    color: #fff;
+}
+.is-dark .date.stay {
+    color: #c600ff;
+}
+.is-dark a.ElGadwl {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(43, 59, 93, 0.15);
+    border: 1px solid #333131;
+    border-radius: 5px;
+    color: #222;
+    margin-bottom: 12px;
+    background: #212121;
+}
+.is-dark .Gadwl-Top {
+    display: flex;
+    overflow: hidden;
+    clear: both;
+    border-bottom: 1px solid #5e5a5a;
+    text-align: center;
+    padding: 10px 0;
+    align-items: center;
+    justify-content: center;
+}
+.is-dark .Fareeq-r span, .is-dark .Fareeq-l span {
+    color: #f0ecec;
+}
+
+.is-dark .Fareeq-c span {
+    position: relative;
+    height: 34px;
+    line-height: 33px;
+    font-size: 16px;
+    display: block;
+    background: #272727;
+    color: #ffffff;
+    border-radius: 10px;
+}
+.is-dark .timer-status span.status, .is-dark .timer-status .timer{
+    background: none;
+    border-radius: 0 !important;
+}
+.is-dark .waiting-kick-off{
+    font-size: 8px !important;
+    color: #fff;
+    background: none !important;
+}
+.is-dark .latwgdmobaryat {
+    border: 1px solid #3b3939;
+    background: #151515;
+}
+/*--is-dark a.ElGadwl End--*/
+/*--نهاية  تنسيقات جدول المباريات--*/
