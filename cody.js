@@ -53,8 +53,6 @@ jQuery(document).ready(function ($) {
                 t.parent().parent().parent().parent().addClass("runing"),
                 t.parents(".egy_sports_item").addClass("live"),
 
-                break;
-
             default:
                 t.parent().find(".result_match").addClass("result_show");
                 t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html("انتهت"),
