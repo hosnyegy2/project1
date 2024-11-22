@@ -13,7 +13,7 @@ jQuery(document).ready(function ($) {
             n = moment(e, "YYYY/MM/DD h:mm A"),
             s = moment.utc().format("YYYY/MM/DD h:mm A");
 
-        var hoursToSubtract = isDaylightSavingTime() ? 3 : 2; // تحديد الفارق الزمني
+        var hoursToSubtract = isDaylightSavingTime(); // تحديد الفارق الزمني
 
         var m = r.subtract(hoursToSubtract, "hours").diff(s, "minutes"),
             o = n.subtract(hoursToSubtract, "hours").diff(s, "minutes");
@@ -21,35 +21,39 @@ jQuery(document).ready(function ($) {
         switch (true) {
             case m > 30:
                 var i = moment.utc(a).subtract(hoursToSubtract, "hours").toDate();
-                t.parent().find(".fc_time").addClass("fc_time_show").text(moment(i).format("LT").replace("PM", "PM").replace("AM", "AM")),
-                t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html(" لم تبدأ "),
-                t.parent().parent().parent().parent().addClass("notstarted"),
+                t.parent().find(".fc_time").addClass("fc_time_show").text(moment(i).format("LT"));
+                i = moment(i).format("YYYY-MM-DD HH:mm:ss");
+                t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html(" لم تبدأ ");
+                t.parent().parent().parent().parent().addClass("notstarted");
+                console.log("Initializing countdown (not started):", i);
                 t.countdowntimer({ dateAndTime: i });
                 break;
 
             case m > 0:
-                i = moment.utc(a).subtract(hoursToSubtract, "hours").toDate(),
-                t.parent().find(".fc_time").addClass("fc_time_show").text(moment(i).format("LT").replace("PM", "PM").replace("AM", "AM")),
-                t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html(" تبدأ قريبا "),
-                t.parent().parent().parent().parent().addClass("started"),
-                t.parents(".egy_sports_item").addClass("soon"),
+                i = moment.utc(a).subtract(hoursToSubtract, "hours").toDate();
+                t.parent().find(".fc_time").addClass("fc_time_show").text(moment(i).format("LT"));
+                i = moment(i).format("YYYY-MM-DD HH:mm:ss");
+                t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html(" تبدأ قريبا ");
+                t.parent().parent().parent().parent().addClass("started");
+                t.parents(".egy_sports_item").addClass("soon");
+                console.log("Initializing countdown (soon):", i);
                 t.countdowntimer({ dateAndTime: i });
                 break;
 
             case o > 0:
-                i = moment.utc(a).subtract(hoursToSubtract, "hours").toDate(),
-                t.parent().find(".result_match").addClass("result_show"),
-                t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html("جارية الان"),
-                t.parent().parent().parent().parent().addClass("runing"),
-                t.parents(".egy_sports_item").addClass("live"),
-
+                i = moment.utc(a).subtract(hoursToSubtract, "hours").toDate();
+                t.parent().find(".result_match").addClass("result_show");
+                t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html("جارية الان");
+                t.parent().parent().parent().parent().addClass("runing");
+                t.parents(".egy_sports_item").addClass("live");
+                console.log("Match running.");
                 break;
 
             default:
                 t.parent().find(".result_match").addClass("result_show");
-                t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html("انتهت"),
-                t.parents(".egy_sports_item").addClass("finshed"),
-                t.parent().parent().parent().parent().find("#playing_show_time").remove(),
+                t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html("انتهت");
+                t.parents(".egy_sports_item").addClass("finshed");
+                t.parent().parent().parent().parent().find("#playing_show_time").remove();
                 t.parent().parent().parent().parent().addClass("endded");
         }
     });
