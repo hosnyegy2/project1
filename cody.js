@@ -21,14 +21,13 @@ jQuery(document).ready(function ($) {
         switch (true) {
             case m > 30:
                 var i = moment.utc(a).subtract(hoursToSubtract, "hours").toDate();
-                t.parent().find(".fc_time").addClass("fc_time_show").text(moment(i).format("LT"));
                 i = moment(i).format("YYYY-MM-DD HH:mm:ss");
+                t.parent().parent().parent().parent().addClass("notstarted");
                 t.countdowntimer({ dateAndTime: i });
                 break;
 
             case m > 0:
                 i = moment.utc(a).subtract(hoursToSubtract, "hours").toDate();
-                t.parent().find(".fc_time").addClass("fc_time_show").text(moment(i).format("LT"));
                 i = moment(i).format("YYYY-MM-DD HH:mm:ss");
                 t.countdowntimer({ dateAndTime: i });
                 break;
