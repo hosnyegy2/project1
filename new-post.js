@@ -1,4 +1,4 @@
- // دالة لجلب بيانات المباراة باستخدام المعرف
+  // دالة لجلب بيانات المباراة باستخدام المعرف
     async function fetchMatchById(matchId) {
         document.getElementById("loading-message").style.display = 'block';
         document.getElementById("match-content").style.display = 'none';
@@ -209,7 +209,6 @@
     document.getElementById("teamAPlayersList").innerHTML = teamAPlayersContent;
     document.getElementById("teamBPlayersList").innerHTML = teamBPlayersContent;
 
-    }
 
     // دالة لعرض رسالة خطأ
     function displayError(message) {
