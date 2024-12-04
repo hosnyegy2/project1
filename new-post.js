@@ -66,7 +66,7 @@
                         <span>${match.team_A_name}</span>
                     </div>
                     <div class="Fareeq-c">
-                        <span class="bouton ${match.status === 'Fixture' ? 'notstarted' : match.status === 'Played' ? 'endded' : match.status === 'Playing' ? 'runing' : match.playing_show_time === 'HT' ? 'started' : 'notstarted'}">${match.status === 'Fixture' ? 'لم تبدأ' : match.status === 'Played' ? 'انتهت' : match.status === 'Playing' ? 'جارية الان' : match.status === 'Uncertain' ? 'لم تبدأ' : match.status}</span>
+                        <span class="bouton ${match.status === 'Fixture' ? 'notstarted' : match.status === 'Played' ? 'endded' : match.status === 'Playing' ? 'runing' : 'notstarted'}">${match.status === 'Fixture' ? 'لم تبدأ' : match.status === 'Played' ? 'انتهت' : match.status === 'Playing' ? 'جارية الان' : match.status === 'Uncertain' ? 'لم تبدأ' : match.status}</span>
                         <div>
                             <div class="fc_time result_match">
                                 ${(match.fs_A === "" && match.fs_B === "") 
