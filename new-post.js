@@ -104,8 +104,6 @@
                 <p>تُعتبر مباراة ${match.team_A_name} ضد ${match.team_B_name} واحدة من أبرز مباريات ${match.competition_name} حيث يتواجه الفريقان اليوم ${formatDate(match.start_play)} في مباراة مثيرة تُعزز من تنافسية البطولة. تُقام المباراة على ملعب ${venueName}، والذي يُعتبر من الملاعب المميزة فى بطولة ${match.competition_name}.</p>
                 <h3>موعد مباراة ${match.team_A_name} ضد ${match.team_B_name}</h3>
                 <p>تُقام مباراة ${match.team_A_name} ضد ${match.team_B_name} اليوم ${formatDate(match.start_play)}، في تمام الساعة ${formatTime(match.start_play)} بتوقيت القاهرة. سيتابع عشاق كرة القدم هذه المباراة بحماس كبير، إذ تعتبر واحدة من المباريات المنتظرة في بطولة ${match.competition_name}.</p>
-                <h3>القنوات الناقلة للمباراة</h3>
-                <p>يمكنكم متابعة مباراة ${match.team_A_name} ضد ${match.team_B_name} مباشرة عبر قناة <a data-abc="true" href="https://www.yallakora.com" rel="noopener" target="_new">ssc sports</a>، حيث تقدم القناة تغطية حية وشاملة لأحداث المباراة بدقة عالية، ما يضمن لمحبي الفريقين مشاهدة ممتعة وتفاصيل كاملة.</p>
                 <h3>تفاصيل البث المباشر</h3>
                 <p>يمكنكم متابعة أحداث المباراة عبر موقعنا كول دادى سبورت حيث نوفر تغطية شاملة لبث مباشر للمباراة، ويقدم موقعنا <a href="https://sport.coldady.com" rel="noopener" target="_new" data-abc="true">كول دادى سبورت</a> تحديثات مستمرة وتحليلات دقيقة لكافة لحظات المباراة، مما يضمن للمشاهدين متابعة مستمرة لأهم الأحداث والتفاصيل.</p>
                 <h3>ملعب المباراة</h3>
