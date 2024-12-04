@@ -53,13 +53,11 @@
          return hours + ':' + minutes + ' ' + ampm;
      }
 
-
-
      // عرض المحتوى
      const content = `
         <div class="match">
             <div class="m_block egy_sports_item ${match.status === 'Fixture' ? 'notstarted' : match.status === 'Played' ? 'finshed' : match.status === 'Playing' ? 'live' : match.status === 'Uncertain' ? 'finshed' : 'soon'}" style="background: url(${match.bg_logo || 'https://allfootball-static.dongqiudi.com/n/dist/static/img/videoMatchBannerBg.42eb49b.jpg'});background-size: cover;">
-                <a href="#" class="ElGadwl ${match.status === 'Fixture' ? 'notstarted' : match.status === 'Played' ? 'endded' : match.status === 'Playing' ? 'runing' : match.status === 'Uncertain' ? 'Uncertain' : 'notstarted'}" title="${match.team_A_name} ضد ${match.team_B_name} فى ${match.competition_name || 'غير معروف'}" title="${match.team_A_name} ضد ${match.team_B_name} فى ${match.competition_name || 'غير معروف'}" style="background: url(${match.bg_logo || 'https://allfootball-static.dongqiudi.com/n/dist/static/img/videoMatchBannerBg.42eb49b.jpg'});background-size: cover;background-position: center;">
+                <a href="#" class="ElGadwl ${match.status === 'Fixture' ? 'notstarted' : match.status === 'Played' ? 'endded' : match.status === 'Playing' ? 'runing' : match.status === 'Uncertain' ? 'Uncertain' : 'notstarted'}" title="${match.team_A_name} ضد ${match.team_B_name} فى ${match.competition_name || 'غير معروف'}" style="background: url(${match.bg_logo || 'https://allfootball-static.dongqiudi.com/n/dist/static/img/videoMatchBannerBg.42eb49b.jpg'});background-size: cover;background-position: center;">
                <div class="competition-info-single"><span class="competition-info-single-name">${match.competition_name} <img alt="${match.competition_name}" src="${match.competition_logo || 'https://media.gemini.media/img/yallakora/IOSTeams/YK-Generic-team-logo.png'}"  width="24" /></span><span style="margin: 0 5px;">-</span>
                <span class="gameweek"> الجولة ${match.gameweek}</span></div>
                 <div class="Gadwl-Top" style="border: 0;">
