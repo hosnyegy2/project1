@@ -168,7 +168,7 @@
          }
      } else {
          // إذا كانت team_A غير موجودة
-         teamAPlayersContent = `<li>لا توجد معلومات متاحة الان عن فريق ${match.team_A_name}.</li>`;
+         teamAPlayersContent = `<li>لا توجد معلومات متاحة عن التشكيل الان.</li>`;
      }
 
      // طباعة النتيجة أو استخدامها
@@ -205,7 +205,7 @@
          }
      } else {
          // إذا كانت team_B غير موجودة
-         teamBPlayersContent = `<li>لا توجد معلومات متاحة الان عن فريق ${match.team_B_name}.</li>`;
+         teamBPlayersContent = `<li>لا توجد معلومات متاحة عن التشكيل الان.</li>`;
      }
 
      // طباعة النتيجة أو استخدامها
