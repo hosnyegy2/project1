@@ -1,4 +1,4 @@
-  // دالة لجلب بيانات المباراة باستخدام المعرف
+   // دالة لجلب بيانات المباراة باستخدام المعرف
     async function fetchMatchById(matchId) {
         document.getElementById("loading-message").style.display = 'block';
         document.getElementById("match-content").style.display = 'none';
@@ -129,7 +129,7 @@
         </div>
         `;
         document.getElementById("match-content").innerHTML = content;
-    }
+    
 
     // طباعة تفاصيل لاعبي الفريق الأول (team_A) من مصفوفة lineups
     let teamAPlayersContent;
@@ -209,6 +209,7 @@
     document.getElementById("teamAPlayersList").innerHTML = teamAPlayersContent;
     document.getElementById("teamBPlayersList").innerHTML = teamBPlayersContent;
 
+    }
 
     // دالة لعرض رسالة خطأ
     function displayError(message) {
