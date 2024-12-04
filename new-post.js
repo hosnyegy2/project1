@@ -99,8 +99,7 @@
             <!-- محتوى التابات -->
             <div class="tab-content active">
                 <div class="match-info" style="text-align: right;">
-                <p>تابعوا مباراة ${match.team_A_name} ضد ${match.team_B_name} اليوم بتاريخ ${formatDate(match.start_play)} في ${match.competition_name}.تعرفوا على موعد المباراة، والملعب وحكم المباراة، وتفاصيل البث المباشر، وطقس المباراة, وتشكيل الفريقين.</p>
-                <h2>اليوم: مباراة ${match.team_A_name} ضد ${match.team_B_name} في ${match.competition_name} وتفاصيل البث المباشر</h2>
+                <h3>مباراة ${match.team_A_name} ضد ${match.team_B_name} في ${match.competition_name}</h3>
                 <p>تُعتبر مباراة ${match.team_A_name} ضد ${match.team_B_name} واحدة من أبرز مباريات ${match.competition_name} حيث يتواجه الفريقان اليوم ${formatDate(match.start_play)} في مباراة مثيرة تُعزز من تنافسية البطولة. تُقام المباراة على ملعب ${venueName}، والذي يُعتبر من الملاعب المميزة فى بطولة ${match.competition_name}.</p>
                 <h3>موعد مباراة ${match.team_A_name} ضد ${match.team_B_name}</h3>
                 <p>تُقام مباراة ${match.team_A_name} ضد ${match.team_B_name} اليوم ${formatDate(match.start_play)}، في تمام الساعة ${formatTime(match.start_play)} بتوقيت القاهرة. سيتابع عشاق كرة القدم هذه المباراة بحماس كبير، إذ تعتبر واحدة من المباريات المنتظرة في بطولة ${match.competition_name}.</p>
