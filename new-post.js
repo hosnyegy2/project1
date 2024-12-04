@@ -148,7 +148,8 @@
                     <span>
                       ${player.position_x === 'AM' ? 'لاعب وسط مهاجم' :
                       player.position_x === 'GK' ? 'حارس مرمى' :
-                      player.position_x === 'DM' ? 'لاعب وسط' :
+                      player.position_x === 'DM' ? 'لاعب وسط مدافع' :
+                      player.position_x === 'M' ? 'لاعب وسط' :
                       player.position_x === 'D1' ? 'مدافع' :
                       player.position_x === 'A' ? 'مهاجم' :
                       player.position_x}
@@ -185,7 +186,8 @@
                    <span>
                       ${player.position_x === 'AM' ? 'لاعب وسط مهاجم' :
                       player.position_x === 'GK' ? 'حارس مرمى' :
-                      player.position_x === 'DM' ? 'لاعب وسط' :
+                      player.position_x === 'DM' ? 'لاعب وسط مدافع' :
+                      player.position_x === 'M' ? 'لاعب وسط' :
                       player.position_x === 'D1' ? 'مدافع' :
                       player.position_x === 'A' ? 'مهاجم' :
                       player.position_x}
