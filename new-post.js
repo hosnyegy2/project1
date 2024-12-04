@@ -1,63 +1,54 @@
- // دالة لجلب مباراة واحدة حسب ID
- async function fetchMatchById(matchId) {
-     // إظهار رسالة التحميل
-     document.getElementById("loading-message").style.display = 'block';
-     document.getElementById("match-content").style.display = 'none'; // إخفاء المحتوى أثناء التحميل
+ // دالة لجلب بيانات المباراة باستخدام المعرف
+    async function fetchMatchById(matchId) {
+        document.getElementById("loading-message").style.display = 'block';
+        document.getElementById("match-content").style.display = 'none';
 
-     try {
-         const response = await fetch(`https://coldady.com/matches/match_detail.php?matchId=${matchId}`);
-         const data = await response.json();
-         console.log("البيانات المسترجعة: ", data);
+        try {
+            const response = await fetch(`https://coldady.com/matches/match_detail.php?matchId=${matchId}`);
+            const data = await response.json();
+            console.log("البيانات المسترجعة: ", data);
 
-         // استخدام البيانات الموجودة داخل matchSample
-         const match = data.matchSample;
+            const match = data.matchSample;
+            if (match) {
+                displayMatch(match, data.matchFormation, data.matchAnalysis, data.matchSK);
+            } else {
+                displayError("عذرًا، لم يتم العثور على المباراة المطلوبة.");
+            }
+        } catch (error) {
+            console.error("خطأ أثناء جلب البيانات:", error);
+            displayError("حدث خطأ أثناء جلب البيانات.");
+        } finally {
+            document.getElementById("loading-message").style.display = 'none';
+            document.getElementById("match-content").style.display = 'block';
+        }
+    }
 
-         if (match) {
-             displayMatch(match, data.matchFormation, data.matchAnalysis, data.matchSK); // تمرير بيانات التشكيل والتقرير أيضاً
-         } else {
-             displayError("عذرًا، لم يتم العثور على المباراة المطلوبة.");
-         }
-     } catch (error) {
-         console.error("خطأ أثناء جلب البيانات:", error);
-         displayError("حدث خطأ أثناء جلب البيانات.");
-     } finally {
-         // بعد تحميل البيانات، إخفاء رسالة التحميل وعرض المحتوى
-         document.getElementById("loading-message").style.display = 'none';
-         document.getElementById("match-content").style.display = 'block';
-     }
- }
+    // دالة لعرض بيانات المباراة
+    function displayMatch(match, matchFormation, analysis, matchSK) {
+        const startPlayDate = new Date(match.start_play);
+        startPlayDate.setHours(startPlayDate.getHours() + 2);
+        const formattedStartPlay = startPlayDate.toISOString().split('T')[0] + ' ' + startPlayDate.toTimeString().split(' ')[0];
 
- // دالة لعرض تفاصيل المباراة
- function displayMatch(match, matchFormation, analysis, matchSK) {
-     // Parse the start_play date and add 2 hours
-     const startPlayDate = new Date(match.start_play);
-     startPlayDate.setHours(startPlayDate.getHours() + 2);
+        const venueName = matchFormation.venue_name || 'لم يتم تحديد الملعب';
+        const weather = matchFormation.weather || "غير معروف";
+        const temperature = matchFormation.temperature || "غير محدد";
+        const referee = matchFormation.referee || "غير محدد";
 
-     const formattedStartPlay = startPlayDate.toISOString().split('T')[0] + ' ' + startPlayDate.toTimeString().split(' ')[0];
+        function formatTimeUtc(utcTime) {
+            const timeString = `1970-01-01T${utcTime}Z`;
+            const date = new Date(timeString);
+            let hours = date.getHours();
+            let minutes = date.getMinutes();
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            return hours + ':' + minutes + ' ' + ampm;
+        }
 
-     const venueName = matchFormation.venue_name || 'لم يتم تحديد الملعب';
-     const weather = matchFormation.weather || "غير معروف";
-     const temperature = matchFormation.temperature || "غير محدد";
-     const referee = matchFormation.referee || "غير محدد";
-
-
-     function formatTimeUtc(utcTime) {
-         const timeString = `1970-01-01T${utcTime}Z`;
-         const date = new Date(timeString);
-         let hours = date.getHours();
-         let minutes = date.getMinutes();
-         const ampm = hours >= 12 ? 'PM' : 'AM';
-         hours = hours % 12;
-         hours = hours ? hours : 12;
-         minutes = minutes < 10 ? '0' + minutes : minutes;
-         return hours + ':' + minutes + ' ' + ampm;
-     }
-
-
-
-     // عرض المحتوى
-     const content = `
-        <div class="match">
+        // بناء المحتوى
+        const content = `
+             <div class="match">
             <div class="m_block egy_sports_item ${match.status === 'Fixture' ? 'notstarted' : match.status === 'Played' ? 'finshed' : match.status === 'Playing' ? 'live' : match.status === 'Uncertain' ? 'finshed' : 'soon'}" style="background: url(${match.bg_logo || 'https://allfootball-static.dongqiudi.com/n/dist/static/img/videoMatchBannerBg.42eb49b.jpg'});background-size: cover;">
                 <a href="#" class="ElGadwl ${match.status === 'Fixture' ? 'notstarted' : match.status === 'Played' ? 'endded' : match.status === 'Playing' ? 'runing' : match.status === 'Uncertain' ? 'Uncertain' : 'notstarted'}" title="${match.team_A_name} ضد ${match.team_B_name} فى ${match.competition_name || 'غير معروف'}" title="${match.team_A_name} ضد ${match.team_B_name} فى ${match.competition_name || 'غير معروف'}" style="background: url(${match.bg_logo || 'https://allfootball-static.dongqiudi.com/n/dist/static/img/videoMatchBannerBg.42eb49b.jpg'});background-size: cover;background-position: center;">
                <div class="competition-info-single"><span class="competition-info-single-name">${match.competition_name} <img alt="${match.competition_name}" src="${match.competition_logo || 'https://media.gemini.media/img/yallakora/IOSTeams/YK-Generic-team-logo.png'}"  width="24" /></span><span style="margin: 0 5px;">-</span>
@@ -136,19 +127,20 @@
                 </div>
             </div>
         </div>
-    `;
-     document.getElementById("match-content").innerHTML = content;
+        `;
+        document.getElementById("match-content").innerHTML = content;
+    }
 
-     // طباعة تفاصيل لاعبي الفريق الأول (team_A) من مصفوفة lineups
-     let teamAPlayersContent;
+    // طباعة تفاصيل لاعبي الفريق الأول (team_A) من مصفوفة lineups
+    let teamAPlayersContent;
 
-     // التحقق من وجود team_A
-     if (matchFormation && matchFormation.team_A) {
-         // التحقق من وجود lineups وصلاحية أن تكون مصفوفة
-         if (matchFormation.team_A.lineups && Array.isArray(matchFormation.team_A.lineups)) {
-             // معالجة العناصر إذا كانت موجودة ومصفوفة
-             teamAPlayersContent = matchFormation.team_A.lineups.map(player => {
-                 return `
+    // التحقق من وجود team_A
+    if (matchFormation && matchFormation.team_A) {
+        // التحقق من وجود lineups وصلاحية أن تكون مصفوفة
+        if (matchFormation.team_A.lineups && Array.isArray(matchFormation.team_A.lineups)) {
+            // معالجة العناصر إذا كانت موجودة ومصفوفة
+            teamAPlayersContent = matchFormation.team_A.lineups.map(player => {
+                return `
                 <li>
                     <span>${player.shirtnumber || 'غير متوفر'}</span>
                     <span>${player.person || 'غير متوفر'}</span>
@@ -162,30 +154,30 @@
                    </span>
                 </li>
             `;
-             }).join('');
-         } else {
-             // إذا كانت lineups غير موجودة أو ليست مصفوفة
-             teamAPlayersContent = `<li>لا توجد معلومات عن لاعبي فريق ${match.team_A_name}.</li>`;
+            }).join('');
+        } else {
+            // إذا كانت lineups غير موجودة أو ليست مصفوفة
+            teamAPlayersContent = `<li>لا توجد معلومات عن لاعبي فريق ${match.team_A_name}.</li>`;
 
-         }
-     } else {
-         // إذا كانت team_A غير موجودة
-         teamAPlayersContent = `<li>لا توجد معلومات متاحة الان عن فريق ${match.team_A_name}.</li>`;
-     }
+        }
+    } else {
+        // إذا كانت team_A غير موجودة
+        teamAPlayersContent = `<li>لا توجد معلومات متاحة الان عن فريق ${match.team_A_name}.</li>`;
+    }
 
-     // طباعة النتيجة أو استخدامها
-     console.log(teamAPlayersContent);
+    // طباعة النتيجة أو استخدامها
+    console.log(teamAPlayersContent);
 
-     // طباعة تفاصيل لاعبي الفريق الثاني (team_B) من مصفوفة lineups
-     let teamBPlayersContent;
+    // طباعة تفاصيل لاعبي الفريق الثاني (team_B) من مصفوفة lineups
+    let teamBPlayersContent;
 
-     // التحقق من وجود team_B
-     if (matchFormation && matchFormation.team_B) {
-         // التحقق من وجود lineups وصلاحية أن تكون مصفوفة
-         if (matchFormation.team_B.lineups && Array.isArray(matchFormation.team_B.lineups)) {
-             // معالجة العناصر إذا كانت موجودة ومصفوفة
-             teamBPlayersContent = matchFormation.team_B.lineups.map(player => {
-                 return `
+    // التحقق من وجود team_B
+    if (matchFormation && matchFormation.team_B) {
+        // التحقق من وجود lineups وصلاحية أن تكون مصفوفة
+        if (matchFormation.team_B.lineups && Array.isArray(matchFormation.team_B.lineups)) {
+            // معالجة العناصر إذا كانت موجودة ومصفوفة
+            teamBPlayersContent = matchFormation.team_B.lineups.map(player => {
+                return `
                 <li>
                     <span>${player.shirtnumber || 'غير متوفر'}</span>
                     <span>${player.person || 'غير متوفر'}</span>
@@ -200,46 +192,46 @@
 
                 </li>
             `;
-             }).join('');
-         } else {
-             // إذا كانت lineups غير موجودة أو ليست مصفوفة
-             teamBPlayersContent = `<li>لا توجد معلومات عن لاعبي فريق ${match.team_B_name}.</li>`;
-         }
-     } else {
-         // إذا كانت team_B غير موجودة
-         teamBPlayersContent = `<li>لا توجد معلومات متاحة الان عن فريق ${match.team_B_name}.</li>`;
-     }
+            }).join('');
+        } else {
+            // إذا كانت lineups غير موجودة أو ليست مصفوفة
+            teamBPlayersContent = `<li>لا توجد معلومات عن لاعبي فريق ${match.team_B_name}.</li>`;
+        }
+    } else {
+        // إذا كانت team_B غير موجودة
+        teamBPlayersContent = `<li>لا توجد معلومات متاحة الان عن فريق ${match.team_B_name}.</li>`;
+    }
 
-     // طباعة النتيجة أو استخدامها
-     console.log(teamBPlayersContent);
+    // طباعة النتيجة أو استخدامها
+    console.log(teamBPlayersContent);
 
-     // إضافة تفاصيل اللاعبين للمحتوى
-     document.getElementById("teamAPlayersList").innerHTML = teamAPlayersContent;
-     document.getElementById("teamBPlayersList").innerHTML = teamBPlayersContent;
+    // إضافة تفاصيل اللاعبين للمحتوى
+    document.getElementById("teamAPlayersList").innerHTML = teamAPlayersContent;
+    document.getElementById("teamBPlayersList").innerHTML = teamBPlayersContent;
 
- }
+    }
 
- // دالة لعرض رسالة خطأ
- function displayError(message) {
-     const content = `<p>${message}</p>`;
-     document.getElementById("match-content").innerHTML = content;
- }
+    // دالة لعرض رسالة خطأ
+    function displayError(message) {
+        const content = `<p>${message}</p>`;
+        document.getElementById("match-content").innerHTML = content;
+    }
 
- // دالة لتنسيق التاريخ
- function formatDate(dateString) {
-     const date = new Date(dateString);
-     const day = String(date.getDate()).padStart(2, '0');
-     const month = String(date.getMonth() + 1).padStart(2, '0');
-     const year = date.getFullYear();
-     return `${year}/${month}/${day}`;
- }
+    // دالة لتنسيق التاريخ
+    function formatDate(dateString) {
+        const date = new Date(dateString);
+        const day = String(date.getDate()).padStart(2, '0');
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const year = date.getFullYear();
+        return `${year}/${month}/${day}`;
+    }
 
- // دالة لتنسيق الوقت وإضافة صباحًا/مساءً
- function formatTime(dateString) {
-     const date = new Date(dateString);
-     let hours = date.getHours();
-     const minutes = String(date.getMinutes()).padStart(2, '0');
-     const period = hours >= 12 ? 'مساءً' : 'صباحًا';
-     hours = hours % 12 || 12; // تحويل الساعة إلى صيغة 12 ساعة
-     return `${hours}:${minutes} ${period}`;
- }
+    // دالة لتنسيق الوقت وإضافة صباحًا/مساءً
+    function formatTime(dateString) {
+        const date = new Date(dateString);
+        let hours = date.getHours();
+        const minutes = String(date.getMinutes()).padStart(2, '0');
+        const period = hours >= 12 ? 'مساءً' : 'صباحًا';
+        hours = hours % 12 || 12; // تحويل الساعة إلى صيغة 12 ساعة
+        return `${hours}:${minutes} ${period}`;
+    }
