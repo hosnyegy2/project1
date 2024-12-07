@@ -66,14 +66,14 @@
                         <span>${match.team_A_name}</span>
                     </div>
                     <div class="Fareeq-c">
-                        <span class="bouton ${match.status === 'Fixture' ? 'notstarted' : match.status === 'Played' ? 'endded' : match.status === 'Playing' ? 'runing' : match.status === 'Uncertain' ? 'Uncertain' : match.status === 'Postponed' ? 'started' : 'notstarted'}">${match.status === 'Fixture' ? 'لم تبدأ' : match.status === 'Played' ? 'انتهت' : match.status === 'Playing' ? 'جارية الان' : match.status === 'Uncertain' ? 'مؤجلة' : match.status === 'Postponed' ? 'مؤجلة' : match.status}</span>
-                            <div>
-                                <div class="fc_time">
-                                    ${(match.fs_A === "" && match.fs_B === "") 
-                                    ? `<span id="time">${formatTime(match.time_utc)}</span>` 
-                                    : `<span id="hdaf1">${match.fs_A || 0}</span> - <span id="hdaf2">${match.fs_B || 0}</span>
-                                    `}
-                                    ${(match.status !== "Played" && match.status !== "Fixture" && match.status !== "Uncertain" && match.status !== "Postponed" && match.status !== "") 
+                        <span class="bouton ${match.status === 'Fixture' ? 'notstarted' : match.status === 'Played' ? 'endded' : match.status === 'Playing' ? 'runing' : match.status === 'Uncertain' ? 'Uncertain' : match.status === 'Postponed' ? 'Uncertain' : 'notstarted'}">${match.status === 'Fixture' ? 'لم تبدأ' : match.status === 'Played' ? 'انتهت' : match.status === 'Playing' ? 'جارية الان' : match.status === 'Uncertain' ? 'مؤجلة' : match.status === 'Postponed' ? 'مؤجلة' : match.status}</span>
+                        <div>
+                            <div class="fc_time result_match">
+                                ${(match.fs_A === "" && match.fs_B === "") 
+                                ? `<span id="time">${formatTimeUtc(match.time_utc)}</span>` 
+                                : `<span id="hdaf1">${match.fs_A || 0}</span> - <span id="hdaf2">${match.fs_B || 0}</span>
+                               `}
+                                ${(match.status !== "Played" && match.status !== "Fixture" && match.status !== "Uncertain" && match.status !== "Postponed" && match.status !== "") 
                                     ? `<span id="playing_show_time">
                                         ${match.playing_show_time && match.playing_show_time !== "" 
                                             ? (match.playing_show_time === "HT" 
@@ -81,10 +81,11 @@
                                                 : match.playing_show_time) 
                                             : ""}
                                        </span>` 
-                                    : ""}
-                                </div>
-                                <div class="date stay" data-start="${match.start_play}" data-gameends="${formattedStartPlay}" id="${match.match_id}" competition_id="${match.competition_id}" date_id="${match.date_utc}"></div>
+                                : ""}
                             </div>
+
+                            <div class="date stay" data-start="${match.start_play}" data-gameends="${formattedStartPlay}" id="${match.match_id}"></div>
+                        </div>
                         </div>
                         <div class="Fareeq-l">
                         <img alt="${match.team_B_name}" src="${match.team_B_logo || 'https://media.gemini.media/img/yallakora/IOSTeams/YK-Generic-team-logo.png'}" />
