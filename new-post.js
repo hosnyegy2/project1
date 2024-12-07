@@ -108,7 +108,7 @@
                 <p>حكم المباراة هو الشخصية المسؤولة عن إدارة اللقاء والتحكيم بين الفريقين بشكل عادل وفقًا لقوانين اللعبة. يتمتع الحكم بخبرة كبيرة تمكنه من اتخاذ القرارات الحاسمة في اللحظات المهمة خلال المباراة. اليوم، يتولى قيادة هذا اللقاء الحكم <a data-abc="true" href="https://www.yallakora.com" rel="noopener" target="_new">${referee}</a>، والذي يُعرف بمسيرته المهنية الحافلة وتميزه في إدارة المباريات على مختلف المستويات.</p>
                 <p>تعد مباراة ${match.team_A_name} ضد ${match.team_B_name} مواجهة من العيار الثقيل في ${match.competition_name}، حيث يتطلع كل من الفريقين إلى تقديم أداء قوي والمنافسة على النقاط الثلاث.</p>
                 </div>          
-                <div class="teams-formations">
+                <div class="teams-formations" style="margin-bottom: 15px">
                     <h2>تشكيل الفريقين</h2>
                     <div class="team-formation">
                         <div id="teamAPlayers">
