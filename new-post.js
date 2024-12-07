@@ -56,8 +56,8 @@
      // عرض المحتوى
      const content = `
         <div class="match">
-            <div class="m_block egy_sports_item ${match.status === 'Fixture' ? 'notstarted' : match.status === 'Played' ? 'finshed' : match.status === 'Playing' ? 'live' : match.status === 'Uncertain' ? 'finshed' : 'soon'}" style="background: url(${match.bg_logo || 'https://allfootball-static.dongqiudi.com/n/dist/static/img/videoMatchBannerBg.42eb49b.jpg'});background-size: cover;">
-                <a href="#" class="ElGadwl ${match.status === 'Fixture' ? 'notstarted' : match.status === 'Played' ? 'endded' : match.status === 'Playing' ? 'runing' : match.status === 'Uncertain' ? 'Uncertain' : 'notstarted'}" title="${match.team_A_name} ضد ${match.team_B_name} فى ${match.competition_name || 'غير معروف'}" style="background: url(${match.bg_logo || 'https://allfootball-static.dongqiudi.com/n/dist/static/img/videoMatchBannerBg.42eb49b.jpg'});background-size: cover;background-position: center;">
+            <div class="m_block egy_sports_item ${match.status === 'Fixture' ? 'notstarted' : match.status === 'Played' ? 'finshed' : match.status === 'Playing' ? 'live' : match.status === 'Uncertain' ? 'finshed' : match.status === 'Postponed' ? 'finshed' : 'notstarted'}" style="background: url(${match.bg_logo || 'https://allfootball-static.dongqiudi.com/n/dist/static/img/videoMatchBannerBg.42eb49b.jpg'});background-size: cover;">
+                <a href="#" class="ElGadwl ${match.status === 'Fixture' ? 'notstarted' : match.status === 'Played' ? 'endded' : match.status === 'Playing' ? 'runing' : match.status === 'Uncertain' ? 'Uncertain' : match.status === 'Postponed' ? 'Uncertain' : 'notstarted'}" title="${match.team_A_name} ضد ${match.team_B_name} فى ${match.competition_name || 'غير معروف'}" style="background: url(${match.bg_logo || 'https://allfootball-static.dongqiudi.com/n/dist/static/img/videoMatchBannerBg.42eb49b.jpg'});background-size: cover;background-position: center;">
                <div class="competition-info-single"><span class="competition-info-single-name">${match.competition_name} <img alt="${match.competition_name}" src="${match.competition_logo || 'https://media.gemini.media/img/yallakora/IOSTeams/YK-Generic-team-logo.png'}"  width="24" /></span><span style="margin: 0 5px;">-</span>
                <span class="gameweek"> الجولة ${match.gameweek}</span></div>
                 <div class="Gadwl-Top" style="border: 0;">
@@ -66,14 +66,14 @@
                         <span>${match.team_A_name}</span>
                     </div>
                     <div class="Fareeq-c">
-                        <span class="bouton ${match.status === 'Fixture' ? 'notstarted' : match.status === 'Played' ? 'endded' : match.status === 'Playing' ? 'runing' : 'notstarted'}">${match.status === 'Fixture' ? 'لم تبدأ' : match.status === 'Played' ? 'انتهت' : match.status === 'Playing' ? 'جارية الان' : match.status === 'Uncertain' ? 'لم تبدأ' : match.status}</span>
-                        <div>
-                            <div class="fc_time result_match">
-                                ${(match.fs_A === "" && match.fs_B === "") 
-                                ? `<span id="time">${formatTimeUtc(match.time_utc)}</span>` 
-                                : `<span id="hdaf1">${match.fs_A || 0}</span> - <span id="hdaf2">${match.fs_B || 0}</span>
-                               `}
-                                ${(match.status !== "Played" && match.status !== "Fixture" && match.status !== "Uncertain" && match.status !== "") 
+                        <span class="bouton ${match.status === 'Fixture' ? 'notstarted' : match.status === 'Played' ? 'endded' : match.status === 'Playing' ? 'runing' : match.status === 'Uncertain' ? 'Uncertain' : match.status === 'Postponed' ? 'started' : 'notstarted'}">${match.status === 'Fixture' ? 'لم تبدأ' : match.status === 'Played' ? 'انتهت' : match.status === 'Playing' ? 'جارية الان' : match.status === 'Uncertain' ? 'مؤجلة' : match.status === 'Postponed' ? 'مؤجلة' : match.status}</span>
+                            <div>
+                                <div class="fc_time">
+                                    ${(match.fs_A === "" && match.fs_B === "") 
+                                    ? `<span id="time">${formatTime(match.time_utc)}</span>` 
+                                    : `<span id="hdaf1">${match.fs_A || 0}</span> - <span id="hdaf2">${match.fs_B || 0}</span>
+                                    `}
+                                    ${(match.status !== "Played" && match.status !== "Fixture" && match.status !== "Uncertain" && match.status !== "Postponed" && match.status !== "") 
                                     ? `<span id="playing_show_time">
                                         ${match.playing_show_time && match.playing_show_time !== "" 
                                             ? (match.playing_show_time === "HT" 
@@ -81,11 +81,10 @@
                                                 : match.playing_show_time) 
                                             : ""}
                                        </span>` 
-                                : ""}
+                                    : ""}
+                                </div>
+                                <div class="date stay" data-start="${match.start_play}" data-gameends="${formattedStartPlay}" id="${match.match_id}" competition_id="${match.competition_id}" date_id="${match.date_utc}"></div>
                             </div>
-
-                            <div class="date stay" data-start="${match.start_play}" data-gameends="${formattedStartPlay}" id="${match.match_id}"></div>
-                        </div>
                         </div>
                         <div class="Fareeq-l">
                         <img alt="${match.team_B_name}" src="${match.team_B_logo || 'https://media.gemini.media/img/yallakora/IOSTeams/YK-Generic-team-logo.png'}" />
