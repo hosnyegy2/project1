@@ -45,7 +45,7 @@ function startTimer(showTime, hideTime, iframeSrc) {
   checkTime(showTime, hideTime, iframeSrc);
 }
 ////////////////////////////////////////////////////////////
-// ملف fetch-element.js
+// ملف fetch-element.js دالة عرض ترتيب الفرق والهدافين
 
 // الدالة لجلب وعرض العنصر تلقائيًا
 async function fetchElement(url, elementType, elementIdOrClass = '') {
