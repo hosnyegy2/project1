@@ -92,7 +92,7 @@ jQuery(document).ready(function ($) {
                         progress = (currentTime - delayEndTime) / (firstHalfEndTime - delayEndTime) * 100;
                         isMatchLive = true;
                     } else if (currentTime < halfTimeEndTime) {
-                        timerElement.html("`45:00");
+                        timerElement.html("`45");
                         statusElement.text("استراحة");
                         progressBarElement.css("width", "50%");
                         isMatchLive = false;
