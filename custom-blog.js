@@ -41,7 +41,7 @@ jQuery(document).ready(function ($) {
                 i = moment.utc(a).subtract(hoursToSubtract, "hours").toDate(),
                 t.parent().find(".fc_time").addClass("fc_time_show").text(moment(i).format("LT").replace("PM", "PM").replace("AM", "AM")),
                 i = moment(i).format("YYYY/MM/DD h:mm A"),
-                t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html(" تبدأ قريبا "),
+                t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html(" تبدأ قريبا ").addClass("started"),
                 t.parent().parent().parent().parent().addClass("started"),
                 t.parents(".egy_sports_item").addClass("soon"),
                 t.parent().parent().parent().parent().find(".hoverG div").html("تبدأ المباراة قريبا"),
