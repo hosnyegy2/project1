@@ -55,7 +55,6 @@ jQuery(document).ready(function ($) {
                 i = moment.utc(a).subtract(hoursToSubtract, "hours").toDate(),
                 t.parent().find(".result_match").addClass("result_show"),
                 i = moment(i).format("YYYY/MM/DD h:mm A"),
-                t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html("جارية الان"),
                 t.parent().parent().parent().parent().addClass("runing"),
                 t.parents(".egy_sports_item").addClass("live"),
                 t.parent().parent().parent().parent().find(".timer-status").show(),
@@ -126,7 +125,6 @@ jQuery(document).ready(function ($) {
             default:
                 t.parent().find(".result_match").addClass("result_show");
                 t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html("انتهت"),
-                t.parent().parent().parent().parent().find(".hoverG div").html("انتهت المباراة"),
                 t.parents(".egy_sports_item").addClass("finshed"),
                 t.parent().parent().parent().parent().find(".timer-status").remove(),
                 t.parent().parent().parent().parent().addClass("endded");
