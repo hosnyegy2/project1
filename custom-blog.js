@@ -28,7 +28,7 @@ jQuery(document).ready(function ($) {
         switch (true) {
             case m > 30:
                 var i = moment.utc(a).subtract(hoursToSubtract, "hours").toDate();
-                t.parent().find(".fc_time").addClass("fc_time_show").text(moment(i).format("LT").replace("PM", "PM").replace("AM", "AM")),
+                t.parent().find(".fc_time").addClass("fc_time_show").text(moment(i).format("LT").replace("PM", "م").replace("AM", "ص")),
                 i = moment(i).format("YYYY/MM/DD h:mm A"),
                 t.parent().parent().parent().parent().find(".hoverG div").html("لم تبدأ المباراة بعد"),
                 t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html(" لم تبدأ "),
@@ -39,7 +39,7 @@ jQuery(document).ready(function ($) {
 
             case m > 0:
                 i = moment.utc(a).subtract(hoursToSubtract, "hours").toDate(),
-                t.parent().find(".fc_time").addClass("fc_time_show").text(moment(i).format("LT").replace("PM", "PM").replace("AM", "AM")),
+                t.parent().find(".fc_time").addClass("fc_time_show").text(moment(i).format("LT").replace("PM", "م").replace("AM", "ص")),
                 i = moment(i).format("YYYY/MM/DD h:mm A"),
                 t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html(" تبدأ قريبا "),
                 t.parent().parent().parent().parent().addClass("started"),
