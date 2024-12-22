@@ -123,7 +123,8 @@ jQuery(document).ready(function ($) {
             default:
                 t.parent().find(".result_match").addClass("result_show");
                 t.parent().parent().parent().parent().find(".Fareeq-c span.bouton").html("انتهت"),
-                t.parent().parent().parent().parent().find(".timer-status").remove(),
+                t.parent().parent().parent().parent().find(".hoverG div").html("انتهت المباراة"),
+                t.parent().parent().parent().parent().find(".timer-status").remove();
         }
     });
 });
