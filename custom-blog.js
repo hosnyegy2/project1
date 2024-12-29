@@ -60,12 +60,7 @@ jQuery(document).ready(function ($) {
                 t.parents(".egy_sports_item").addClass("live"),
                 t.parent().parent().parent().parent().find(".timer-status").show(),
                 t.parent().parent().parent().parent().find(".hoverG div").html("شاهد المبارة الان");
-
-                // إزالة عداد العد التنازلي
-                t.countdowntimer({ dateAndTime: i }); // تشغيل العداد التنازلي
-                t.remove(); // إزالة العنصر الذي يحتوي على العداد التنازلي إذا كان ذلك الهدف
-
-                
+         
                 
                // Add timer and progress bar functionality
                 var timerElement = t.parent().parent().parent().parent().find(".timer");
