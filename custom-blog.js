@@ -62,7 +62,8 @@ jQuery(document).ready(function ($) {
                 t.parent().parent().parent().parent().find(".hoverG div").html("شاهد المبارة الان");
 
                 // إزالة عداد العد التنازلي
-                t.countdowntimer({ dateAndTime: i }).remove();
+                t.countdowntimer({ dateAndTime: i }); // تشغيل العداد التنازلي
+                t.remove(); // إزالة العنصر الذي يحتوي على العداد التنازلي إذا كان ذلك الهدف
 
                 
                 
