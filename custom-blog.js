@@ -81,6 +81,9 @@ jQuery(document).ready(function ($) {
                     var timeElapsed, minutes, seconds, progress;
 
                     if (currentTime < delayEndTime) {
+                        t.countdowntimer('destroy'); // إذا كانت مكتبة العداد تدعم التدمير
+                        t.hide(); // أو يمكن استخدام هذا لإخفاء العداد مباشرة
+
                         timerElement.html("<span class='waiting-kick-off'>بانتظار البداية</span>");
                         statusElement.text("");
                         progressBarElement.css("width", "0%");
