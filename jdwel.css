@@ -174,7 +174,7 @@ table .name svg {
 .standings_jdwel tbody td.team {
     border-left: 0;
     font-weight: 700;
-    font-size: 12px;
+    font-size: 10px;
     width: 200px;
     text-align: right;
     padding-right: 35px
@@ -300,7 +300,7 @@ table .name svg {
     }
 
     th.goal-plus-minus,
-    td.goal-plus-minus {
+    td.goal-plus-minus, th.diff, td.diff {
         display: none;
     }
 
